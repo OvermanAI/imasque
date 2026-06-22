@@ -79,8 +79,8 @@ export default function Home() {
               <div className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-dusk/30 blur-2xl" />
               <SunglassesMask
                 className="relative w-full"
-                left="#6E78B8"
-                right="#F7CBAE"
+                left="#080808"
+                right="#F8C8C8"
                 idSuffix="concept"
               />
             </div>

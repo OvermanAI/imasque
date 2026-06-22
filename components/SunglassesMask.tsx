@@ -9,9 +9,9 @@ type Props = {
 // The MVP product: a sleep mask in the silhouette of sunglasses, two-tone.
 export function SunglassesMask({
   className = "",
-  left = "#9AA6D6",
-  right = "#F3B48A",
-  frame = "#FBF8F1",
+  left = "#080808",
+  right = "#F8C8C8",
+  frame = "#FFFFFF",
   idSuffix = "a",
 }: Props) {
   const lg = `lg-${idSuffix}`;
@@ -47,7 +47,7 @@ export function SunglassesMask({
       </defs>
 
       {/* soft cast shadow */}
-      <ellipse cx="280" cy="300" rx="190" ry="22" fill="#6E78B8" opacity="0.14" />
+      <ellipse cx="280" cy="300" rx="190" ry="22" fill="#F08890" opacity="0.16" />
 
       <g filter={`url(#${sh})`}>
         {/* strap */}
@@ -70,6 +70,8 @@ export function SunglassesMask({
           height="190"
           rx="92"
           fill={frame}
+          stroke="#F1DADC"
+          strokeWidth="2.5"
         />
 
         {/* left lens */}
@@ -84,8 +86,8 @@ export function SunglassesMask({
         />
 
         {/* soft highlights */}
-        <ellipse cx="120" cy="138" rx="34" ry="20" fill="#FBF8F1" opacity="0.35" />
-        <ellipse cx="352" cy="138" rx="34" ry="20" fill="#FBF8F1" opacity="0.35" />
+        <ellipse cx="120" cy="138" rx="34" ry="20" fill="#FFFFFF" opacity="0.35" />
+        <ellipse cx="352" cy="138" rx="34" ry="20" fill="#FFFFFF" opacity="0.35" />
       </g>
     </svg>
   );

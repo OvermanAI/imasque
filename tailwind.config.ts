@@ -8,16 +8,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Soft editorial dreamscape palette
-        milk: "#F6F1E7", // warm cream paper
-        cream: "#FBF8F1",
-        ink: "#23202B", // soft near-black
-        dusk: "#9AA6D6", // periwinkle dusk
-        "dusk-deep": "#6E78B8",
-        apricot: "#F3B48A", // warm apricot
-        "apricot-soft": "#F7CBAE",
-        haze: "#E7DFEF", // lilac haze
-        moss: "#A8B89B", // muted sage (future flower/animal dreams)
+        // Black + Pink + White — simplified brand palette.
+        // Legacy token names are kept and remapped to pink shades so the
+        // whole site recolours from one place.
+        milk: "#FFFFFF", // page background — white
+        cream: "#FFF6F7", // softest pink-white for cards / inputs
+        ink: "#080808", // black
+        white2: "#FFFFFF",
+
+        // pink scale (from the logo)
+        pink: "#F8C8C8", // primary light rose (logo wordmark)
+        "pink-deep": "#E07A84", // deeper coral for text accents / hover
+        "pink-soft": "#FBDCDE", // light pink tint
+        "pink-haze": "#FCEAEB", // near-white pink wash
+
+        // remapped legacy names → pink
+        dusk: "#F4A9B0",
+        "dusk-deep": "#E07A84",
+        apricot: "#F8C8C8",
+        "apricot-soft": "#FBDCDE",
+        haze: "#FCEAEB",
+        moss: "#F4A9B0",
       },
       fontFamily: {
         display: ["var(--font-fraunces)", "Georgia", "serif"],

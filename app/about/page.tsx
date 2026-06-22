@@ -35,7 +35,7 @@ export default function AboutPage() {
             <div className="relative rounded-[2.5rem] border border-ink/5 bg-gradient-to-br from-dusk/25 via-cream to-apricot/25 p-10 lg:p-12 overflow-hidden">
               <div className="absolute -top-16 -left-12 h-52 w-52 rounded-full bg-haze/40 blur-2xl" />
               <div className="animate-floaty">
-                <SunglassesMask className="w-full" left="#6E78B8" right="#F3B48A" idSuffix="about" />
+                <SunglassesMask className="w-full" left="#080808" right="#F8C8C8" idSuffix="about" />
               </div>
               <p className="relative mt-8 text-center font-sans text-[0.72rem] uppercase tracking-wider2 text-ink/45">
                 {t(a.formula, lang)}

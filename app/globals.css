@@ -13,14 +13,13 @@
   body {
     @apply bg-milk text-ink font-sans antialiased;
     background-image:
-      radial-gradient(120% 80% at 12% -10%, rgba(154, 166, 214, 0.28) 0%, transparent 55%),
-      radial-gradient(120% 90% at 92% 0%, rgba(243, 180, 138, 0.24) 0%, transparent 50%),
-      radial-gradient(140% 120% at 50% 120%, rgba(231, 223, 239, 0.55) 0%, transparent 60%);
+      radial-gradient(120% 80% at 12% -10%, rgba(248, 200, 200, 0.30) 0%, transparent 55%),
+      radial-gradient(110% 90% at 92% 2%, rgba(240, 136, 144, 0.12) 0%, transparent 50%);
     background-attachment: fixed;
   }
   ::selection {
-    background: #9aa6d6;
-    color: #fbf8f1;
+    background: #f08890;
+    color: #ffffff;
   }
 }
 

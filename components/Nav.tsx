@@ -21,7 +21,7 @@ export function Nav() {
 
   return (
     <header className="sticky top-0 z-40">
-      <div className="backdrop-blur-md bg-milk/55 border-b border-ink/5">
+      <div className="backdrop-blur-md bg-[#080808]/90 border-b border-white/10">
         <nav className="mx-auto max-w-7xl px-6 lg:px-10 h-16 flex items-center justify-between">
           <Link
             href="/"
@@ -47,12 +47,12 @@ export function Nav() {
                   key={l.href}
                   href={l.href}
                   className={`relative py-1 transition-colors ${
-                    active ? "text-ink" : "text-ink/55 hover:text-ink"
+                    active ? "text-cream" : "text-white/55 hover:text-cream"
                   }`}
                 >
                   {t(dict.nav[l.key], lang)}
                   {active && (
-                    <span className="absolute -bottom-0.5 left-0 h-px w-full bg-dusk-deep" />
+                    <span className="absolute -bottom-0.5 left-0 h-px w-full bg-apricot-soft" />
                   )}
                 </Link>
               );
@@ -63,7 +63,7 @@ export function Nav() {
             <button
               onClick={toggle}
               aria-label="Toggle language"
-              className="font-sans text-[0.72rem] uppercase tracking-wider2 text-ink/60 hover:text-ink transition-colors border border-ink/15 rounded-full px-3 py-1.5"
+              className="font-sans text-[0.72rem] uppercase tracking-wider2 text-white/65 hover:text-cream transition-colors border border-white/20 rounded-full px-3 py-1.5"
             >
               {lang === "en" ? "中" : "EN"}
             </button>
@@ -73,11 +73,11 @@ export function Nav() {
               onClick={() => setOpen((o) => !o)}
             >
               <span
-                className={`block h-px w-6 bg-ink transition-transform ${open ? "translate-y-[6px] rotate-45" : ""}`}
+                className={`block h-px w-6 bg-cream transition-transform ${open ? "translate-y-[6px] rotate-45" : ""}`}
               />
-              <span className={`block h-px w-6 bg-ink transition-opacity ${open ? "opacity-0" : ""}`} />
+              <span className={`block h-px w-6 bg-cream transition-opacity ${open ? "opacity-0" : ""}`} />
               <span
-                className={`block h-px w-6 bg-ink transition-transform ${open ? "-translate-y-[6px] -rotate-45" : ""}`}
+                className={`block h-px w-6 bg-cream transition-transform ${open ? "-translate-y-[6px] -rotate-45" : ""}`}
               />
             </button>
           </div>
@@ -86,14 +86,14 @@ export function Nav() {
 
       {/* mobile menu */}
       {open && (
-        <div className="md:hidden bg-milk/95 backdrop-blur-md border-b border-ink/5">
+        <div className="md:hidden bg-[#080808]/95 backdrop-blur-md border-b border-white/10">
           <div className="px-6 py-6 flex flex-col gap-5 font-display text-2xl">
             {links.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-ink/80 hover:text-ink lowercase"
+                className="text-cream/80 hover:text-cream lowercase"
               >
                 {t(dict.nav[l.key], lang)}
               </Link>
