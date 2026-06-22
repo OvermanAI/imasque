@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { useLang } from "@/components/LanguageProvider";
@@ -24,10 +25,18 @@ export function Nav() {
         <nav className="mx-auto max-w-7xl px-6 lg:px-10 h-16 flex items-center justify-between">
           <Link
             href="/"
-            className="font-display text-2xl lowercase tracking-brand text-ink hover:text-dusk-deep transition-colors"
+            aria-label="imasque — Dream More"
+            className="flex items-center transition-opacity hover:opacity-70"
             onClick={() => setOpen(false)}
           >
-            imasque
+            <Image
+              src="/logo.png"
+              alt="imasque"
+              width={1904}
+              height={611}
+              priority
+              className="h-9 w-auto sm:h-10"
+            />
           </Link>
 
           <div className="hidden md:flex items-center gap-9 font-sans text-[0.82rem] uppercase tracking-wider2">

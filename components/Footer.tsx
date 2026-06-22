@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLang } from "@/components/LanguageProvider";
 import { dict, t } from "@/lib/dictionary";
 
@@ -20,11 +21,14 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
           <div className="max-w-md">
-            <Link
-              href="/"
-              className="font-display text-4xl lowercase tracking-brand text-ink"
-            >
-              imasque
+            <Link href="/" aria-label="imasque — Dream More" className="inline-block">
+              <Image
+                src="/logo.png"
+                alt="imasque"
+                width={1904}
+                height={611}
+                className="h-16 w-auto"
+              />
             </Link>
             <p className="mt-4 font-sans text-sm text-ink/55 leading-relaxed">
               {t(dict.footer.tagline, lang)}
