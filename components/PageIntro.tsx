@@ -1,5 +1,7 @@
 "use client";
 
+import { BalancedText } from "@/components/BalancedText";
+
 export function PageIntro({
   index,
   title,
@@ -15,10 +17,10 @@ export function PageIntro({
         {index}
       </span>
       <h1 className="mt-5 font-display font-light text-[clamp(3rem,9vw,7rem)] leading-[0.88] tracking-brand text-ink animate-blurin">
-        {title}
+        <BalancedText>{title}</BalancedText>
       </h1>
       <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed text-ink/60 text-balance animate-rise [animation-delay:0.2s]">
-        {intro}
+        <BalancedText>{intro}</BalancedText>
       </p>
     </header>
   );

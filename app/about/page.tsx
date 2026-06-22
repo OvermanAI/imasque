@@ -5,6 +5,7 @@ import { dict, t } from "@/lib/dictionary";
 import { Reveal } from "@/components/Reveal";
 import { SunglassesMask } from "@/components/SunglassesMask";
 import { PageIntro } from "@/components/PageIntro";
+import { BalancedText } from "@/components/BalancedText";
 
 export default function AboutPage() {
   const { lang } = useLang();
@@ -18,13 +19,13 @@ export default function AboutPage() {
         <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-16 items-start">
           <Reveal className="space-y-7 max-w-2xl">
             <p className="font-display font-light text-[clamp(1.6rem,3vw,2.3rem)] leading-snug tracking-brand text-ink text-balance">
-              {t(a.body1, lang)}
+              <BalancedText>{t(a.body1, lang)}</BalancedText>
             </p>
             <p className="font-sans text-lg leading-relaxed text-ink/65">
-              {t(a.body2, lang)}
+              <BalancedText>{t(a.body2, lang)}</BalancedText>
             </p>
             <p className="font-sans text-lg leading-relaxed text-ink/65">
-              {t(a.body3, lang)}
+              <BalancedText>{t(a.body3, lang)}</BalancedText>
             </p>
             <p className="font-display italic text-4xl text-dusk-deep pt-2">
               {t(a.signature, lang)}

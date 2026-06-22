@@ -6,6 +6,7 @@ import { Reveal } from "@/components/Reveal";
 import { SunglassesMask } from "@/components/SunglassesMask";
 import { PageIntro } from "@/components/PageIntro";
 import { DreamListForm } from "@/components/DreamListForm";
+import { BalancedText } from "@/components/BalancedText";
 
 export default function ShopPage() {
   const { lang } = useLang();
@@ -35,10 +36,10 @@ export default function ShopPage() {
               {t(s.status, lang)}
             </span>
             <h2 className="mt-6 font-display font-light text-[clamp(2.4rem,5vw,3.6rem)] leading-[0.95] tracking-brand text-ink">
-              {t(s.productName, lang)}
+              <BalancedText>{t(s.productName, lang)}</BalancedText>
             </h2>
             <p className="mt-6 max-w-md font-sans text-lg leading-relaxed text-ink/65">
-              {t(s.productDesc, lang)}
+              <BalancedText>{t(s.productDesc, lang)}</BalancedText>
             </p>
 
             <div className="mt-9 rounded-2xl bg-milk/70 border border-ink/5 p-6">

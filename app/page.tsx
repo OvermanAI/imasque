@@ -6,6 +6,7 @@ import { dict, t } from "@/lib/dictionary";
 import { Reveal } from "@/components/Reveal";
 import { SunglassesMask } from "@/components/SunglassesMask";
 import { DreamListForm } from "@/components/DreamListForm";
+import { BalancedText } from "@/components/BalancedText";
 
 export default function Home() {
   const { lang } = useLang();
@@ -67,10 +68,10 @@ export default function Home() {
           <Reveal className="lg:col-span-5">
             <Kicker>{t(h.conceptKicker, lang)}</Kicker>
             <h2 className="mt-5 font-display font-light text-[clamp(2.4rem,5vw,4rem)] leading-[0.95] tracking-brand text-ink text-balance">
-              {t(h.conceptTitle, lang)}
+              <BalancedText>{t(h.conceptTitle, lang)}</BalancedText>
             </h2>
             <p className="mt-7 max-w-md font-sans text-lg leading-relaxed text-ink/65">
-              {t(h.conceptBody, lang)}
+              <BalancedText>{t(h.conceptBody, lang)}</BalancedText>
             </p>
           </Reveal>
           <Reveal className="lg:col-span-7">
@@ -93,7 +94,7 @@ export default function Home() {
         <Reveal>
           <Kicker>{t(h.valuesKicker, lang)}</Kicker>
           <h2 className="mt-5 font-display font-light text-[clamp(2.4rem,5vw,4rem)] leading-[0.95] tracking-brand text-ink">
-            {t(h.valuesTitle, lang)}
+            <BalancedText>{t(h.valuesTitle, lang)}</BalancedText>
           </h2>
         </Reveal>
         <Reveal stagger className="mt-14 grid md:grid-cols-3 gap-6">
@@ -126,10 +127,10 @@ export default function Home() {
           <div className="relative px-8 py-16 lg:px-20 lg:py-24 text-cream">
             <Kicker className="text-apricot-soft">{t(h.bipKicker, lang)}</Kicker>
             <h2 className="mt-5 max-w-3xl font-display font-light text-[clamp(2.2rem,5vw,4rem)] leading-[0.98] tracking-brand text-balance">
-              {t(h.bipTitle, lang)}
+              <BalancedText>{t(h.bipTitle, lang)}</BalancedText>
             </h2>
             <p className="mt-7 max-w-xl font-sans text-lg leading-relaxed text-cream/75">
-              {t(h.bipBody, lang)}
+              <BalancedText>{t(h.bipBody, lang)}</BalancedText>
             </p>
             <Link
               href="/journal"
@@ -146,10 +147,10 @@ export default function Home() {
         <Reveal className="text-center max-w-2xl mx-auto">
           <Kicker className="justify-center">{t(h.dreamKicker, lang)}</Kicker>
           <h2 className="mt-5 font-display font-light text-[clamp(3rem,8vw,6rem)] leading-[0.9] tracking-brand text-ink">
-            {t(h.dreamTitle, lang)}
+            <BalancedText>{t(h.dreamTitle, lang)}</BalancedText>
           </h2>
           <p className="mt-6 font-sans text-lg leading-relaxed text-ink/65">
-            {t(h.dreamBody, lang)}
+            <BalancedText>{t(h.dreamBody, lang)}</BalancedText>
           </p>
           <div className="mt-10 flex justify-center">
             <DreamListForm />

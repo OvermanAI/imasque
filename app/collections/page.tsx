@@ -6,6 +6,7 @@ import { dict, t } from "@/lib/dictionary";
 import { Reveal } from "@/components/Reveal";
 import { SunglassesMask } from "@/components/SunglassesMask";
 import { PageIntro } from "@/components/PageIntro";
+import { BalancedText } from "@/components/BalancedText";
 
 const futureDreams = [
   { key: "flower" as const, grad: "from-apricot/40 to-haze/30" },
@@ -38,7 +39,7 @@ export default function CollectionsPage() {
                     {t(c.sunglasses, lang)}
                   </h2>
                   <p className="mt-5 max-w-sm font-sans text-lg leading-relaxed text-ink/65">
-                    {t(c.sunglassesDesc, lang)}
+                    <BalancedText>{t(c.sunglassesDesc, lang)}</BalancedText>
                   </p>
                   <span className="mt-7 inline-flex items-center gap-2 font-sans text-sm uppercase tracking-wider2 text-ink/70 group-hover:text-ink transition-colors">
                     {t(dict.nav.shop, lang)}

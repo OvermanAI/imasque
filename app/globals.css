@@ -21,6 +21,13 @@
     background: #f08890;
     color: #ffffff;
   }
+  /* Balance heading line lengths. Paired with <BalancedText> word-segmentation,
+     this keeps Chinese breaks on word boundaries (e.g. never 作|夢). */
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
 }
 
 /* Film grain overlay for editorial texture */

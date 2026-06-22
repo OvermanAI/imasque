@@ -16,7 +16,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const saved = window.localStorage.getItem("imasque-lang") as Lang | null;
-    if (saved === "en" || saved === "zh") setLangState(saved);
+    if (saved === "en" || saved === "zh") {
+      setLangState(saved);
+      document.documentElement.lang = saved === "zh" ? "zh-Hant" : "en";
+    }
   }, []);
 
   const setLang = (l: Lang) => {
