@@ -44,7 +44,7 @@ export default function ShopPage() {
 
             <div className="mt-9 rounded-2xl bg-milk/70 border border-ink/5 p-6">
               <p className="font-sans text-sm leading-relaxed text-ink/55">
-                {t(s.soon, lang)}
+                <BalancedText>{t(s.soon, lang)}</BalancedText>
               </p>
               <div className="mt-5">
                 <DreamListForm compact />

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useLang } from "@/components/LanguageProvider";
 import { dict, t } from "@/lib/dictionary";
+import { BalancedText } from "@/components/BalancedText";
 
 // UI-only for now — no backend wired up yet (by design).
 export function DreamListForm({ compact = false }: { compact?: boolean }) {
@@ -48,7 +49,7 @@ export function DreamListForm({ compact = false }: { compact?: boolean }) {
         </button>
       </div>
       <p className="mt-3 font-sans text-xs text-ink/40">
-        {t(dict.home.emailNote, lang)}
+        <BalancedText>{t(dict.home.emailNote, lang)}</BalancedText>
       </p>
     </form>
   );

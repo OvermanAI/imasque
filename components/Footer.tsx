@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLang } from "@/components/LanguageProvider";
 import { dict, t } from "@/lib/dictionary";
+import { BalancedText } from "@/components/BalancedText";
 
 const links = [
   { href: "/shop", key: "shop" as const },
@@ -31,7 +32,7 @@ export function Footer() {
               />
             </Link>
             <p className="mt-4 font-sans text-sm text-ink/55 leading-relaxed">
-              {t(dict.footer.tagline, lang)}
+              <BalancedText>{t(dict.footer.tagline, lang)}</BalancedText>
             </p>
           </div>
 

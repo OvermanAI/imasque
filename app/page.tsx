@@ -29,7 +29,7 @@ export default function Home() {
                 </span>
               </h1>
               <p className="mt-8 max-w-md font-sans text-lg leading-relaxed text-ink/65 text-balance animate-rise [animation-delay:0.3s]">
-                {t(h.heroSub, lang)}
+                <BalancedText>{t(h.heroSub, lang)}</BalancedText>
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-5 animate-rise [animation-delay:0.45s]">
                 <a
@@ -111,7 +111,7 @@ export default function Home() {
               <div>
                 <h3 className="font-display text-3xl text-ink">{t(v.t, lang)}</h3>
                 <p className="mt-3 font-sans text-[0.95rem] leading-relaxed text-ink/60">
-                  {t(v.b, lang)}
+                  <BalancedText>{t(v.b, lang)}</BalancedText>
                 </p>
               </div>
             </div>

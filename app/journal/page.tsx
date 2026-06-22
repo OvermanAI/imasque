@@ -4,6 +4,7 @@ import { useLang } from "@/components/LanguageProvider";
 import { dict, t } from "@/lib/dictionary";
 import { Reveal } from "@/components/Reveal";
 import { PageIntro } from "@/components/PageIntro";
+import { BalancedText } from "@/components/BalancedText";
 
 const categories = [
   { key: "building" as const, descKey: "buildingDesc" as const, num: "01", c: "from-dusk/25 to-haze/20" },
@@ -33,7 +34,7 @@ export default function JournalPage() {
                   {t(j[cat.key], lang)}
                 </h2>
                 <p className="mt-3 max-w-sm font-sans text-[0.95rem] leading-relaxed text-ink/60">
-                  {t(j[cat.descKey], lang)}
+                  <BalancedText>{t(j[cat.descKey], lang)}</BalancedText>
                 </p>
               </div>
             </article>
@@ -44,7 +45,7 @@ export default function JournalPage() {
       <section className="mx-auto max-w-7xl px-6 lg:px-10 pb-10">
         <Reveal className="rounded-[2rem] border border-dashed border-ink/15 bg-cream/40 px-8 py-14 text-center">
           <p className="font-display italic text-2xl lg:text-3xl text-ink/50 text-balance">
-            {t(dict.journal.empty, lang)}
+            <BalancedText>{t(dict.journal.empty, lang)}</BalancedText>
           </p>
         </Reveal>
       </section>
