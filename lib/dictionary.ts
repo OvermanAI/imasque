@@ -4,6 +4,7 @@ export type Lang = "en" | "zh";
 // Slogans & wordmark stay English across both languages by design.
 export const dict = {
   nav: {
+    product: { en: "Product", zh: "Product" },
     shop: { en: "Shop", zh: "選購" },
     collections: { en: "Collections", zh: "系列" },
     journal: { en: "Journal", zh: "日誌" },
