@@ -106,13 +106,13 @@ export default function Home() {
 
       <SalesSection className="bg-[#FBF7EF] pt-20 lg:pt-28">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <Kicker>Hero product</Kicker>
+          <Kicker>Celluloid Black</Kicker>
           <h2 className="mt-5 font-display text-[clamp(2.8rem,6vw,5.8rem)] font-light leading-[0.88] tracking-brand text-ink">
-            <BalancedText>先把 Celluloid Black 做成最好入手的第一款。</BalancedText>
+            <BalancedText>看起來俐落，戴起來很安靜。</BalancedText>
           </h2>
           <p className="mx-auto mt-7 max-w-2xl font-sans text-lg leading-relaxed text-ink/62">
             <BalancedText>
-              目前首頁集中主推 Black：更安靜、更深眠，也最能表現 imasque 的核心：Comfort、Healing、Imagination。
+              深色遮光面料搭配玳瑁框視覺，把睡眠眼罩做成一件可以收藏、可以送禮，也每天都想用的小物。
             </BalancedText>
           </p>
         </Reveal>
