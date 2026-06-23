@@ -8,7 +8,7 @@ import { Reveal } from "@/components/Reveal";
 
 const productImages = {
   set: "/product/去背/imasqueBlack/7.png",
-  front: "/product/去背/imasqueBlack/8-clean.png",
+  front: "/product/去背/imasqueBlack/8-front-cropped.png",
   angle: "/product/去背/imasqueBlack/9.png",
 };
 
@@ -29,70 +29,65 @@ const features = [
 export default function Home() {
   return (
     <>
-      <section className="relative -mt-16 min-h-[100svh] overflow-hidden bg-[#0E0906] text-cream">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_34%,rgba(245,215,170,0.24),transparent_33%),linear-gradient(90deg,rgba(14,9,6,0.98)_0%,rgba(14,9,6,0.86)_42%,rgba(14,9,6,0.36)_100%)]" />
-        <div className="absolute right-[-10%] top-[9%] hidden h-[72%] w-[68%] lg:block">
-          <Image
-            src={productImages.front}
-            alt="imasque Celluloid Black front view"
-            fill
-            priority
-            sizes="64vw"
-            className="object-contain drop-shadow-[0_38px_60px_rgba(0,0,0,0.42)]"
-          />
+      <section className="relative -mt-16 min-h-[100svh] overflow-hidden bg-[#0B0705] text-cream">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_46%,rgba(245,215,170,0.28),transparent_31%),radial-gradient(circle_at_50%_100%,rgba(154,91,44,0.16),transparent_36%),linear-gradient(90deg,rgba(11,7,5,1)_0%,rgba(11,7,5,0.94)_38%,rgba(11,7,5,0.58)_100%)]" />
+        <div className="absolute inset-y-0 right-0 top-8 hidden w-[58%] lg:block">
+          <div className="relative h-full w-full">
+            <Image
+              src={productImages.front}
+              alt="imasque Celluloid Black front view"
+              fill
+              priority
+              sizes="72vw"
+              className="object-contain object-center drop-shadow-[0_46px_68px_rgba(0,0,0,0.5)]"
+            />
+          </div>
         </div>
-        <div className="absolute bottom-[5%] right-[34%] hidden h-[30%] w-[30%] lg:block">
-          <Image
-            src={productImages.angle}
-            alt="imasque Celluloid Black angle view"
-            fill
-            priority
-            sizes="28vw"
-            className="object-contain drop-shadow-[0_30px_42px_rgba(0,0,0,0.34)]"
-          />
-        </div>
-        <div className="absolute inset-x-0 bottom-[6%] h-[36%] opacity-55 lg:hidden">
-          <Image
-            src={productImages.set}
-            alt="imasque Celluloid product set"
-            fill
-            priority
-            sizes="100vw"
-            className="object-contain drop-shadow-[0_30px_48px_rgba(0,0,0,0.38)]"
-          />
-        </div>
-        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#FBF7EF] to-transparent" />
-
-        <div className="relative mx-auto flex min-h-[100svh] max-w-7xl items-center px-6 pb-14 pt-28 lg:px-10 lg:pt-24">
-          <div className="max-w-[38rem]">
+        <div className="relative mx-auto flex min-h-[100svh] max-w-7xl items-center px-6 pb-16 pt-28 lg:px-10 lg:pt-24">
+          <div className="max-w-[42rem]">
             <p className="reveal in font-sans text-[0.72rem] uppercase tracking-widest2 text-[#F5D7AA]">
-              imasque Celluloid Collection
+              imasque Celluloid Black
             </p>
-            <h1 className="mt-5 font-display text-[clamp(4.1rem,10vw,9rem)] font-light leading-[0.82] tracking-brand text-white">
-              <span className="block animate-blurin">Dream</span>
+            <h1 className="mt-5 font-display text-[clamp(4rem,9vw,8.6rem)] font-light leading-[0.86] tracking-brand text-white">
+              <span className="block animate-blurin">Celluloid</span>
               <span className="block italic text-[#F5D7AA] animate-blurin [animation-delay:0.12s]">
-                More.
+                Black.
               </span>
             </h1>
-            <p className="mt-7 font-display text-[clamp(1.75rem,3.2vw,3rem)] font-light leading-tight text-[#F5D7AA] animate-rise [animation-delay:0.2s]">
-              <BalancedText>把太陽眼鏡的時髦，變成深度睡眠的溫柔。</BalancedText>
+            <p className="mt-7 max-w-xl font-display text-[clamp(1.7rem,3vw,2.85rem)] font-light leading-tight text-[#F5D7AA] animate-rise [animation-delay:0.2s]">
+              <BalancedText>太陽眼鏡造型睡眠眼罩，閉上眼也保留造型感。</BalancedText>
             </p>
             <p className="mt-5 max-w-md font-sans text-base leading-relaxed text-white/72 animate-rise [animation-delay:0.3s]">
               <BalancedText>
-                玳瑁太陽眼鏡造型眼罩，為睡前、午休、旅行與通勤休息而生。看起來有造型，戴起來要柔軟、透氣、全遮光。
+                深色全遮光、Tencel 親膚布面、雙側可調耳掛。為睡前、午休、旅行與通勤休息而生。
               </BalancedText>
             </p>
-            <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center animate-rise [animation-delay:0.4s]">
+            <div className="relative mt-6 h-32 sm:h-40 lg:hidden animate-rise [animation-delay:0.34s]">
+              <Image
+                src={productImages.front}
+                alt="imasque Celluloid Black front view"
+                fill
+                priority
+                sizes="100vw"
+                className="object-contain drop-shadow-[0_26px_42px_rgba(0,0,0,0.42)]"
+              />
+            </div>
+            <div className="mt-9 flex flex-col gap-5 sm:flex-row sm:items-center animate-rise [animation-delay:0.4s]">
               <a
                 href="#preorder"
-                className="inline-flex items-center justify-center rounded-full bg-[#F5D7AA] px-8 py-4 font-sans text-sm font-semibold uppercase tracking-wider2 text-[#130D09] transition hover:bg-white"
+                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#F5D7AA] px-9 font-sans text-sm font-semibold uppercase tracking-wider2 text-[#130D09] shadow-[0_18px_42px_rgba(245,215,170,0.18)] transition hover:bg-white"
               >
                 我要預購
               </a>
-              <p className="font-sans text-sm leading-relaxed text-white/66">
-                <span className="block text-2xl font-semibold text-white">早鳥 NT$299</span>
-                第一輪預購測試價
+              <p className="font-sans text-sm leading-relaxed text-white/68">
+                <span className="block text-3xl font-semibold text-white">早鳥 NT$299</span>
+                Celluloid Black 第一輪預購測試價
               </p>
+            </div>
+            <div className="mt-9 flex max-w-lg flex-wrap gap-x-6 gap-y-2 border-t border-white/12 pt-5 font-sans text-[0.72rem] uppercase tracking-wider2 text-white/42 animate-rise [animation-delay:0.48s]">
+              <span>Full blackout</span>
+              <span>Tencel soft touch</span>
+              <span>Adjustable ear loops</span>
             </div>
           </div>
         </div>
