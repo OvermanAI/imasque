@@ -7,8 +7,6 @@ import { dict, t } from "@/lib/dictionary";
 import { BalancedText } from "@/components/BalancedText";
 
 const links = [
-  { href: "/shop", key: "shop" as const },
-  { href: "/collections", key: "collections" as const },
   { href: "/journal", key: "journal" as const },
   { href: "/about", key: "about" as const },
 ];

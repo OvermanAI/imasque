@@ -8,8 +8,6 @@ import { useLang } from "@/components/LanguageProvider";
 import { dict, t } from "@/lib/dictionary";
 
 const links = [
-  { href: "/shop", key: "shop" as const },
-  { href: "/collections", key: "collections" as const },
   { href: "/journal", key: "journal" as const },
   { href: "/about", key: "about" as const },
 ];
