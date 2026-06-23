@@ -10,19 +10,13 @@ const products = [
   {
     name: "Celluloid Black",
     label: "Deep sleep black",
-    image: "/product/celluloid-black-set.webp",
-    front: "/product/celluloid-black-front.webp",
-    detail: "/product/celluloid-black-angle.webp",
-    pouch: "/product/celluloid-black-pouch.webp",
+    image: "/product/celluloid-black-set-cutout.webp",
     description: "深色遮光面料搭配玳瑁框視覺，像太陽眼鏡一樣俐落，閉眼後更安靜。",
   },
   {
     name: "Celluloid Cream",
     label: "Warm cream comfort",
-    image: "/product/celluloid-cream-set.webp",
-    front: "/product/celluloid-cream-front.webp",
-    detail: "/product/celluloid-cream-angle.webp",
-    pouch: "/product/celluloid-cream-pouch.webp",
+    image: "/product/celluloid-cream-set-cutout.webp",
     description: "暖奶油眼罩面保留 Tencel 的柔軟感，玳瑁框讓睡眠小物也有造型。",
   },
 ];
@@ -38,15 +32,47 @@ export default function Home() {
   return (
     <>
       <section className="relative -mt-16 min-h-[100svh] overflow-hidden bg-[#0E0906] text-cream">
-        <Image
-          src="/product/celluloid-cream-hero.webp"
-          alt="imasque Celluloid Cream product set"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover opacity-72"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(14,9,6,0.94)_0%,rgba(14,9,6,0.78)_34%,rgba(14,9,6,0.18)_72%,rgba(14,9,6,0.06)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_34%,rgba(245,215,170,0.24),transparent_33%),linear-gradient(90deg,rgba(14,9,6,0.98)_0%,rgba(14,9,6,0.86)_42%,rgba(14,9,6,0.36)_100%)]" />
+        <div className="absolute right-[-10%] top-[9%] hidden h-[72%] w-[68%] lg:block">
+          <Image
+            src="/product/celluloid-cream-front-cutout.webp"
+            alt="imasque Celluloid Cream front view"
+            fill
+            priority
+            sizes="64vw"
+            className="object-contain drop-shadow-[0_38px_60px_rgba(0,0,0,0.42)]"
+          />
+        </div>
+        <div className="absolute bottom-[8%] right-[3%] hidden h-[34%] w-[36%] lg:block">
+          <Image
+            src="/product/celluloid-cream-pouch-cutout.webp"
+            alt="imasque Celluloid pouch"
+            fill
+            priority
+            sizes="34vw"
+            className="object-contain drop-shadow-[0_34px_48px_rgba(0,0,0,0.34)]"
+          />
+        </div>
+        <div className="absolute bottom-[5%] right-[37%] hidden h-[28%] w-[28%] lg:block">
+          <Image
+            src="/product/celluloid-cream-angle-cutout.webp"
+            alt="imasque Celluloid Cream angle view"
+            fill
+            priority
+            sizes="28vw"
+            className="object-contain drop-shadow-[0_30px_42px_rgba(0,0,0,0.34)]"
+          />
+        </div>
+        <div className="absolute inset-x-0 bottom-[6%] h-[36%] opacity-55 lg:hidden">
+          <Image
+            src="/product/celluloid-cream-set-cutout.webp"
+            alt="imasque Celluloid product set"
+            fill
+            priority
+            sizes="100vw"
+            className="object-contain drop-shadow-[0_30px_48px_rgba(0,0,0,0.38)]"
+          />
+        </div>
         <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#FBF7EF] to-transparent" />
 
         <div className="relative mx-auto flex min-h-[100svh] max-w-7xl items-center px-6 pb-14 pt-28 lg:px-10 lg:pt-24">
@@ -111,13 +137,13 @@ export default function Home() {
         <Reveal stagger className="mt-14 grid gap-6 lg:grid-cols-2">
           {products.map((product) => (
             <article key={product.name} className="overflow-hidden rounded-[1.5rem] border border-ink/8 bg-white shadow-[0_24px_80px_rgba(77,42,24,0.07)]">
-              <div className="relative aspect-[4/3] bg-[#F6F0E8]">
+              <div className="relative aspect-[4/3] bg-[radial-gradient(circle_at_50%_42%,#FFF8EC_0%,#F1E0C9_62%,#E7D2B6_100%)]">
                 <Image
                   src={product.image}
                   alt={`${product.name} product set`}
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover transition duration-700 hover:scale-[1.02]"
+                  className="object-contain p-8 drop-shadow-[0_28px_34px_rgba(77,42,24,0.22)] transition duration-700 hover:scale-[1.02]"
                 />
               </div>
               <div className="p-7 lg:p-8">
@@ -149,23 +175,23 @@ export default function Home() {
           </Reveal>
 
           <Reveal className="grid gap-4 sm:grid-cols-2">
-            <ProductImage src="/product/celluloid-black-front.webp" alt="Celluloid Black front view" />
-            <ProductImage src="/product/celluloid-cream-front.webp" alt="Celluloid Cream front view" />
-            <ProductImage src="/product/celluloid-black-angle.webp" alt="Celluloid Black angle view" />
-            <ProductImage src="/product/celluloid-cream-pouch.webp" alt="Celluloid Cream pouch" />
+            <ProductImage src="/product/celluloid-black-front-cutout.webp" alt="Celluloid Black front view" />
+            <ProductImage src="/product/celluloid-cream-front-cutout.webp" alt="Celluloid Cream front view" />
+            <ProductImage src="/product/celluloid-black-angle-cutout.webp" alt="Celluloid Black angle view" />
+            <ProductImage src="/product/celluloid-cream-pouch-cutout.webp" alt="Celluloid Cream pouch" />
           </Reveal>
         </div>
       </SalesSection>
 
       <SalesSection className="bg-[#FBF7EF]">
         <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-          <Reveal className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem] bg-[#F4EDE3] shadow-[0_24px_80px_rgba(77,42,24,0.08)]">
+          <Reveal className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem] bg-[linear-gradient(135deg,#F8EFE3_0%,#E8D1B2_100%)] shadow-[0_24px_80px_rgba(77,42,24,0.08)]">
             <Image
-              src="/product/celluloid-black-hero.webp"
+              src="/product/celluloid-black-set-cutout.webp"
               alt="Celluloid Black product hero"
               fill
               sizes="(min-width: 1024px) 58vw, 100vw"
-              className="object-cover"
+              className="object-contain p-8 drop-shadow-[0_28px_38px_rgba(77,42,24,0.22)]"
             />
           </Reveal>
           <Reveal>
@@ -214,13 +240,13 @@ export default function Home() {
 
 function ProductImage({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="relative aspect-[4/3] overflow-hidden rounded-[1.25rem] bg-[#F8F4ED]">
+    <div className="relative aspect-[4/3] overflow-hidden rounded-[1.25rem] bg-[radial-gradient(circle_at_50%_42%,#FFF8EC_0%,#EEDBC1_100%)]">
       <Image
         src={src}
         alt={alt}
         fill
         sizes="(min-width: 1024px) 25vw, 50vw"
-        className="object-cover"
+        className="object-contain p-6 drop-shadow-[0_22px_28px_rgba(0,0,0,0.28)]"
       />
     </div>
   );
