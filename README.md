@@ -2,6 +2,8 @@
 
 > The eye mask of 11yo CxY's imagination. **Dream More.**
 
+**Live:** https://imasque.vercel.app · Built in public 🛠️
+
 A brand-led marketing site for **imasque** — an eye mask brand built on **Comfort, Healing & Imagination**. The first MVP product is a two-tone eye mask in the silhouette of sunglasses. Built in public by 11-year-old CxY.
 
 ## Stack
