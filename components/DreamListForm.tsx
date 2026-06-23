@@ -6,7 +6,17 @@ import { dict, t } from "@/lib/dictionary";
 import { BalancedText } from "@/components/BalancedText";
 
 // UI-only for now — no backend wired up yet (by design).
-export function DreamListForm({ compact = false }: { compact?: boolean }) {
+export function DreamListForm({
+  compact = false,
+  buttonLabel,
+  note,
+  thanks,
+}: {
+  compact?: boolean;
+  buttonLabel?: string;
+  note?: string;
+  thanks?: string;
+}) {
   const { lang } = useLang();
   const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
@@ -23,7 +33,7 @@ export function DreamListForm({ compact = false }: { compact?: boolean }) {
   if (done) {
     return (
       <p className="font-display text-2xl text-dusk-deep">
-        {t(dict.home.emailThanks, lang)}
+        {thanks ?? t(dict.home.emailThanks, lang)}
       </p>
     );
   }
@@ -45,11 +55,11 @@ export function DreamListForm({ compact = false }: { compact?: boolean }) {
           type="submit"
           className="group relative overflow-hidden rounded-full bg-ink px-7 py-3.5 font-sans text-sm uppercase tracking-wider2 text-cream transition-colors hover:bg-dusk-deep"
         >
-          {t(dict.home.emailButton, lang)}
+          {buttonLabel ?? t(dict.home.emailButton, lang)}
         </button>
       </div>
       <p className="mt-3 font-sans text-xs text-ink/40">
-        <BalancedText>{t(dict.home.emailNote, lang)}</BalancedText>
+        <BalancedText>{note ?? t(dict.home.emailNote, lang)}</BalancedText>
       </p>
     </form>
   );

@@ -26,14 +26,14 @@ const notoTC = Noto_Sans_TC({
 });
 
 export const metadata: Metadata = {
-  title: "imasque — The eye mask of 11yo CxY's imagination",
+  title: "imasque Celluloid — 早鳥預購 NT$299",
   description:
-    "An eye mask brand built on comfort, healing and imagination. The first collection is shaped like sunglasses. Built in public by 11-year-old CxY. Dream More.",
+    "把太陽眼鏡的時髦，變成深度睡眠的溫柔。imasque Celluloid 是 11 歲 CxY 的第一款太陽眼鏡造型柔軟睡眠眼罩。",
   metadataBase: new URL("https://imasque.com"),
   openGraph: {
-    title: "imasque — Dream More.",
+    title: "imasque Celluloid — 早鳥預購 NT$299",
     description:
-      "The eye mask of 11yo CxY's imagination. Comfort. Healing. Imagination.",
+      "玳瑁框靈感、Tencel 透氣材質、雙側耳掛可調繩。支持 CxY 的第一款創意眼罩誕生。",
     type: "website",
   },
 };
