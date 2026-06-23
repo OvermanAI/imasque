@@ -10,7 +10,7 @@ const images = {
   hero: "/product/去背/imasqueBlack/8-front-cropped.png",
   set: "/product/去背/imasqueBlack/7.png",
   angle: "/product/去背/imasqueBlack/9.png",
-  cxy: "/CxY/product-cxy-section.png",
+  cxy: "/CxY/CxY-peace-grid-poster.png",
 };
 
 const proofPoints = [
@@ -102,13 +102,13 @@ export default function ProductPage() {
 
       <SalesSection className="bg-[#FBF7EF] pt-20 lg:pt-28">
         <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <Reveal className="relative aspect-[2/1] overflow-hidden rounded-[1.5rem] bg-[#17110D] shadow-[0_24px_80px_rgba(77,42,24,0.08)]">
+          <Reveal className="relative aspect-[3/4] overflow-hidden rounded-[1.5rem] bg-[#D41425] shadow-[0_24px_80px_rgba(77,42,24,0.08)]">
             <Image
               src={images.cxy}
               alt="CyX building imasque"
               fill
               sizes="(min-width: 1024px) 44vw, 100vw"
-              className="object-cover"
+              className="object-contain"
             />
           </Reveal>
           <Reveal>
