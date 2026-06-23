@@ -6,10 +6,16 @@ import { BalancedText } from "@/components/BalancedText";
 import { DreamListForm } from "@/components/DreamListForm";
 import { Reveal } from "@/components/Reveal";
 
+const productImages = {
+  set: "/product/去背/imasqueBlack/7.png",
+  front: "/product/去背/imasqueBlack/8-clean.png",
+  angle: "/product/去背/imasqueBlack/9.png",
+};
+
 const product = {
   name: "Celluloid Black",
   label: "Deep sleep black",
-  image: "/product/celluloid-black-set-cutout.webp",
+  image: productImages.set,
   description: "深色遮光面料搭配玳瑁框視覺，像太陽眼鏡一樣俐落，閉眼後更安靜。",
 };
 
@@ -27,7 +33,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_34%,rgba(245,215,170,0.24),transparent_33%),linear-gradient(90deg,rgba(14,9,6,0.98)_0%,rgba(14,9,6,0.86)_42%,rgba(14,9,6,0.36)_100%)]" />
         <div className="absolute right-[-10%] top-[9%] hidden h-[72%] w-[68%] lg:block">
           <Image
-            src="/product/celluloid-black-front-cutout.webp"
+            src={productImages.front}
             alt="imasque Celluloid Black front view"
             fill
             priority
@@ -35,19 +41,9 @@ export default function Home() {
             className="object-contain drop-shadow-[0_38px_60px_rgba(0,0,0,0.42)]"
           />
         </div>
-        <div className="absolute bottom-[8%] right-[3%] hidden h-[34%] w-[36%] lg:block">
+        <div className="absolute bottom-[5%] right-[34%] hidden h-[30%] w-[30%] lg:block">
           <Image
-            src="/product/celluloid-black-pouch-cutout.webp"
-            alt="imasque Celluloid pouch"
-            fill
-            priority
-            sizes="34vw"
-            className="object-contain drop-shadow-[0_34px_48px_rgba(0,0,0,0.34)]"
-          />
-        </div>
-        <div className="absolute bottom-[5%] right-[37%] hidden h-[28%] w-[28%] lg:block">
-          <Image
-            src="/product/celluloid-black-angle-cutout.webp"
+            src={productImages.angle}
             alt="imasque Celluloid Black angle view"
             fill
             priority
@@ -57,7 +53,7 @@ export default function Home() {
         </div>
         <div className="absolute inset-x-0 bottom-[6%] h-[36%] opacity-55 lg:hidden">
           <Image
-            src="/product/celluloid-black-set-cutout.webp"
+            src={productImages.set}
             alt="imasque Celluloid product set"
             fill
             priority
@@ -165,10 +161,9 @@ export default function Home() {
           </Reveal>
 
           <Reveal className="grid gap-4 sm:grid-cols-2">
-            <ProductImage src="/product/celluloid-black-front-cutout.webp" alt="Celluloid Black front view" />
-            <ProductImage src="/product/celluloid-black-angle-cutout.webp" alt="Celluloid Black angle view" />
-            <ProductImage src="/product/celluloid-black-pouch-cutout.webp" alt="Celluloid Black pouch" />
-            <ProductImage src="/product/celluloid-black-set-cutout.webp" alt="Celluloid Black product set" />
+            <ProductImage src={productImages.front} alt="Celluloid Black front view" />
+            <ProductImage src={productImages.angle} alt="Celluloid Black angle view" />
+            <ProductImage src={productImages.set} alt="Celluloid Black product set" />
           </Reveal>
         </div>
       </SalesSection>
@@ -177,7 +172,7 @@ export default function Home() {
         <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
           <Reveal className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem] bg-[linear-gradient(135deg,#F8EFE3_0%,#E8D1B2_100%)] shadow-[0_24px_80px_rgba(77,42,24,0.08)]">
             <Image
-              src="/product/celluloid-black-set-cutout.webp"
+              src={productImages.set}
               alt="Celluloid Black product hero"
               fill
               sizes="(min-width: 1024px) 58vw, 100vw"
