@@ -6,20 +6,12 @@ import { BalancedText } from "@/components/BalancedText";
 import { DreamListForm } from "@/components/DreamListForm";
 import { Reveal } from "@/components/Reveal";
 
-const products = [
-  {
-    name: "Celluloid Black",
-    label: "Deep sleep black",
-    image: "/product/celluloid-black-set-cutout.webp",
-    description: "深色遮光面料搭配玳瑁框視覺，像太陽眼鏡一樣俐落，閉眼後更安靜。",
-  },
-  {
-    name: "Celluloid Cream",
-    label: "Warm cream comfort",
-    image: "/product/celluloid-cream-set-cutout.webp",
-    description: "暖奶油眼罩面保留 Tencel 的柔軟感，玳瑁框讓睡眠小物也有造型。",
-  },
-];
+const product = {
+  name: "Celluloid Black",
+  label: "Deep sleep black",
+  image: "/product/celluloid-black-set-cutout.webp",
+  description: "深色遮光面料搭配玳瑁框視覺，像太陽眼鏡一樣俐落，閉眼後更安靜。",
+};
 
 const features = [
   ["全遮光", "降低光線干擾，適合睡前、午休、旅行與通勤休息。"],
@@ -35,8 +27,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_34%,rgba(245,215,170,0.24),transparent_33%),linear-gradient(90deg,rgba(14,9,6,0.98)_0%,rgba(14,9,6,0.86)_42%,rgba(14,9,6,0.36)_100%)]" />
         <div className="absolute right-[-10%] top-[9%] hidden h-[72%] w-[68%] lg:block">
           <Image
-            src="/product/celluloid-cream-front-cutout.webp"
-            alt="imasque Celluloid Cream front view"
+            src="/product/celluloid-black-front-cutout.webp"
+            alt="imasque Celluloid Black front view"
             fill
             priority
             sizes="64vw"
@@ -45,7 +37,7 @@ export default function Home() {
         </div>
         <div className="absolute bottom-[8%] right-[3%] hidden h-[34%] w-[36%] lg:block">
           <Image
-            src="/product/celluloid-cream-pouch-cutout.webp"
+            src="/product/celluloid-black-pouch-cutout.webp"
             alt="imasque Celluloid pouch"
             fill
             priority
@@ -55,8 +47,8 @@ export default function Home() {
         </div>
         <div className="absolute bottom-[5%] right-[37%] hidden h-[28%] w-[28%] lg:block">
           <Image
-            src="/product/celluloid-cream-angle-cutout.webp"
-            alt="imasque Celluloid Cream angle view"
+            src="/product/celluloid-black-angle-cutout.webp"
+            alt="imasque Celluloid Black angle view"
             fill
             priority
             sizes="28vw"
@@ -65,7 +57,7 @@ export default function Home() {
         </div>
         <div className="absolute inset-x-0 bottom-[6%] h-[36%] opacity-55 lg:hidden">
           <Image
-            src="/product/celluloid-cream-set-cutout.webp"
+            src="/product/celluloid-black-set-cutout.webp"
             alt="imasque Celluloid product set"
             fill
             priority
@@ -91,7 +83,7 @@ export default function Home() {
             </p>
             <p className="mt-5 max-w-md font-sans text-base leading-relaxed text-white/72 animate-rise [animation-delay:0.3s]">
               <BalancedText>
-                兩款玳瑁太陽眼鏡造型眼罩，為睡前、午休、旅行與通勤休息而生。看起來有造型，戴起來要柔軟、透氣、全遮光。
+                玳瑁太陽眼鏡造型眼罩，為睡前、午休、旅行與通勤休息而生。看起來有造型，戴起來要柔軟、透氣、全遮光。
               </BalancedText>
             </p>
             <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center animate-rise [animation-delay:0.4s]">
@@ -123,40 +115,38 @@ export default function Home() {
 
       <SalesSection className="bg-[#FBF7EF] pt-20 lg:pt-28">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <Kicker>Two product directions</Kicker>
+          <Kicker>Hero product</Kicker>
           <h2 className="mt-5 font-display text-[clamp(2.8rem,6vw,5.8rem)] font-light leading-[0.88] tracking-brand text-ink">
-            <BalancedText>一個睡眠眼罩，兩種日常性格。</BalancedText>
+            <BalancedText>先把 Celluloid Black 做成最好入手的第一款。</BalancedText>
           </h2>
           <p className="mx-auto mt-7 max-w-2xl font-sans text-lg leading-relaxed text-ink/62">
             <BalancedText>
-              Black 更安靜、更深眠；Cream 更柔和、更生活感。兩款都保留 imasque 的核心：Comfort、Healing、Imagination。
+              目前首頁集中主推 Black：更安靜、更深眠，也最能表現 imasque 的核心：Comfort、Healing、Imagination。
             </BalancedText>
           </p>
         </Reveal>
 
-        <Reveal stagger className="mt-14 grid gap-6 lg:grid-cols-2">
-          {products.map((product) => (
-            <article key={product.name} className="overflow-hidden rounded-[1.5rem] border border-ink/8 bg-white shadow-[0_24px_80px_rgba(77,42,24,0.07)]">
-              <div className="relative aspect-[4/3] bg-[radial-gradient(circle_at_50%_42%,#FFF8EC_0%,#F1E0C9_62%,#E7D2B6_100%)]">
-                <Image
-                  src={product.image}
-                  alt={`${product.name} product set`}
-                  fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-contain p-8 drop-shadow-[0_28px_34px_rgba(77,42,24,0.22)] transition duration-700 hover:scale-[1.02]"
-                />
-              </div>
-              <div className="p-7 lg:p-8">
-                <p className="font-sans text-[0.68rem] uppercase tracking-widest2 text-[#9A5B2C]">
-                  {product.label}
-                </p>
-                <h3 className="mt-3 font-display text-4xl font-light text-ink">{product.name}</h3>
-                <p className="mt-4 font-sans leading-relaxed text-ink/58">
-                  <BalancedText>{product.description}</BalancedText>
-                </p>
-              </div>
-            </article>
-          ))}
+        <Reveal className="mx-auto mt-14 max-w-4xl">
+          <article className="overflow-hidden rounded-[1.5rem] border border-ink/8 bg-white shadow-[0_24px_80px_rgba(77,42,24,0.07)]">
+            <div className="relative aspect-[16/10] bg-[radial-gradient(circle_at_50%_42%,#FFF8EC_0%,#F1E0C9_62%,#E7D2B6_100%)]">
+              <Image
+                src={product.image}
+                alt={`${product.name} product set`}
+                fill
+                sizes="(min-width: 1024px) 64vw, 100vw"
+                className="object-contain p-8 drop-shadow-[0_28px_34px_rgba(77,42,24,0.22)] transition duration-700 hover:scale-[1.02]"
+              />
+            </div>
+            <div className="p-7 lg:p-9">
+              <p className="font-sans text-[0.68rem] uppercase tracking-widest2 text-[#9A5B2C]">
+                {product.label}
+              </p>
+              <h3 className="mt-3 font-display text-4xl font-light text-ink">{product.name}</h3>
+              <p className="mt-4 max-w-2xl font-sans leading-relaxed text-ink/58">
+                <BalancedText>{product.description}</BalancedText>
+              </p>
+            </div>
+          </article>
         </Reveal>
       </SalesSection>
 
@@ -176,9 +166,9 @@ export default function Home() {
 
           <Reveal className="grid gap-4 sm:grid-cols-2">
             <ProductImage src="/product/celluloid-black-front-cutout.webp" alt="Celluloid Black front view" />
-            <ProductImage src="/product/celluloid-cream-front-cutout.webp" alt="Celluloid Cream front view" />
             <ProductImage src="/product/celluloid-black-angle-cutout.webp" alt="Celluloid Black angle view" />
-            <ProductImage src="/product/celluloid-cream-pouch-cutout.webp" alt="Celluloid Cream pouch" />
+            <ProductImage src="/product/celluloid-black-pouch-cutout.webp" alt="Celluloid Black pouch" />
+            <ProductImage src="/product/celluloid-black-set-cutout.webp" alt="Celluloid Black product set" />
           </Reveal>
         </div>
       </SalesSection>

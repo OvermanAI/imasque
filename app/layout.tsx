@@ -26,14 +26,14 @@ const notoTC = Noto_Sans_TC({
 });
 
 export const metadata: Metadata = {
-  title: "imasque Celluloid Collection — 早鳥預購 NT$299",
+  title: "imasque Celluloid Black — 早鳥預購 NT$299",
   description:
-    "把太陽眼鏡的時髦，變成深度睡眠的溫柔。imasque Celluloid Collection 是 11 歲 CxY 的太陽眼鏡造型柔軟睡眠眼罩。",
+    "把太陽眼鏡的時髦，變成深度睡眠的溫柔。imasque Celluloid Black 是 11 歲 CxY 的太陽眼鏡造型柔軟睡眠眼罩。",
   metadataBase: new URL("https://imasque.com"),
   openGraph: {
-    title: "imasque Celluloid Collection — 早鳥預購 NT$299",
+    title: "imasque Celluloid Black — 早鳥預購 NT$299",
     description:
-      "Black 與 Cream 兩款玳瑁框靈感眼罩，Tencel 透氣材質、雙側耳掛可調繩。支持 CxY 的創意眼罩誕生。",
+      "Celluloid Black 玳瑁框靈感眼罩，Tencel 透氣材質、雙側耳掛可調繩。支持 CxY 的創意眼罩誕生。",
     type: "website",
   },
 };
