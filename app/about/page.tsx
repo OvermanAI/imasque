@@ -52,12 +52,12 @@ const records = ["想法", "顏色", "設計", "拍照", "網站", "第一個真
 export default function AboutPage() {
   return (
     <>
-      <PageIntro index="About / CxY" title="About imasque" intro="CxY 和爸爸一起把想像力做出來的品牌。" />
+      <PageIntro index="About / CxY" title="About imasque" intro="CxY 和爸爸一起把想像力做出來的品牌。" preserveCase />
 
       <section className="bg-[#F7EFF6] px-6 pb-16 pt-12 lg:px-10 lg:pb-24">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <Reveal className="space-y-7">
-            <p className="max-w-3xl font-monster text-[clamp(3rem,7vw,7rem)] uppercase leading-[0.82] text-[#0B0B0C]">
+            <p className="max-w-3xl font-monster text-[clamp(3rem,7vw,7rem)] leading-[0.82] text-[#0B0B0C]">
               <BalancedText>我是 CxY。</BalancedText>
             </p>
             <div className="max-w-2xl space-y-4 font-sans text-lg font-bold leading-relaxed text-[#0B0B0C]/74">

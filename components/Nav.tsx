@@ -26,7 +26,7 @@ export function Nav() {
           <Link
             href="/"
             aria-label="imasque — Dream More"
-            className="relative h-12 w-36 overflow-hidden transition-transform hover:-rotate-1 sm:w-44"
+            className="relative h-14 w-44 overflow-hidden transition-transform hover:-rotate-1 sm:w-56"
             onClick={() => setOpen(false)}
           >
             <Image
@@ -34,7 +34,7 @@ export function Nav() {
               alt="imasque Dream More"
               fill
               priority
-              sizes="(min-width: 640px) 176px, 144px"
+              sizes="(min-width: 640px) 224px, 176px"
               className="object-contain object-left"
             />
           </Link>

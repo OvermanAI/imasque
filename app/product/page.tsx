@@ -57,7 +57,7 @@ export default function ProductPage() {
               <span className="block">feral.</span>
             </h1>
             <p className="mt-7 max-w-xl font-display text-[clamp(1.5rem,3vw,2.7rem)] font-light leading-tight text-[#0B0B0C]">
-              <BalancedText>一副由 11 歲 CyX 想出來的太陽眼鏡眼罩，被 Star Monster 重新接管。</BalancedText>
+              <BalancedText>一副由 11 歲 CxY 想出來的太陽眼鏡眼罩，被 Star Monster 重新接管。</BalancedText>
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
               <a
@@ -111,7 +111,7 @@ export default function ProductPage() {
             <div className="relative aspect-[3/4] overflow-hidden border-2 border-[#0B0B0C] bg-[#D41425] shadow-[8px_8px_0_#0B0B0C]">
               <Image
                 src={images.cxy}
-                alt="CyX StarMonster style poster"
+                alt="CxY StarMonster style poster"
                 fill
                 sizes="(min-width: 1024px) 40vw, 90vw"
                 className="object-contain"
@@ -125,7 +125,7 @@ export default function ProductPage() {
             </h2>
             <p className="mt-7 max-w-xl font-sans text-lg font-semibold leading-relaxed text-[#0B0B0C]/72">
               <BalancedText>
-                大人常常先問市場、成本、規格。CyX 先問的是：「如果睡覺也可以有造型呢？」所以 imasque 的第一版，不只是眼罩，是一個有紅角、有翅膀、有一點壞壞保護力的小宇宙。
+                大人常常先問市場、成本、規格。CxY 先問的是：「如果睡覺也可以有造型呢？」所以 imasque 的第一版，不只是眼罩，是一個有紅角、有翅膀、有一點壞壞保護力的小宇宙。
               </BalancedText>
             </p>
             <p className="mt-6 inline-block rotate-[-2deg] bg-[#FF2B9A] px-5 py-3 font-serif text-2xl italic text-white shadow-[5px_5px_0_#0B0B0C] [font-family:var(--font-bodoni)]">
@@ -206,7 +206,7 @@ export default function ProductPage() {
             <DreamListForm
               buttonLabel="加入預購名單"
               note="目前為意向登記。第一輪開放時，你會優先收到通知。"
-              thanks="收到你的支持了。CyX 的第一個產品夢，又更近一點。"
+              thanks="收到你的支持了。CxY 的第一個產品夢，又更近一點。"
             />
           </div>
           <div className="mt-8">

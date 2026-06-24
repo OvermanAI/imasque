@@ -16,7 +16,7 @@ const images = {
 const notes = [
   ["Soft", "眼罩要舒服，像小雲一樣貼在臉上。"],
   ["Feral", "外型要有角色感，不要只是安靜的日用品。"],
-  ["Build in public", "CyX 的每一步想像，都可以被看見。"],
+  ["Build in public", "CxY 的每一步想像，都可以被看見。"],
 ];
 
 export default function Home() {
@@ -42,7 +42,7 @@ export default function Home() {
             </h1>
             <p className="mt-7 max-w-xl font-sans text-xl font-bold leading-relaxed text-[#0B0B0C]/72">
               <BalancedText>
-                imasque 是 11 歲 CyX 的創意眼罩品牌：舒適、療癒，但帶一點淘氣的 StarMonster 能量。
+                imasque 是 11 歲 CxY 的創意眼罩品牌：舒適、療癒，但帶一點淘氣的 StarMonster 能量。
               </BalancedText>
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -142,7 +142,7 @@ export default function Home() {
             Join the monsters.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl font-sans text-lg font-bold leading-relaxed text-white">
-            <BalancedText>第一只眼罩成真時，你會最先知道，也會一起看見 CyX 的下一個夢。</BalancedText>
+            <BalancedText>第一只眼罩成真時，你會最先知道，也會一起看見 CxY 的下一個夢。</BalancedText>
           </p>
           <div className="mx-auto mt-10 max-w-xl border-2 border-[#0B0B0C] bg-[#F7EFF6] p-5 shadow-[8px_8px_0_#0B0B0C]">
             <DreamListForm />
