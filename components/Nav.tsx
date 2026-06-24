@@ -10,7 +10,6 @@ import { dict, t } from "@/lib/dictionary";
 const links = [
   { href: "/starmonster", key: "starmonster" as const },
   { href: "/product", key: "product" as const },
-  { href: "/journal", key: "journal" as const },
   { href: "/about", key: "about" as const },
 ];
 

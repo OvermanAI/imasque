@@ -8,7 +8,6 @@ import { BalancedText } from "@/components/BalancedText";
 
 const links = [
   { href: "/product", key: "product" as const },
-  { href: "/journal", key: "journal" as const },
   { href: "/about", key: "about" as const },
 ];
 
