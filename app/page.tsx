@@ -16,7 +16,7 @@ const images = {
 const notes = [
   ["Soft", "眼罩要舒服，像小雲一樣貼在臉上。"],
   ["Feral", "外型要有角色感，不要只是安靜的日用品。"],
-  ["Made in public", "CyX 的每一步想像，都可以被看見。"],
+  ["Build in public", "CyX 的每一步想像，都可以被看見。"],
 ];
 
 export default function Home() {

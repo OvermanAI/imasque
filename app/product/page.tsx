@@ -17,7 +17,7 @@ const images = {
 const productNotes = [
   ["Cloud Hex Star", "軟綿綿、六角、像小朋友畫出來的夢境生物。"],
   ["Little Angel", "對善良的人很溫柔，戴上眼罩像被偷偷守護。"],
-  ["Little Trouble", "兩個紅角、X 嘴，保留一點淘氣，睡覺也不要太乖。"],
+  ["Little Devil", "兩個紅角、X 嘴，保留一點淘氣，睡覺也不要太乖。"],
 ];
 
 const specs = [

@@ -19,7 +19,7 @@ export default function JournalPage() {
 
   return (
     <>
-      <PageIntro index="Journal / Made in public" title={t(j.title, lang)} intro={t(j.intro, lang)} />
+      <PageIntro index="Journal / Build in public" title={t(j.title, lang)} intro={t(j.intro, lang)} />
 
       <section className="bg-[#F7EFF6] px-6 py-12 lg:px-10 lg:py-16">
         <Reveal stagger className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2">
