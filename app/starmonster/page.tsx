@@ -1,235 +1,188 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { BalancedText } from "@/components/BalancedText";
 import { Reveal } from "@/components/Reveal";
-import { StarMonsterMark } from "@/components/StarMonsterMark";
 
 export const metadata: Metadata = {
-  title: "STARMONSTER — imasque",
+  title: "認識 StarMonster — imasque",
   description:
-    "Star Monster 是 imasque 的夢境角色，介於 Little Angel 與 Little Devil 之間，柔軟可愛，也會守護正義。",
+    "StarMonster 來自一位 11 歲小女孩的夢境，是一隻雲朵星星怪獸，給每一個人做夢想的勇氣。",
 };
 
-const traits = [
-  ["Core", "介於 Little Angel 與 Little Devil 之間的夢境生物。外表柔軟可愛，內在有守護正義的魔法力量。"],
-  ["Shape", "Cloud Hex Star™ 雲朵五角星。雲朵與星星混合的圓潤身體，像從夢境裡跑出來的生物。"],
-  ["Face", "超寬眼距加固定 X 嘴。永遠看不出牠在想什麼，呆萌、神秘，又像藏著秘密。"],
-  ["Horn", "兩個小紅角，圓潤短胖，不尖銳也不邪惡，讓牠多了一點淘氣反差。"],
+const profile = [
+  ["名字", "StarMonster"],
+  ["誕生地", "一位 11 歲小女孩的夢境"],
+  ["種族", "Cloud Star™ 雲朵星星怪獸"],
+  ["MBTI", "ESFP — The Performer"],
+  ["個性", "開朗、充滿想像力、熱愛分享、喜歡冒險、樂觀、勇敢、帶著一點點調皮"],
+  ["內心比例", "70% Little Angel / 30% Little Devil"],
+  ["使命", "給每一個人做夢想的勇氣。"],
+  [
+    "超能力",
+    "當有人失去希望，或當夢想受到傷害時，StarMonster 會喚醒心中的魔法，守護每一顆仍然相信未來的心。",
+  ],
 ];
 
-const shapeDetails = [
-  "軟綿綿、胖嘟嘟",
-  "像五角星，但邊緣不是尖銳線條，而是雲朵般圓潤",
-  "日式專業手繪感",
-  "正面可見一雙小天使翅膀",
-  "頭上固定有兩個小紅角",
-  "整體像從夢境裡跑出來的生物",
+const storyBlocks = [
+  [
+    "在某個充滿月光與星星的夜晚，一位愛做夢的小女孩夢見了一個從未見過的小傢伙。",
+    "牠有著像雲朵一樣柔軟的星星身體，兩隻小小的天使翅膀，一對糖果紅的小角，還有一張總是讓人猜不透的臉。",
+    "醒來以後，女孩忘記了夢中的故事，卻始終記得那個可愛又神秘的小夥伴。",
+    "於是，StarMonster 誕生了。",
+  ],
+  [
+    "從那一天起，StarMonster 開始在每個人的夢裡旅行。",
+    "牠喜歡唱歌、跳舞、收集星光，也喜歡和大家分享快樂。",
+    "牠總是相信，世界上沒有太奇怪的夢，也沒有太遙遠的願望。",
+    "因為每一個偉大的故事，都曾經只是某個人心裡的一個小小夢想。",
+  ],
+  [
+    "StarMonster 的 MBTI 是 ESFP — The Performer。",
+    "牠熱愛生活，充滿好奇，相信每個人都應該勇敢地發光。",
+    "當有人因為害怕而不敢做夢，當有人因為別人的否定而放棄自己，當世界告訴你「不可能」，StarMonster 會輕輕地來到身邊，提醒你：",
+    "「做夢想，是一件很酷的事。」",
+  ],
+  [
+    "因為夢想不是用來證明自己有多厲害，而是讓我們知道，自己的心正在閃閃發亮。",
+    "雖然平時總是愛玩又充滿活力，但當欺負、謊言、不公平，或有人試圖摧毀別人的夢想時，StarMonster 那條小小的糖果紅尾巴便會悄悄出現。",
+    "因為牠知道，每一個夢想，都值得被好好守護。",
+  ],
 ];
 
-const faceDetails = [
-  "眼睛是兩個小黑點：• •",
-  "眼距非常寬",
-  "嘴巴是固定的 X",
-  "沒有嘴型變化",
-  "X 嘴是 Star Monster 的靈魂識別符號",
-];
-
-const angelDetails = ["善良", "陪伴", "守護", "安慰", "默默站在你身邊"];
-
-const tailTriggers = ["欺負人", "說謊", "不公平", "傷害弱小", "惡意破壞"];
-
-const tailDetails = [
-  "小惡魔尾巴",
-  "帶有魔法能量",
-  "充滿淘氣感",
-  "可用來攻擊壞人或阻止不公平的事情",
+const closingLines = [
+  "夢想不需要得到所有人的同意。",
+  "只要你願意相信，",
+  "星星就會開始發光。",
+  "而我，會一直陪著你。",
+  "一起做夢。",
+  "一起發光。",
+  "一起成為自己想成為的樣子。",
 ];
 
 export default function StarMonsterPage() {
   return (
     <>
-      <section className="relative -mt-16 min-h-[100svh] overflow-hidden border-b-2 border-[#0B0B0C] bg-[#FF2B9A] pt-16 text-[#0B0B0C]">
-        <div className="absolute inset-x-0 top-16 z-10 border-y-2 border-[#0B0B0C] bg-[#0B0B0C] py-2 font-sans text-[0.68rem] font-black uppercase tracking-widest2 text-[#D9FF38]">
-          <div className="flex w-max animate-[marquee_22s_linear_infinite] gap-8 whitespace-nowrap px-6">
+      <section className="relative -mt-16 min-h-[100svh] overflow-hidden border-b-2 border-[#0B0B0C] bg-[#F7EFF6] pt-16 text-[#0B0B0C]">
+        <div className="absolute inset-x-0 top-16 z-10 border-y-2 border-[#0B0B0C] bg-[#FF2B9A] py-2 font-sans text-[0.68rem] font-black uppercase tracking-widest2 text-white">
+          <div className="flex w-max animate-[marquee_24s_linear_infinite] gap-8 whitespace-nowrap px-6">
             {Array.from({ length: 8 }).map((_, i) => (
-              <span key={i}>✦ LITTLE ANGEL ✦ LITTLE DEVIL ✦ CLOUD HEX STAR ✦ MAGIC DEVIL TAIL</span>
+              <span key={i}>✦ DREAM MORE ✦ ESFP THE PERFORMER ✦ CLOUD STAR™ ✦ BUILD IN PUBLIC</span>
             ))}
           </div>
         </div>
 
-        <div className="mx-auto grid min-h-[calc(100svh-4rem)] max-w-7xl items-center gap-10 px-6 pb-16 pt-28 lg:grid-cols-[0.9fr_1.1fr] lg:px-10">
+        <div className="mx-auto grid min-h-[calc(100svh-4rem)] max-w-7xl items-center gap-10 px-6 pb-16 pt-32 lg:grid-cols-[0.92fr_1.08fr] lg:px-10">
           <Reveal className="relative z-10">
-            <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-white">
-              imasque character bible / dream creature 001
+            <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#E01414]">
+              meet the character ip
             </p>
-            <h1 className="mt-5 font-sans text-[clamp(4.5rem,12vw,11rem)] font-black uppercase leading-[0.78] tracking-normal text-white [-webkit-text-stroke:2px_#0B0B0C] [font-family:var(--font-anton)]">
-              Star
-              <span className="block text-[#D9FF38]">Monster</span>
+            <h1 className="mt-5 font-sans text-[clamp(4rem,10vw,9.5rem)] font-black uppercase leading-[0.78] tracking-normal text-[#0B0B0C] [font-family:var(--font-anton)]">
+              認識
+              <span className="block text-[#FF2B9A] [-webkit-text-stroke:2px_#0B0B0C]">Star</span>
+              <span className="block">Monster</span>
             </h1>
-            <p className="mt-7 max-w-xl font-display text-[clamp(1.55rem,3vw,2.8rem)] font-light leading-tight text-white">
-              <BalancedText>
-                來自夢境的雲朵五角星小怪物。柔軟像小天使，但遇到不公平時，Little Devil 的魔法尾巴會醒來。
-              </BalancedText>
+            <p className="mt-7 max-w-xl font-display text-[clamp(1.6rem,3vw,2.9rem)] font-light leading-tight text-[#0B0B0C]">
+              <BalancedText>StarMonster，來自一位 11 歲小女孩的夢境。</BalancedText>
             </p>
           </Reveal>
 
           <Reveal className="relative min-h-[430px] lg:min-h-[650px]">
-            <div className="absolute inset-6 rotate-[-4deg] border-2 border-[#0B0B0C] bg-[#D9FF38] shadow-[10px_10px_0_#0B0B0C]" />
-            <div className="absolute inset-x-0 top-20 h-[70%] rotate-[3deg] border-2 border-[#0B0B0C] bg-[#F7EFF6]" />
-            <StarMonsterMark className="absolute inset-x-0 top-20 mx-auto h-[min(72vw,560px)] w-[min(72vw,560px)] text-[#D9FF38] drop-shadow-[10px_10px_0_#0B0B0C]" />
+            <div className="absolute inset-4 rotate-[-4deg] border-2 border-[#0B0B0C] bg-[#D9FF38] shadow-[10px_10px_0_#0B0B0C]" />
+            <div className="absolute inset-x-0 top-16 h-[76%] rotate-[3deg] border-2 border-[#0B0B0C] bg-[#FF2B9A]" />
+            <div className="absolute inset-x-8 top-24 h-[68%] border-2 border-[#0B0B0C] bg-white" />
+            <Image
+              src="/starmonster/starmonster_去背.png"
+              alt="StarMonster character IP"
+              fill
+              priority
+              sizes="(min-width: 1024px) 52vw, 100vw"
+              className="object-contain px-4 pb-8 pt-10 drop-shadow-[10px_10px_0_rgba(11,11,12,0.22)]"
+            />
             <div className="absolute bottom-8 left-2 rotate-[-5deg] border-2 border-[#0B0B0C] bg-white px-5 py-3 font-sans text-xs font-black uppercase tracking-wider2 shadow-[5px_5px_0_#0B0B0C]">
-              Cloud Hex Star™
+              70% Little Angel
             </div>
             <div className="absolute right-2 top-24 rotate-[7deg] bg-[#E01414] px-5 py-3 font-sans text-xs font-black uppercase tracking-wider2 text-white shadow-[5px_5px_0_#0B0B0C]">
-              X mouth forever
+              30% Little Devil
             </div>
           </Reveal>
         </div>
       </section>
 
-      <section className="border-b-2 border-[#0B0B0C] bg-[#0B0B0C] text-white">
-        <Reveal stagger className="mx-auto grid max-w-7xl gap-px bg-[#0B0B0C] font-sans md:grid-cols-4">
-          {traits.map(([title, body]) => (
-            <article key={title} className="bg-[#F7EFF6] p-6 text-[#0B0B0C] lg:p-8">
-              <h2 className="font-sans text-3xl font-black uppercase tracking-normal [font-family:var(--font-anton)]">
-                {title}
-              </h2>
-              <p className="mt-4 text-sm font-semibold leading-relaxed text-[#0B0B0C]/72">{body}</p>
-            </article>
-          ))}
-        </Reveal>
+      <section className="overflow-hidden border-b-2 border-[#0B0B0C] bg-[#0B0B0C] text-white">
+        <div className="mx-auto grid max-w-7xl gap-px bg-white lg:grid-cols-[0.86fr_1.14fr]">
+          <Reveal className="bg-[#D9FF38] p-6 text-[#0B0B0C] lg:p-10">
+            <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#E01414]">
+              origin story
+            </p>
+            <h2 className="mt-5 font-sans text-[clamp(3.4rem,7vw,7rem)] font-black uppercase leading-[0.82] tracking-normal [font-family:var(--font-anton)]">
+              Born from a dream.
+            </h2>
+            <p className="mt-7 max-w-xl font-sans text-lg font-bold leading-relaxed text-[#0B0B0C]/72">
+              <BalancedText>
+                StarMonster 不是被設計出來的角色，而是一個被記住的夢。牠帶著小女孩心裡那種「相信不可能也可以試試看」的亮光，開始旅行。
+              </BalancedText>
+            </p>
+          </Reveal>
+
+          <Reveal stagger className="bg-[#F7EFF6] p-6 text-[#0B0B0C] lg:p-10">
+            <div className="grid gap-8 md:grid-cols-2">
+              {storyBlocks.map((block, index) => (
+                <article key={index} className="space-y-4 border-t-2 border-[#0B0B0C] pt-5">
+                  {block.map((line, lineIndex) => (
+                    <p
+                      key={line}
+                      className={`font-sans leading-relaxed ${
+                        lineIndex === block.length - 1 && line.includes("做夢想")
+                          ? "font-serif text-2xl italic text-[#E01414] [font-family:var(--font-bodoni)]"
+                          : "text-base font-semibold text-[#0B0B0C]/76"
+                      }`}
+                    >
+                      {line}
+                    </p>
+                  ))}
+                </article>
+              ))}
+            </div>
+          </Reveal>
+        </div>
       </section>
 
-      <CharacterSection kicker="01 / Shape" title="Cloud Hex Star™" className="bg-[#F7EFF6]">
-        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-          <Reveal className="relative min-h-[340px]">
-            <div className="absolute inset-0 rotate-[-3deg] border-2 border-[#0B0B0C] bg-[#D9FF38] shadow-[8px_8px_0_#0B0B0C]" />
-            <StarMonsterMark className="absolute inset-0 m-auto h-64 w-64 text-[#D9FF38] drop-shadow-[5px_5px_0_#0B0B0C]" />
-          </Reveal>
+      <section className="border-b-2 border-[#0B0B0C] bg-[#F7EFF6] px-6 py-16 lg:px-10 lg:py-24">
+        <div className="mx-auto max-w-7xl">
           <Reveal>
-            <p className="max-w-2xl font-sans text-xl font-bold leading-relaxed text-[#0B0B0C]/76">
-              Star Monster 的身體是「雲朵 × 星星」的混合輪廓。它不是尖銳的星星，而是被夢泡軟之後，長成胖嘟嘟形狀的小生物。
+            <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#E01414]">
+              StarMonster profile
             </p>
-            <TagList items={shapeDetails} />
+            <h2 className="mt-5 font-sans text-[clamp(3.2rem,7vw,7rem)] font-black uppercase leading-[0.82] tracking-normal text-[#0B0B0C] [font-family:var(--font-anton)]">
+              小檔案
+            </h2>
+          </Reveal>
+
+          <Reveal stagger className="mt-10 grid gap-px bg-[#0B0B0C] border-2 border-[#0B0B0C] md:grid-cols-2">
+            {profile.map(([label, value]) => (
+              <article key={label} className="bg-white p-5 lg:p-7">
+                <p className="font-sans text-xs font-black uppercase tracking-widest2 text-[#E01414]">{label}</p>
+                <p className="mt-3 font-sans text-xl font-black leading-snug text-[#0B0B0C]">{value}</p>
+              </article>
+            ))}
           </Reveal>
         </div>
-      </CharacterSection>
+      </section>
 
-      <CharacterSection kicker="02 / Face" title="Wide eyes. X mouth." className="bg-[#D9FF38]">
-        <div className="grid gap-10 lg:grid-cols-[1fr_0.85fr] lg:items-center">
-          <Reveal>
-            <p className="max-w-2xl font-sans text-xl font-bold leading-relaxed text-[#0B0B0C]/76">
-              固定表情是 Star Monster 的品牌記憶點。兩顆小黑點離得很遠，嘴巴永遠是 X，所以牠看起來呆萌，卻又永遠像有祕密。
-            </p>
-            <TagList items={faceDetails} />
-          </Reveal>
-          <Reveal className="border-2 border-[#0B0B0C] bg-[#F7EFF6] p-8 text-center shadow-[8px_8px_0_#0B0B0C]">
-            <p className="font-sans text-[clamp(5rem,14vw,10rem)] font-black leading-none tracking-normal [font-family:var(--font-anton)]">
-              • <span className="inline-block px-8">×</span> •
-            </p>
-            <p className="mt-5 font-serif text-2xl italic text-[#E01414] [font-family:var(--font-bodoni)]">
-              no mood, all mystery
-            </p>
-          </Reveal>
-        </div>
-      </CharacterSection>
-
-      <CharacterSection kicker="03 / Angel + Devil" title="Soft guardian energy." className="bg-[#0B0B0C] text-white">
-        <div className="grid gap-px overflow-hidden border-2 border-white bg-white md:grid-cols-2">
-          <Reveal className="bg-[#F7EFF6] p-6 text-[#0B0B0C] lg:p-10">
-            <p className="font-sans text-4xl font-black uppercase leading-none [font-family:var(--font-anton)]">
-              Little Angel Wings
-            </p>
-            <p className="mt-5 font-sans text-base font-semibold leading-relaxed text-[#0B0B0C]/72">
-              小小一雙天使翅膀，正面就看得到。圓潤、柔軟、不誇張，像是角色身體的一部分，不是外加裝飾。
-            </p>
-            <TagList items={angelDetails} />
-          </Reveal>
-
-          <Reveal className="bg-[#FF2B9A] p-6 text-white lg:p-10">
-            <p className="font-sans text-4xl font-black uppercase leading-none [font-family:var(--font-anton)]">
-              Magic Devil Tail
-            </p>
-            <p className="mt-5 font-sans text-base font-semibold leading-relaxed text-white/82">
-              平時看不見。當牠感受到不正義時，Little Devil 的力量會啟動，尾巴出現，釋放魔法能量保護他人。
-            </p>
-            <TagList items={tailDetails} dark />
-          </Reveal>
-        </div>
-
-        <Reveal className="mt-10 border-2 border-white bg-[#E01414] p-6 shadow-[8px_8px_0_#D9FF38] lg:p-8">
+      <section className="overflow-hidden bg-[#FF2B9A] px-6 py-16 text-white lg:px-10 lg:py-24">
+        <Reveal className="mx-auto max-w-6xl text-center">
           <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#D9FF38]">
-            Tail appears when
+            StarMonster wants to tell you
           </p>
-          <div className="mt-5 flex flex-wrap gap-3">
-            {tailTriggers.map((item) => (
-              <span
-                key={item}
-                className="border-2 border-white bg-[#0B0B0C] px-4 py-2 font-sans text-sm font-black text-white"
-              >
-                {item}
-              </span>
+          <div className="mt-6 space-y-3 font-display text-[clamp(2.2rem,5.4vw,5.8rem)] font-light leading-[0.98] [-webkit-text-stroke:1px_#0B0B0C]">
+            {closingLines.map((line) => (
+              <p key={line}>
+                <BalancedText>{line}</BalancedText>
+              </p>
             ))}
           </div>
         </Reveal>
-      </CharacterSection>
-
-      <section className="bg-[#F7EFF6] px-6 py-16 lg:px-10 lg:py-24">
-        <Reveal className="mx-auto max-w-6xl text-center">
-          <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#E01414]">
-            one-line positioning
-          </p>
-          <h2 className="mt-5 font-display text-[clamp(2.6rem,6vw,6rem)] font-light leading-[0.96] text-[#0B0B0C]">
-            <BalancedText>
-              Star Monster 是一隻來自夢境的雲朵五角星小怪物，外表像天使般柔軟可愛，卻藏著一條只會在不公平出現時啟動的魔法惡魔尾巴。
-            </BalancedText>
-          </h2>
-        </Reveal>
       </section>
     </>
-  );
-}
-
-function CharacterSection({
-  kicker,
-  title,
-  children,
-  className = "",
-}: {
-  kicker: string;
-  title: string;
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <section className={`overflow-hidden border-b-2 border-[#0B0B0C] ${className}`}>
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-        <Reveal>
-          <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#E01414]">{kicker}</p>
-          <h2 className="mt-4 max-w-5xl font-sans text-[clamp(3rem,7vw,7rem)] font-black uppercase leading-[0.82] tracking-normal [font-family:var(--font-anton)]">
-            {title}
-          </h2>
-        </Reveal>
-        <div className="mt-10">{children}</div>
-      </div>
-    </section>
-  );
-}
-
-function TagList({ items, dark = false }: { items: string[]; dark?: boolean }) {
-  return (
-    <div className="mt-7 flex flex-wrap gap-3">
-      {items.map((item) => (
-        <span
-          key={item}
-          className={`border-2 px-4 py-2 font-sans text-sm font-black ${
-            dark
-              ? "border-white bg-[#0B0B0C] text-white"
-              : "border-[#0B0B0C] bg-white text-[#0B0B0C] shadow-[3px_3px_0_#0B0B0C]"
-          }`}
-        >
-          {item}
-        </span>
-      ))}
-    </div>
   );
 }
