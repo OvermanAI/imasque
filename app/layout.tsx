@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Hanken_Grotesk, Noto_Sans_TC } from "next/font/google";
+import { Anton, Bodoni_Moda, Fraunces, Hanken_Grotesk, Noto_Sans_TC } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { Nav } from "@/components/Nav";
@@ -25,6 +25,21 @@ const notoTC = Noto_Sans_TC({
   weight: ["300", "400", "500", "700"],
 });
 
+const anton = Anton({
+  subsets: ["latin"],
+  variable: "--font-anton",
+  display: "swap",
+  weight: "400",
+});
+
+const bodoni = Bodoni_Moda({
+  subsets: ["latin"],
+  variable: "--font-bodoni",
+  display: "swap",
+  style: ["normal", "italic"],
+  weight: ["400", "500", "700"],
+});
+
 export const metadata: Metadata = {
   title: "imasque Celluloid Black — 早鳥預購 NT$299",
   description:
@@ -46,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fraunces.variable} ${hanken.variable} ${notoTC.variable} grain min-h-screen`}
+        className={`${fraunces.variable} ${hanken.variable} ${notoTC.variable} ${anton.variable} ${bodoni.variable} grain min-h-screen`}
       >
         <LanguageProvider>
           <Nav />
