@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLang } from "@/components/LanguageProvider";
 import { dict, t } from "@/lib/dictionary";
 import { BalancedText } from "@/components/BalancedText";
-import { StarMonsterMark } from "@/components/StarMonsterMark";
 
 const links = [
   { href: "/product", key: "product" as const },
@@ -21,11 +21,18 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
           <div className="max-w-md">
-            <Link href="/" aria-label="imasque — Dream More" className="inline-flex items-center gap-4">
-              <StarMonsterMark className="h-16 w-16 text-[#D9FF38]" />
-              <span className="font-monster text-[clamp(3rem,7vw,6rem)] uppercase leading-[0.8] tracking-normal">
-                ima<span className="text-[#FF2B9A]">sque</span>
-              </span>
+            <Link
+              href="/"
+              aria-label="imasque — Dream More"
+              className="relative block h-28 w-[min(82vw,360px)] overflow-hidden transition-transform hover:-rotate-1"
+            >
+              <Image
+                src="/logo/5.png"
+                alt="imasque Dream More"
+                fill
+                sizes="(min-width: 768px) 360px, 82vw"
+                className="object-contain object-left"
+              />
             </Link>
             <p className="mt-5 font-sans text-sm font-bold leading-relaxed text-white/65">
               <BalancedText>{t(dict.footer.tagline, lang)}</BalancedText>
