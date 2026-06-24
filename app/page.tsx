@@ -5,230 +5,151 @@ import Link from "next/link";
 import { BalancedText } from "@/components/BalancedText";
 import { DreamListForm } from "@/components/DreamListForm";
 import { Reveal } from "@/components/Reveal";
+import { StarMonsterMark } from "@/components/StarMonsterMark";
 
-const productImages = {
+const images = {
+  product: "/product/去背/imasqueBlack/8-front-cropped.png",
   set: "/product/去背/imasqueBlack/7.png",
-  front: "/product/去背/imasqueBlack/8-front-cropped.png",
-  angle: "/product/去背/imasqueBlack/9.png",
+  poster: "/CxY/CxY-peace-grid-poster.png",
 };
 
-const product = {
-  name: "Celluloid Black",
-  label: "Deep sleep black",
-  image: productImages.set,
-  description: "深色遮光面料搭配玳瑁框視覺，像太陽眼鏡一樣俐落，閉眼後更安靜。",
-};
-
-const features = [
-  ["全遮光", "降低光線干擾，適合睡前、午休、旅行與通勤休息。"],
-  ["Tencel 親膚", "柔軟滑順、透氣不悶，讓眼周保持舒服。"],
-  ["雙側耳掛", "可調繩設計，不壓後腦，長時間配戴更輕鬆。"],
-  ["收納袋套組", "同色系束口袋，讓眼罩成為可以送禮的完整小物。"],
+const notes = [
+  ["Soft", "眼罩要舒服，像小雲一樣貼在臉上。"],
+  ["Feral", "外型要有角色感，不要只是安靜的日用品。"],
+  ["Made in public", "CyX 的每一步想像，都可以被看見。"],
 ];
 
 export default function Home() {
   return (
     <>
-      <section className="relative -mt-16 min-h-[100svh] overflow-hidden bg-[#0B0705] text-cream">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_46%,rgba(245,215,170,0.28),transparent_31%),radial-gradient(circle_at_50%_100%,rgba(154,91,44,0.16),transparent_36%),linear-gradient(90deg,rgba(11,7,5,1)_0%,rgba(11,7,5,0.94)_38%,rgba(11,7,5,0.58)_100%)]" />
-        <div className="absolute inset-y-0 right-0 top-8 hidden w-[58%] lg:block">
-          <div className="relative h-full w-full">
-            <Image
-              src={productImages.front}
-              alt="imasque Celluloid Black front view"
-              fill
-              priority
-              sizes="72vw"
-              className="object-contain object-center drop-shadow-[0_46px_68px_rgba(0,0,0,0.5)]"
-            />
+      <section className="relative -mt-16 min-h-[100svh] overflow-hidden bg-[#F7EFF6] text-[#0B0B0C]">
+        <div className="absolute inset-x-0 top-16 z-10 border-y-2 border-[#0B0B0C] bg-[#FF2B9A] py-2 font-sans text-[0.68rem] font-black uppercase tracking-widest2 text-white">
+          <div className="flex w-max animate-[marquee_28s_linear_infinite] gap-8 whitespace-nowrap px-6">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <span key={i}>✦ DREAM MORE ✦ SLEEP BUT FERAL ✦ LITTLE ANGEL TO GOOD HEARTS</span>
+            ))}
           </div>
         </div>
-        <div className="relative mx-auto flex min-h-[100svh] max-w-7xl items-center px-6 pb-16 pt-28 lg:px-10 lg:pt-24">
-          <div className="max-w-[42rem]">
-            <p className="reveal in font-sans text-[0.72rem] uppercase tracking-widest2 text-[#F5D7AA]">
-              imasque Celluloid Black
+
+        <div className="mx-auto grid min-h-[100svh] max-w-7xl items-center gap-10 px-6 pb-16 pt-36 lg:grid-cols-[0.9fr_1.1fr] lg:px-10">
+          <Reveal className="relative z-10">
+            <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#E01414]">
+              StarMonster powered sleep object
             </p>
-            <h1 className="mt-5 font-display text-[clamp(4rem,9vw,8.6rem)] font-light leading-[0.86] tracking-brand text-white">
-              <span className="block animate-blurin">Celluloid</span>
-              <span className="block italic text-[#F5D7AA] animate-blurin [animation-delay:0.12s]">
-                Black.
-              </span>
+            <h1 className="mt-5 font-monster text-[clamp(4.6rem,13vw,12rem)] uppercase leading-[0.78] tracking-normal">
+              Dream
+              <span className="block text-[#FF2B9A] [-webkit-text-stroke:2px_#0B0B0C]">more.</span>
             </h1>
-            <p className="mt-7 max-w-xl font-display text-[clamp(1.7rem,3vw,2.85rem)] font-light leading-tight text-[#F5D7AA] animate-rise [animation-delay:0.2s]">
-              <BalancedText>太陽眼鏡造型睡眠眼罩，閉上眼也保留造型感。</BalancedText>
-            </p>
-            <p className="mt-5 max-w-md font-sans text-base leading-relaxed text-white/72 animate-rise [animation-delay:0.3s]">
+            <p className="mt-7 max-w-xl font-sans text-xl font-bold leading-relaxed text-[#0B0B0C]/72">
               <BalancedText>
-                深色全遮光、Tencel 親膚布面、雙側可調耳掛。為睡前、午休、旅行與通勤休息而生。
+                imasque 是 11 歲 CyX 的創意眼罩品牌：舒適、療癒，但帶一點淘氣的 StarMonster 能量。
               </BalancedText>
             </p>
-            <div className="relative mt-6 h-32 sm:h-40 lg:hidden animate-rise [animation-delay:0.34s]">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <Link
+                href="/product"
+                className="inline-flex min-h-14 items-center justify-center border-2 border-[#0B0B0C] bg-[#E01414] px-8 font-sans text-sm font-black uppercase tracking-wider2 text-white shadow-[6px_6px_0_#0B0B0C] transition hover:-translate-y-1 hover:bg-[#FF2B9A]"
+              >
+                See the drop →
+              </Link>
+              <a
+                href="#dream-list"
+                className="inline-flex min-h-14 items-center justify-center border-2 border-[#0B0B0C] bg-[#D9FF38] px-8 font-sans text-sm font-black uppercase tracking-wider2 text-[#0B0B0C] shadow-[6px_6px_0_#0B0B0C] transition hover:-translate-y-1"
+              >
+                Join the club
+              </a>
+            </div>
+          </Reveal>
+
+          <Reveal className="relative z-10 min-h-[460px] lg:min-h-[650px]">
+            <div className="absolute inset-x-5 top-10 h-[72%] rotate-[-3deg] border-2 border-[#0B0B0C] bg-[#D9FF38]" />
+            <div className="absolute inset-x-0 top-16 h-[72%] rotate-[3deg] border-2 border-[#0B0B0C] bg-[#FF2B9A]" />
+            <div className="absolute left-[14%] right-[16%] top-4 aspect-[3/4] border-2 border-[#0B0B0C] bg-[#D41425] shadow-[8px_8px_0_#0B0B0C]">
               <Image
-                src={productImages.front}
-                alt="imasque Celluloid Black front view"
+                src={images.poster}
+                alt="CxY StarMonster poster"
                 fill
                 priority
-                sizes="100vw"
-                className="object-contain drop-shadow-[0_26px_42px_rgba(0,0,0,0.42)]"
+                sizes="(min-width: 1024px) 32vw, 80vw"
+                className="object-contain"
               />
             </div>
-            <div className="mt-9 flex flex-col gap-5 sm:flex-row sm:items-center animate-rise [animation-delay:0.4s]">
-              <a
-                href="#preorder"
-                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#F5D7AA] px-9 font-sans text-sm font-semibold uppercase tracking-wider2 text-[#130D09] shadow-[0_18px_42px_rgba(245,215,170,0.18)] transition hover:bg-white"
-              >
-                我要預購
-              </a>
-              <p className="font-sans text-sm leading-relaxed text-white/68">
-                <span className="block text-3xl font-semibold text-white">早鳥 NT$299</span>
-                Celluloid Black 第一輪預購測試價
-              </p>
-            </div>
-            <div className="mt-9 flex max-w-lg flex-wrap gap-x-6 gap-y-2 border-t border-white/12 pt-5 font-sans text-[0.72rem] uppercase tracking-wider2 text-white/42 animate-rise [animation-delay:0.48s]">
-              <span>Full blackout</span>
-              <span>Tencel soft touch</span>
-              <span>Adjustable ear loops</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-ink/10 bg-[#FBF7EF]">
-        <div className="mx-auto grid max-w-7xl gap-6 px-6 py-8 font-sans text-sm text-ink/60 md:grid-cols-4 lg:px-10">
-          {features.map(([title, body]) => (
-            <p key={title}>
-              <span className="block font-semibold text-ink">{title}</span>
-              {body}
-            </p>
-          ))}
-        </div>
-      </section>
-
-      <SalesSection className="bg-[#FBF7EF] pt-20 lg:pt-28">
-        <Reveal className="mx-auto max-w-3xl text-center">
-          <Kicker>Celluloid Black</Kicker>
-          <h2 className="mt-5 font-display text-[clamp(2.8rem,6vw,5.8rem)] font-light leading-[0.88] tracking-brand text-ink">
-            <BalancedText>看起來俐落，戴起來很安靜。</BalancedText>
-          </h2>
-          <p className="mx-auto mt-7 max-w-2xl font-sans text-lg leading-relaxed text-ink/62">
-            <BalancedText>
-              深色遮光面料搭配玳瑁框視覺，把睡眠眼罩做成一件可以收藏、可以送禮，也每天都想用的小物。
-            </BalancedText>
-          </p>
-        </Reveal>
-
-        <Reveal className="mx-auto mt-14 max-w-4xl">
-          <article className="overflow-hidden rounded-[1.5rem] border border-ink/8 bg-white shadow-[0_24px_80px_rgba(77,42,24,0.07)]">
-            <div className="relative aspect-[16/10] bg-[radial-gradient(circle_at_50%_42%,#FFF8EC_0%,#F1E0C9_62%,#E7D2B6_100%)]">
+            <div className="absolute bottom-8 left-0 right-0 mx-auto h-44 max-w-[92%]">
               <Image
-                src={product.image}
-                alt={`${product.name} product set`}
+                src={images.product}
+                alt="imasque Celluloid Black"
                 fill
-                sizes="(min-width: 1024px) 64vw, 100vw"
-                className="object-contain p-8 drop-shadow-[0_28px_34px_rgba(77,42,24,0.22)] transition duration-700 hover:scale-[1.02]"
+                priority
+                sizes="(min-width: 1024px) 46vw, 92vw"
+                className="object-contain drop-shadow-[0_18px_0_rgba(11,11,12,0.18)]"
               />
             </div>
-            <div className="p-7 lg:p-9">
-              <p className="font-sans text-[0.68rem] uppercase tracking-widest2 text-[#9A5B2C]">
-                {product.label}
-              </p>
-              <h3 className="mt-3 font-display text-4xl font-light text-ink">{product.name}</h3>
-              <p className="mt-4 max-w-2xl font-sans leading-relaxed text-ink/58">
-                <BalancedText>{product.description}</BalancedText>
-              </p>
+            <StarMonsterMark className="absolute right-0 top-6 h-24 w-24 rotate-[12deg] text-[#D9FF38] drop-shadow-[4px_4px_0_#0B0B0C]" />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="border-y-2 border-[#0B0B0C] bg-[#0B0B0C]">
+        <Reveal stagger className="mx-auto grid max-w-7xl gap-px bg-[#0B0B0C] font-sans md:grid-cols-3">
+          {notes.map(([title, body]) => (
+            <div key={title} className="bg-[#F7EFF6] p-7 text-[#0B0B0C] lg:p-9">
+              <h2 className="font-monster text-5xl uppercase leading-none">{title}</h2>
+              <p className="mt-4 font-bold leading-relaxed text-[#0B0B0C]/68">{body}</p>
             </div>
-          </article>
+          ))}
         </Reveal>
-      </SalesSection>
+      </section>
 
-      <SalesSection className="bg-[#120C08] text-cream">
-        <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-          <Reveal>
-            <Kicker className="text-[#F5D7AA]">Product details</Kicker>
-            <h2 className="mt-5 font-display text-[clamp(2.6rem,5vw,5rem)] font-light leading-[0.9] tracking-brand text-white">
-              <BalancedText>不是硬式眼鏡。是柔軟、貼膚、可以戴著入睡的想像力。</BalancedText>
-            </h2>
-            <p className="mt-7 max-w-lg font-sans text-lg leading-relaxed text-white/66">
-              <BalancedText>
-                玳瑁框只是視覺語言；真正接觸皮膚的是柔軟布料、輕量填充與可調耳掛。舒服，比外觀更優先。
-              </BalancedText>
-            </p>
-          </Reveal>
-
-          <Reveal className="grid gap-4 sm:grid-cols-2">
-            <ProductImage src={productImages.front} alt="Celluloid Black front view" />
-            <ProductImage src={productImages.angle} alt="Celluloid Black angle view" />
-            <ProductImage src={productImages.set} alt="Celluloid Black product set" />
-          </Reveal>
-        </div>
-      </SalesSection>
-
-      <SalesSection className="bg-[#FBF7EF]">
-        <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-          <Reveal className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem] bg-[linear-gradient(135deg,#F8EFE3_0%,#E8D1B2_100%)] shadow-[0_24px_80px_rgba(77,42,24,0.08)]">
-            <Image
-              src={productImages.set}
-              alt="Celluloid Black product hero"
-              fill
-              sizes="(min-width: 1024px) 58vw, 100vw"
-              className="object-contain p-8 drop-shadow-[0_28px_38px_rgba(77,42,24,0.22)]"
-            />
+      <SalesSection className="bg-[#F7EFF6]">
+        <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <Reveal className="relative">
+            <div className="relative aspect-[16/10] overflow-hidden border-2 border-[#0B0B0C] bg-white shadow-[8px_8px_0_#0B0B0C]">
+              <Image
+                src={images.set}
+                alt="Celluloid Black set"
+                fill
+                sizes="(min-width: 1024px) 56vw, 100vw"
+                className="object-contain p-8"
+              />
+              <div className="absolute left-0 top-0 bg-[#E01414] px-4 py-2 font-sans text-xs font-black uppercase tracking-wider2 text-white">
+                Drop 001
+              </div>
+            </div>
           </Reveal>
           <Reveal>
-            <Kicker>11yo CxY's imagination</Kicker>
-            <h2 className="mt-5 font-display text-[clamp(2.6rem,5vw,5rem)] font-light leading-[0.9] tracking-brand text-ink">
-              <BalancedText>這不是一份市場報告長出的產品。</BalancedText>
+            <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#E01414]">
+              First product
+            </p>
+            <h2 className="mt-5 font-monster text-[clamp(3.2rem,7vw,7rem)] uppercase leading-[0.82]">
+              Sunglasses mask.
             </h2>
-            <p className="mt-7 max-w-lg font-sans text-lg leading-relaxed text-ink/62">
+            <p className="mt-7 max-w-xl font-sans text-lg font-bold leading-relaxed text-[#0B0B0C]/70">
               <BalancedText>
-                它來自 11 歲 CxY 對「眼罩可以長什麼樣子」的想像。普通眼罩可以很舒服，但 imasque 想讓它也變成一個想收藏、想送人的小物。
+                玳瑁框視覺、全遮光、Tencel 親膚布面、雙側可調耳掛。它不是普通眼罩換個顏色，而是把休息變成可以戴上的小儀式。
               </BalancedText>
             </p>
-            <p className="mt-8 font-display text-4xl italic text-[#9A5B2C]">舒服是最好的療癒。</p>
-          </Reveal>
-        </div>
-      </SalesSection>
-
-      <SalesSection id="preorder" className="bg-white pb-24 lg:pb-32">
-        <Reveal className="mx-auto max-w-3xl text-center">
-          <Kicker>早鳥預購測試價</Kicker>
-          <h2 className="mt-5 font-display text-[clamp(4rem,11vw,9rem)] font-light leading-none tracking-brand text-ink">
-            NT$299
-          </h2>
-          <p className="mx-auto mt-6 max-w-2xl font-sans text-lg leading-relaxed text-ink/62">
-            <BalancedText>
-              這是 imasque Celluloid 第一輪早鳥預購測試。留下 email，首批打樣、預購開放與款式確認時優先通知。
-            </BalancedText>
-          </p>
-          <div className="mx-auto mt-10 max-w-xl">
-            <DreamListForm
-              buttonLabel="我要預購"
-              note="留下 email，首批打樣與預購開放時優先通知。表單目前為意向登記。"
-              thanks="收到你的預購意向了。Dream more."
-            />
-          </div>
-          <div className="mt-8">
-            <Link href="/about" className="font-sans text-sm uppercase tracking-wider2 text-ink/45 transition hover:text-ink">
-              關於 imasque →
+            <Link href="/product" className="mt-8 inline-flex border-2 border-[#0B0B0C] bg-[#FF2B9A] px-7 py-3.5 font-sans text-sm font-black uppercase tracking-wider2 text-white shadow-[5px_5px_0_#0B0B0C] transition hover:-translate-y-1">
+              Product page →
             </Link>
+          </Reveal>
+        </div>
+      </SalesSection>
+
+      <SalesSection id="dream-list" className="bg-[#FF2B9A] pb-24 lg:pb-32">
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <StarMonsterMark className="mx-auto h-24 w-24 text-[#D9FF38] drop-shadow-[4px_4px_0_#0B0B0C]" />
+          <h2 className="mt-6 font-monster text-[clamp(3.4rem,9vw,8rem)] uppercase leading-[0.82] text-white [-webkit-text-stroke:2px_#0B0B0C]">
+            Join the monsters.
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl font-sans text-lg font-bold leading-relaxed text-white">
+            <BalancedText>第一只眼罩成真時，你會最先知道，也會一起看見 CyX 的下一個夢。</BalancedText>
+          </p>
+          <div className="mx-auto mt-10 max-w-xl border-2 border-[#0B0B0C] bg-[#F7EFF6] p-5 shadow-[8px_8px_0_#0B0B0C]">
+            <DreamListForm />
           </div>
         </Reveal>
       </SalesSection>
     </>
-  );
-}
-
-function ProductImage({ src, alt }: { src: string; alt: string }) {
-  return (
-    <div className="relative aspect-[4/3] overflow-hidden rounded-[1.25rem] bg-[radial-gradient(circle_at_50%_42%,#FFF8EC_0%,#EEDBC1_100%)]">
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        sizes="(min-width: 1024px) 25vw, 50vw"
-        className="object-contain p-6 drop-shadow-[0_22px_28px_rgba(0,0,0,0.28)]"
-      />
-    </div>
   );
 }
 
@@ -245,13 +166,5 @@ function SalesSection({
     <section id={id} className={`scroll-mt-24 overflow-hidden ${className}`}>
       <div className="mx-auto min-w-0 max-w-7xl px-6 py-16 lg:px-10 lg:py-24">{children}</div>
     </section>
-  );
-}
-
-function Kicker({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return (
-    <p className={`font-sans text-[0.72rem] uppercase tracking-widest2 text-[#9A5B2C] ${className}`}>
-      {children}
-    </p>
   );
 }

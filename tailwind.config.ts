@@ -32,6 +32,8 @@ const config: Config = {
       },
       fontFamily: {
         display: ["var(--font-fraunces)", "Georgia", "serif"],
+        monster: ["var(--font-anton)", "Impact", "ui-sans-serif", "sans-serif"],
+        couture: ["var(--font-bodoni)", "Georgia", "serif"],
         sans: ["var(--font-hanken)", "ui-sans-serif", "system-ui", "sans-serif"],
         cjk: ["var(--font-noto-tc)", "ui-sans-serif", "sans-serif"],
       },
