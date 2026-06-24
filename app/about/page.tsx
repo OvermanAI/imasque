@@ -70,7 +70,7 @@ export default function AboutPage() {
             </p>
           </Reveal>
 
-          <Reveal className="relative">
+          <Reveal className="relative overflow-hidden">
             <div className="absolute -left-4 -top-4 h-full w-full rotate-[-3deg] border-2 border-[#0B0B0C] bg-[#D9FF38]" />
             <div className="relative border-2 border-[#0B0B0C] bg-white p-8 shadow-[8px_8px_0_#0B0B0C] lg:p-10">
               <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#E01414]">
