@@ -9,8 +9,6 @@ import { StarMonsterMark } from "@/components/StarMonsterMark";
 
 const links = [
   { href: "/product", key: "product" as const },
-  { href: "/collections", key: "collections" as const },
-  { href: "/shop", key: "shop" as const },
   { href: "/journal", key: "journal" as const },
   { href: "/about", key: "about" as const },
 ];
