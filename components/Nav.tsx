@@ -22,11 +22,11 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-40">
       <div className="border-b-2 border-[#FFB8C8] bg-[#080808]">
-        <nav className="mx-auto max-w-7xl px-6 lg:px-10 h-16 flex items-center justify-between">
+        <nav className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
           <Link
             href="/"
             aria-label="imasque — Dream More"
-            className="relative h-14 w-44 overflow-hidden transition-transform hover:-rotate-1 sm:w-56"
+            className="relative h-16 w-52 overflow-hidden transition-transform hover:-rotate-1 sm:w-64"
             onClick={() => setOpen(false)}
           >
             <Image
@@ -34,7 +34,7 @@ export function Nav() {
               alt="imasque Dream More"
               fill
               priority
-              sizes="(min-width: 640px) 224px, 176px"
+              sizes="(min-width: 640px) 256px, 208px"
               className="object-contain object-left"
             />
           </Link>
