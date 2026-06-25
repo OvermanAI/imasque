@@ -32,7 +32,7 @@ export function DreamListForm({
 
   if (done) {
     return (
-      <p className="font-couture text-2xl italic text-[#FF2B9A]">
+      <p className="font-couture text-2xl italic text-[#FF1F0F]">
         {thanks ?? t(dict.home.emailThanks, lang)}
       </p>
     );
@@ -49,16 +49,16 @@ export function DreamListForm({
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder={t(dict.home.emailPlaceholder, lang)}
-          className="flex-1 border-2 border-[#0B0B0C] bg-white px-5 py-3.5 font-sans font-bold text-[#0B0B0C] placeholder:text-[#0B0B0C]/35 outline-none shadow-[4px_4px_0_#0B0B0C] transition focus:bg-[#D9FF38]"
+          className="flex-1 border border-[#080808]/25 bg-white px-5 py-3.5 font-sans font-bold text-[#080808] placeholder:text-[#080808]/35 outline-none transition focus:border-[#080808] focus:bg-[#FFF6F7]"
         />
         <button
           type="submit"
-          className="group relative overflow-hidden border-2 border-[#0B0B0C] bg-[#E01414] px-7 py-3.5 font-sans text-sm font-black uppercase tracking-wider2 text-white shadow-[4px_4px_0_#0B0B0C] transition hover:-translate-y-0.5 hover:bg-[#FF2B9A]"
+          className="bg-[#FF1F0F] px-7 py-3.5 font-sans text-sm font-black uppercase tracking-wider2 text-white transition hover:bg-[#080808]"
         >
           {buttonLabel ?? t(dict.home.emailButton, lang)}
         </button>
       </div>
-      <p className="mt-4 font-sans text-xs font-bold text-[#0B0B0C]/50">
+      <p className="mt-4 font-sans text-xs font-bold text-[#080808]/50">
         <BalancedText>{note ?? t(dict.home.emailNote, lang)}</BalancedText>
       </p>
     </form>

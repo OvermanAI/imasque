@@ -5,166 +5,200 @@ import Link from "next/link";
 import { BalancedText } from "@/components/BalancedText";
 import { DreamListForm } from "@/components/DreamListForm";
 import { Reveal } from "@/components/Reveal";
-import { StarMonsterMark } from "@/components/StarMonsterMark";
 
-const images = {
-  product: "/product/去背/imasqueBlack/8-front-cropped.png",
-  set: "/product/去背/imasqueBlack/7.png",
-  poster: "/CxY/CxY-peace-grid-poster.png",
-};
+const products = [
+  {
+    name: "Celluloid Cream",
+    image: "/product/celluloid-cream-front-cutout.webp",
+    note: "Tortoiseshell frame with a soft beige blackout cushion.",
+  },
+  {
+    name: "Celluloid Black",
+    image: "/product/celluloid-black-front-cutout.webp",
+    note: "Tortoiseshell frame with a deeper blackout surface and adjustable fit.",
+  },
+];
 
-const notes = [
-  ["Soft", "眼罩要舒服，像小雲一樣貼在臉上。"],
-  ["Feral", "外型要有角色感，不要只是安靜的日用品。"],
-  ["Build in public", "CxY 的每一步想像，都可以被看見。"],
+const proof = [
+  ["Muji-level comfort", "親膚、柔軟、安靜。眼周接觸面以舒服為第一原則。"],
+  ["Eyewear creativity", "不是普通眼罩換顏色，而是把精品太陽眼鏡輪廓變成休息配件。"],
+  ["Under $10", "精品感不是高壓價格，而是讓第一批使用者能輕鬆加入。"],
+];
+
+const moments = [
+  ["Bedtime", "CxY 和心愛玩偶一起戴上 imasque，睡前從日常切換到夢境。"],
+  ["In-flight", "搭飛機時不是狼狽遮眼，而是像完成機場穿搭的精品配件。"],
+  ["Recharge", "在電競房、工作間、午休片刻，戴上就是自己的暫停鍵。"],
+  ["Selfie", "朋友一起戴上時，它不是用品，是會被拍下來的社交畫面。"],
 ];
 
 export default function Home() {
   return (
     <>
-      <section className="relative -mt-16 min-h-[100svh] overflow-hidden bg-[#F7EFF6] text-[#0B0B0C]">
-        <div className="absolute inset-x-0 top-16 z-10 border-y-2 border-[#0B0B0C] bg-[#FF2B9A] py-2 font-sans text-[0.68rem] font-black uppercase tracking-widest2 text-white">
-          <div className="flex w-max animate-[marquee_28s_linear_infinite] gap-8 whitespace-nowrap px-6">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <span key={i}>✦ DREAM MORE ✦ SLEEP BUT FERAL ✦ LITTLE ANGEL TO GOOD HEARTS</span>
-            ))}
-          </div>
-        </div>
-
-        <div className="mx-auto grid min-h-[100svh] max-w-7xl items-center gap-10 px-6 pb-16 pt-36 lg:grid-cols-[0.9fr_1.1fr] lg:px-10">
-          <Reveal className="relative z-10">
-            <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#E01414]">
-              StarMonster powered sleep object
+      <section className="relative overflow-hidden bg-[#FFF6F7] text-[#080808]">
+        <div className="mx-auto grid min-h-[calc(100svh-5rem)] max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-[0.84fr_1.16fr] lg:px-10 lg:py-24">
+          <Reveal>
+            <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#FF1F0F]">
+              Boutique sleep accessory
             </p>
-            <h1 className="mt-5 font-monster text-[clamp(4.6rem,13vw,12rem)] uppercase leading-[0.78] tracking-normal">
-              Dream
-              <span className="block text-[#FF2B9A] [-webkit-text-stroke:2px_#0B0B0C]">more.</span>
+            <h1 className="mt-6 font-display text-[clamp(3.7rem,9vw,8.7rem)] font-semibold leading-[0.9] tracking-normal">
+              <BalancedText>Muji-level comfort. Fashion-eyewear creativity.</BalancedText>
             </h1>
-            <p className="mt-7 max-w-xl font-sans text-xl font-bold leading-relaxed text-[#0B0B0C]/72">
+            <p className="mt-7 max-w-xl font-sans text-lg font-semibold leading-relaxed text-[#080808]/68">
               <BalancedText>
-                imasque 是 11 歲 CxY 的創意眼罩品牌：舒適、療癒，但帶一點淘氣的 StarMonster 能量。
+                imasque 是一款以 Celluloid 太陽眼鏡為靈感的精品眼罩。舒服到每天想戴，好看到想拍給別人看，定價在 10 美金以下。
               </BalancedText>
             </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/product"
-                className="inline-flex min-h-14 items-center justify-center border-2 border-[#0B0B0C] bg-[#E01414] px-8 font-sans text-sm font-black uppercase tracking-wider2 text-white shadow-[6px_6px_0_#0B0B0C] transition hover:-translate-y-1 hover:bg-[#FF2B9A]"
+                className="inline-flex min-h-14 items-center justify-center bg-[#FF1F0F] px-8 font-sans text-sm font-black uppercase tracking-wider2 text-white transition hover:bg-[#080808]"
               >
-                See the drop →
+                Explore Celluloid
               </Link>
               <a
                 href="#dream-list"
-                className="inline-flex min-h-14 items-center justify-center border-2 border-[#0B0B0C] bg-[#D9FF38] px-8 font-sans text-sm font-black uppercase tracking-wider2 text-[#0B0B0C] shadow-[6px_6px_0_#0B0B0C] transition hover:-translate-y-1"
+                className="inline-flex min-h-14 items-center justify-center border border-[#080808]/25 bg-white px-8 font-sans text-sm font-black uppercase tracking-wider2 text-[#080808] transition hover:border-[#080808]"
               >
-                Join the club
+                Join first drop
               </a>
             </div>
           </Reveal>
 
-          <Reveal className="relative z-10 min-h-[460px] lg:min-h-[650px]">
-            <div className="absolute inset-x-5 top-10 h-[72%] rotate-[-3deg] border-2 border-[#0B0B0C] bg-[#D9FF38]" />
-            <div className="absolute inset-x-0 top-16 h-[72%] rotate-[3deg] border-2 border-[#0B0B0C] bg-[#FF2B9A]" />
-            <div className="absolute left-[14%] right-[16%] top-4 aspect-[3/4] border-2 border-[#0B0B0C] bg-[#D41425] shadow-[8px_8px_0_#0B0B0C]">
-              <Image
-                src={images.poster}
-                alt="CxY StarMonster poster"
-                fill
-                priority
-                sizes="(min-width: 1024px) 32vw, 80vw"
-                className="object-contain"
-              />
+          <Reveal className="relative min-h-[420px] lg:min-h-[650px]">
+            <div className="absolute inset-0 rounded-[2rem] bg-[#080808]" />
+            <div className="absolute left-8 right-8 top-8 h-28 bg-[#F8C8C8]/90 blur-3xl" />
+            <div className="absolute inset-x-6 bottom-8 top-10 rounded-[1.5rem] border border-white/10 bg-white/[0.03]" />
+            <Image
+              src="/product/celluloid-cream-front-cutout.webp"
+              alt="imasque Celluloid Cream"
+              fill
+              priority
+              sizes="(min-width: 1024px) 44vw, 92vw"
+              className="object-contain object-[center_40%] px-4 pb-36 pt-16 drop-shadow-[0_26px_45px_rgba(0,0,0,0.45)]"
+            />
+            <Image
+              src="/product/celluloid-black-front-cutout.webp"
+              alt="imasque Celluloid Black"
+              fill
+              priority
+              sizes="(min-width: 1024px) 44vw, 92vw"
+              className="object-contain object-[center_72%] px-2 pb-8 pt-48 drop-shadow-[0_26px_45px_rgba(0,0,0,0.5)]"
+            />
+            <div className="absolute bottom-7 left-7 max-w-[15rem] bg-[#F8C8C8] px-5 py-4 font-sans text-xs font-black uppercase tracking-wider2 text-[#080808]">
+              Looks like eyewear. Feels like a dream.
             </div>
-            <div className="absolute bottom-8 left-0 right-0 mx-auto h-44 max-w-[92%]">
-              <Image
-                src={images.product}
-                alt="imasque Celluloid Black"
-                fill
-                priority
-                sizes="(min-width: 1024px) 46vw, 92vw"
-                className="object-contain drop-shadow-[0_18px_0_rgba(11,11,12,0.18)]"
-              />
-            </div>
-            <StarMonsterMark className="absolute right-0 top-6 h-24 w-24 rotate-[12deg] text-[#D9FF38] drop-shadow-[4px_4px_0_#0B0B0C]" />
           </Reveal>
         </div>
       </section>
 
-      <section className="border-y-2 border-[#0B0B0C] bg-[#0B0B0C]">
-        <Reveal stagger className="mx-auto grid max-w-7xl gap-px bg-[#0B0B0C] font-sans md:grid-cols-3">
-          {notes.map(([title, body]) => (
-            <div key={title} className="bg-[#F7EFF6] p-7 text-[#0B0B0C] lg:p-9">
-              <h2 className="font-monster text-5xl uppercase leading-none">{title}</h2>
-              <p className="mt-4 font-bold leading-relaxed text-[#0B0B0C]/68">{body}</p>
-            </div>
+      <section className="border-y border-[#080808]/10 bg-white">
+        <Reveal stagger className="mx-auto grid max-w-7xl divide-y divide-[#080808]/10 px-6 lg:grid-cols-3 lg:divide-x lg:divide-y-0 lg:px-10">
+          {proof.map(([title, body]) => (
+            <article key={title} className="py-10 lg:px-8">
+              <h2 className="font-display text-[clamp(2.2rem,4vw,4.25rem)] font-semibold leading-[0.95]">{title}</h2>
+              <p className="mt-5 font-sans text-base font-semibold leading-relaxed text-[#080808]/62">{body}</p>
+            </article>
           ))}
         </Reveal>
       </section>
 
-      <SalesSection className="bg-[#F7EFF6]">
-        <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <Reveal className="relative">
-            <div className="relative aspect-[16/10] overflow-hidden border-2 border-[#0B0B0C] bg-white shadow-[8px_8px_0_#0B0B0C]">
-              <Image
-                src={images.set}
-                alt="Celluloid Black set"
-                fill
-                sizes="(min-width: 1024px) 56vw, 100vw"
-                className="object-contain p-8"
-              />
-              <div className="absolute left-0 top-0 bg-[#E01414] px-4 py-2 font-sans text-xs font-black uppercase tracking-wider2 text-white">
-                Drop 001
-              </div>
-            </div>
-          </Reveal>
+      <section className="bg-[#080808] text-white">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-10 lg:py-24">
           <Reveal>
-            <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#E01414]">
-              First product
+            <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#F8C8C8]">
+              The first two pieces
             </p>
-            <h2 className="mt-5 font-monster text-[clamp(3.2rem,7vw,7rem)] uppercase leading-[0.82]">
-              Sunglasses mask.
+            <h2 className="mt-5 font-display text-[clamp(3rem,7vw,7rem)] font-semibold leading-[0.9]">
+              <BalancedText>Comfort first. Creativity visible.</BalancedText>
             </h2>
-            <p className="mt-7 max-w-xl font-sans text-lg font-bold leading-relaxed text-[#0B0B0C]/70">
+            <p className="mt-7 max-w-xl font-sans text-lg font-semibold leading-relaxed text-white/66">
               <BalancedText>
-                玳瑁框視覺、全遮光、Tencel 親膚布面、雙側可調耳掛。它不是普通眼罩換個顏色，而是把休息變成可以戴上的小儀式。
+                Muji 讓舒服成為日用品標準。imasque 在這個舒適基礎上，加入精品眼鏡輪廓、原創配色、迷你玩偶尺寸與可組裝小配件的想像。
               </BalancedText>
             </p>
-            <Link href="/product" className="mt-8 inline-flex border-2 border-[#0B0B0C] bg-[#FF2B9A] px-7 py-3.5 font-sans text-sm font-black uppercase tracking-wider2 text-white shadow-[5px_5px_0_#0B0B0C] transition hover:-translate-y-1">
-              Product page →
-            </Link>
+          </Reveal>
+          <Reveal stagger className="grid gap-5 md:grid-cols-2">
+            {products.map((product) => (
+              <article key={product.name} className="bg-white p-5 text-[#080808]">
+                <div className="relative aspect-[4/3] bg-[#FFF6F7]">
+                  <Image
+                    src={product.image}
+                    alt={`imasque ${product.name}`}
+                    fill
+                    sizes="(min-width: 1024px) 26vw, 80vw"
+                    className="object-contain p-5"
+                  />
+                </div>
+                <h3 className="mt-5 font-display text-4xl font-semibold">{product.name}</h3>
+                <p className="mt-3 font-sans text-sm font-semibold leading-relaxed text-[#080808]/62">{product.note}</p>
+              </article>
+            ))}
           </Reveal>
         </div>
-      </SalesSection>
+      </section>
 
-      <SalesSection id="dream-list" className="bg-[#FF2B9A] pb-24 lg:pb-32">
-        <Reveal className="mx-auto max-w-3xl text-center">
-          <StarMonsterMark className="mx-auto h-24 w-24 text-[#D9FF38] drop-shadow-[4px_4px_0_#0B0B0C]" />
-          <h2 className="mt-6 font-monster text-[clamp(3.4rem,9vw,8rem)] uppercase leading-[0.82] text-white [-webkit-text-stroke:2px_#0B0B0C]">
-            Join the monsters.
-          </h2>
-          <p className="mx-auto mt-6 max-w-2xl font-sans text-lg font-bold leading-relaxed text-white">
-            <BalancedText>第一只眼罩成真時，你會最先知道，也會一起看見 CxY 的下一個夢。</BalancedText>
-          </p>
-          <div className="mx-auto mt-10 max-w-xl border-2 border-[#0B0B0C] bg-[#F7EFF6] p-5 shadow-[8px_8px_0_#0B0B0C]">
-            <DreamListForm />
-          </div>
-        </Reveal>
-      </SalesSection>
+      <section className="bg-[#F6E7D8]">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+          <Reveal className="max-w-3xl">
+            <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#FF1F0F]">
+              Ritual, not novelty
+            </p>
+            <h2 className="mt-5 font-display text-[clamp(3rem,7vw,7rem)] font-semibold leading-[0.9]">
+              <BalancedText>Every imasque has a moment.</BalancedText>
+            </h2>
+          </Reveal>
+          <Reveal stagger className="mt-10 grid gap-px overflow-hidden bg-[#080808] md:grid-cols-2">
+            {moments.map(([title, body]) => (
+              <article key={title} className="bg-[#FFF6F7] p-7 lg:p-10">
+                <p className="font-display text-5xl font-semibold leading-none">{title}</p>
+                <p className="mt-5 max-w-md font-sans text-base font-semibold leading-relaxed text-[#080808]/64">{body}</p>
+              </article>
+            ))}
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-[0.95fr_1.05fr] lg:px-10 lg:py-24">
+          <Reveal>
+            <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#FF1F0F]">
+              CxY's AI entrepreneurship story
+            </p>
+            <h2 className="mt-5 font-display text-[clamp(3rem,7vw,6.8rem)] font-semibold leading-[0.9]">
+              <BalancedText>11 years old, building a product the new way.</BalancedText>
+            </h2>
+          </Reveal>
+          <Reveal className="space-y-5 font-sans text-lg font-semibold leading-relaxed text-[#080808]/66">
+            <p>
+              imasque 不是大人做出來討好小孩的產品。它來自 CxY 對休息、造型、玩偶與 AI 創作的想像。
+            </p>
+            <p>
+              她先把使用情境用 AI 做出來，再和爸爸一起討論材質、造型、網站與首批產品。故事保留童心，但品牌必須讓成年人也願意買單。
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section id="dream-list" className="bg-[#FFF6F7]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-10 lg:py-24">
+          <Reveal>
+            <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#FF1F0F]">
+              First drop
+            </p>
+            <h2 className="mt-5 font-display text-[clamp(3rem,7vw,6.8rem)] font-semibold leading-[0.9]">
+              <BalancedText>Be first to see the Celluloid drop.</BalancedText>
+            </h2>
+          </Reveal>
+          <Reveal className="bg-white p-6 shadow-[0_20px_80px_rgba(8,8,8,0.08)] lg:p-8">
+            <DreamListForm
+              buttonLabel="Join first drop"
+              note="No spam. Only first-drop notes, product progress, and launch timing."
+              thanks="You're on the first-drop list. Dream More."
+            />
+          </Reveal>
+        </div>
+      </section>
     </>
-  );
-}
-
-function SalesSection({
-  children,
-  className = "",
-  id,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  id?: string;
-}) {
-  return (
-    <section id={id} className={`scroll-mt-24 overflow-hidden ${className}`}>
-      <div className="mx-auto min-w-0 max-w-7xl px-6 py-16 lg:px-10 lg:py-24">{children}</div>
-    </section>
   );
 }

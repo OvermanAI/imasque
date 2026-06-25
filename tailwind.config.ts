@@ -8,31 +8,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Black + Pink + White — simplified brand palette.
-        // Legacy token names are kept and remapped to pink shades so the
-        // whole site recolours from one place.
-        milk: "#FFFFFF", // page background — white
-        cream: "#FFF6F7", // softest pink-white for cards / inputs
-        ink: "#080808", // black
+        milk: "#FFFFFF",
+        cream: "#F6E7D8",
+        ink: "#080808",
         white2: "#FFFFFF",
+        blush: "#F8C8C8",
+        "blush-soft": "#FCE8EA",
+        "blush-haze": "#FFF6F7",
+        red: "#FF1F0F",
+        beige: "#F4E7D3",
 
-        // pink scale (from the logo)
-        pink: "#F8C8C8", // primary light rose (logo wordmark)
-        "pink-deep": "#E07A84", // deeper coral for text accents / hover
-        "pink-soft": "#FBDCDE", // light pink tint
-        "pink-haze": "#FCEAEB", // near-white pink wash
-
-        // remapped legacy names → pink
-        dusk: "#F4A9B0",
-        "dusk-deep": "#E07A84",
-        apricot: "#F8C8C8",
-        "apricot-soft": "#FBDCDE",
-        haze: "#FCEAEB",
-        moss: "#F4A9B0",
+        // Legacy token names are remapped to the new boutique palette.
+        pink: "#F8C8C8",
+        "pink-deep": "#FF1F0F",
+        "pink-soft": "#FCE8EA",
+        "pink-haze": "#FFF6F7",
+        dusk: "#F8C8C8",
+        "dusk-deep": "#FF1F0F",
+        apricot: "#F4E7D3",
+        "apricot-soft": "#F6E7D8",
+        haze: "#FFF6F7",
+        moss: "#F6E7D8",
       },
       fontFamily: {
         display: ["var(--font-fraunces)", "Georgia", "serif"],
-        monster: ["var(--font-anton)", "Impact", "ui-sans-serif", "sans-serif"],
+        monster: ["var(--font-fraunces)", "Georgia", "serif"],
         couture: ["var(--font-bodoni)", "Georgia", "serif"],
         sans: ["var(--font-hanken)", "ui-sans-serif", "system-ui", "sans-serif"],
         cjk: ["var(--font-noto-tc)", "ui-sans-serif", "sans-serif"],

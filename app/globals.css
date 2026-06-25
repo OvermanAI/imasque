@@ -15,16 +15,16 @@
     @apply bg-milk text-ink font-sans antialiased;
     overflow-x: clip;
     background-image:
-      radial-gradient(120% 80% at 12% -10%, rgba(248, 200, 200, 0.30) 0%, transparent 55%),
-      radial-gradient(110% 90% at 92% 2%, rgba(240, 136, 144, 0.12) 0%, transparent 50%);
+      radial-gradient(90% 70% at 8% -10%, rgba(248, 200, 200, 0.22) 0%, transparent 58%),
+      linear-gradient(180deg, #fff6f7 0%, #ffffff 34%, #f6e7d8 100%);
     background-attachment: fixed;
   }
   main {
     overflow-x: clip;
   }
   ::selection {
-    background: #f08890;
-    color: #ffffff;
+    background: #080808;
+    color: #f8c8c8;
   }
   /* Balance heading line lengths. Paired with <BalancedText> word-segmentation,
      this keeps Chinese breaks on word boundaries (e.g. never 作|夢). */

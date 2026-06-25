@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, Bodoni_Moda, Fraunces, Hanken_Grotesk, Noto_Sans_TC } from "next/font/google";
+import { Bodoni_Moda, Fraunces, Hanken_Grotesk, Noto_Sans_TC } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { Nav } from "@/components/Nav";
@@ -25,13 +25,6 @@ const notoTC = Noto_Sans_TC({
   weight: ["300", "400", "500", "700"],
 });
 
-const anton = Anton({
-  subsets: ["latin"],
-  variable: "--font-anton",
-  display: "swap",
-  weight: "400",
-});
-
 const bodoni = Bodoni_Moda({
   subsets: ["latin"],
   variable: "--font-bodoni",
@@ -41,14 +34,14 @@ const bodoni = Bodoni_Moda({
 });
 
 export const metadata: Metadata = {
-  title: "imasque Celluloid Black — 早鳥預購 NT$299",
+  title: "imasque Celluloid — Boutique Sleep Masks",
   description:
-    "把太陽眼鏡的時髦，變成深度睡眠的溫柔。imasque Celluloid Black 是 11 歲 CxY 的太陽眼鏡造型柔軟睡眠眼罩。",
+    "Muji-level comfort, fashion-eyewear creativity, under $10. imasque Celluloid is a boutique sleep mask shaped by comfort, eyewear and CxY's imagination.",
   metadataBase: new URL("https://imasque.com"),
   openGraph: {
-    title: "imasque Celluloid Black — 早鳥預購 NT$299",
+    title: "imasque Celluloid — Boutique Sleep Masks",
     description:
-      "Celluloid Black 玳瑁框靈感眼罩，Tencel 透氣材質、雙側耳掛可調繩。支持 CxY 的創意眼罩誕生。",
+      "A boutique sleep mask inspired by celluloid eyewear: comfort-first, visually memorable, and built in public by CxY.",
     type: "website",
   },
 };
@@ -61,7 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fraunces.variable} ${hanken.variable} ${notoTC.variable} ${anton.variable} ${bodoni.variable} grain min-h-screen`}
+        className={`${fraunces.variable} ${hanken.variable} ${notoTC.variable} ${bodoni.variable} grain min-h-screen`}
       >
         <LanguageProvider>
           <Nav />

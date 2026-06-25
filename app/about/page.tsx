@@ -54,32 +54,32 @@ export default function AboutPage() {
     <>
       <PageIntro index="About / CxY" title="About imasque" intro="CxY 和爸爸一起把想像力做出來的品牌。" preserveCase />
 
-      <section className="bg-[#F7EFF6] px-6 pb-16 pt-12 lg:px-10 lg:pb-24">
+      <section className="bg-[#FFF6F7] px-6 pb-16 pt-12 lg:px-10 lg:pb-24">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <Reveal className="space-y-7">
-            <p className="max-w-3xl font-monster text-[clamp(3rem,7vw,7rem)] leading-[0.82] text-[#0B0B0C]">
+            <p className="max-w-3xl font-display text-[clamp(3rem,7vw,7rem)] leading-[0.82] text-[#080808]">
               <BalancedText>我是 CxY。</BalancedText>
             </p>
-            <div className="max-w-2xl space-y-4 font-sans text-lg font-bold leading-relaxed text-[#0B0B0C]/74">
+            <div className="max-w-2xl space-y-4 font-sans text-lg font-bold leading-relaxed text-[#080808]/74">
               {opening.map((line) => (
                 <p key={line}>{line}</p>
               ))}
             </div>
-            <p className="inline-block rotate-[-2deg] bg-[#FF2B9A] px-5 py-3 font-couture text-3xl italic text-white shadow-[5px_5px_0_#0B0B0C]">
+            <p className="inline-block bg-[#F8C8C8] px-5 py-3 font-couture text-3xl italic text-[#080808]">
               Dream More.
             </p>
           </Reveal>
 
           <Reveal className="relative overflow-hidden">
-            <div className="absolute -left-4 -top-4 h-full w-full rotate-[-3deg] border-2 border-[#0B0B0C] bg-[#D9FF38]" />
-            <div className="relative border-2 border-[#0B0B0C] bg-white p-8 shadow-[8px_8px_0_#0B0B0C] lg:p-10">
-              <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#E01414]">
+            <div className="absolute -left-4 -top-4 h-full w-full rotate-[-3deg] border-2 border-[#080808] bg-[#F6E7D8]" />
+            <div className="relative border-2 border-[#080808] bg-white p-8 shadow-[8px_8px_0_#080808] lg:p-10">
+              <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#FF1F0F]">
                 Why imasque exists
               </p>
-              <h2 className="mt-5 font-monster text-[clamp(3rem,6vw,6rem)] uppercase leading-[0.82] text-[#0B0B0C]">
+              <h2 className="mt-5 font-display text-[clamp(3rem,6vw,6rem)] uppercase leading-[0.82] text-[#080808]">
                 <BalancedText>這就是 imasque 開始的原因。</BalancedText>
               </h2>
-              <div className="mt-7 space-y-4 font-sans text-lg font-bold leading-relaxed text-[#0B0B0C]/72">
+              <div className="mt-7 space-y-4 font-sans text-lg font-bold leading-relaxed text-[#080808]/72">
                 <p>我喜歡做夢。</p>
                 <p>也喜歡想很多奇奇怪怪、可愛又有趣的東西。</p>
                 <p>有時候我會想：</p>
@@ -88,7 +88,7 @@ export default function AboutPage() {
                 {questions.map((question) => (
                   <p
                     key={question}
-                    className="border-2 border-[#0B0B0C] bg-[#F7EFF6] p-4 font-sans text-base font-black leading-relaxed shadow-[3px_3px_0_#0B0B0C]"
+                    className="border-2 border-[#080808] bg-[#FFF6F7] p-4 font-sans text-base font-black leading-relaxed shadow-[3px_3px_0_#080808]"
                   >
                     {question}
                   </p>
@@ -99,8 +99,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-y-2 border-[#0B0B0C] bg-[#0B0B0C]">
-        <Reveal stagger className="mx-auto grid max-w-7xl gap-px bg-[#0B0B0C] md:grid-cols-3">
+      <section className="border-y-2 border-[#080808] bg-[#080808]">
+        <Reveal stagger className="mx-auto grid max-w-7xl gap-px bg-[#080808] md:grid-cols-3">
           <StoryPanel title="爸爸說" accent="那我們就把它做出來看看。">
             <p>我把這些想法告訴爸爸。</p>
             <p>爸爸沒有說：「這只是想像而已。」</p>
@@ -118,16 +118,16 @@ export default function AboutPage() {
         </Reveal>
       </section>
 
-      <section className="bg-[#F7EFF6] px-6 py-16 lg:px-10 lg:py-24">
+      <section className="bg-[#FFF6F7] px-6 py-16 lg:px-10 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <Reveal>
-            <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#E01414]">
+            <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#FF1F0F]">
               build with dad
             </p>
-            <h2 className="mt-5 max-w-3xl font-monster text-[clamp(3rem,7vw,7rem)] uppercase leading-[0.82] text-[#0B0B0C]">
+            <h2 className="mt-5 max-w-3xl font-display text-[clamp(3rem,7vw,7rem)] uppercase leading-[0.82] text-[#080808]">
               <BalancedText>我們就一步一步試。</BalancedText>
             </h2>
-            <div className="mt-7 max-w-2xl space-y-4 font-sans text-lg font-bold leading-relaxed text-[#0B0B0C]/74">
+            <div className="mt-7 max-w-2xl space-y-4 font-sans text-lg font-bold leading-relaxed text-[#080808]/74">
               {buildTogether.map((line) => (
                 <p key={line}>{line}</p>
               ))}
@@ -136,9 +136,9 @@ export default function AboutPage() {
             </div>
           </Reveal>
 
-          <Reveal className="border-2 border-[#0B0B0C] bg-[#FF2B9A] p-7 text-white shadow-[8px_8px_0_#0B0B0C] lg:p-9">
-            <h3 className="font-monster text-5xl uppercase leading-none">Not just a mask.</h3>
-            <div className="mt-6 space-y-4 font-sans text-lg font-bold leading-relaxed text-white/90">
+          <Reveal className="border border-[#080808]/10 bg-[#F8C8C8] p-7 text-[#080808] lg:p-9">
+            <h3 className="font-display text-5xl uppercase leading-none">Not just a mask.</h3>
+            <div className="mt-6 space-y-4 font-sans text-lg font-bold leading-relaxed text-[#080808]/72">
               <p>對我來說，imasque 不只是做眼罩。</p>
               <p>它是我勇敢開始做一個品牌。</p>
               <p>也是我把想像力放出來的方式。</p>
@@ -149,12 +149,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-t-2 border-[#0B0B0C] bg-[#0B0B0C] px-6 py-16 text-white lg:px-10 lg:py-24">
+      <section className="border-t-2 border-[#080808] bg-[#080808] px-6 py-16 text-white lg:px-10 lg:py-24">
         <Reveal className="mx-auto max-w-6xl text-center">
-          <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#D9FF38]">
+          <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#F6E7D8]">
             building in public
           </p>
-          <h2 className="mt-5 font-monster text-[clamp(3rem,7vw,7rem)] uppercase leading-[0.82] text-[#FFB8C8]">
+          <h2 className="mt-5 font-display text-[clamp(3rem,7vw,7rem)] uppercase leading-[0.82] text-[#F8C8C8]">
             <BalancedText>imasque 是我想像力的開始。</BalancedText>
           </h2>
           <p className="mx-auto mt-8 max-w-3xl font-sans text-lg font-bold leading-relaxed text-white/76">
@@ -162,12 +162,12 @@ export default function AboutPage() {
           </p>
           <div className="mx-auto mt-8 flex max-w-4xl flex-wrap justify-center gap-3">
             {records.map((item) => (
-              <span key={item} className="border-2 border-[#FFB8C8] px-4 py-2 font-sans text-sm font-black text-[#FFB8C8]">
+              <span key={item} className="border-2 border-[#F8C8C8] px-4 py-2 font-sans text-sm font-black text-[#F8C8C8]">
                 {item}
               </span>
             ))}
           </div>
-          <p className="mt-10 font-couture text-5xl italic text-[#D9FF38]">Dream More.</p>
+          <p className="mt-10 font-couture text-5xl italic text-[#F6E7D8]">Dream More.</p>
         </Reveal>
       </section>
     </>
@@ -184,12 +184,12 @@ function StoryPanel({
   children: React.ReactNode;
 }) {
   return (
-    <article className="bg-[#F7EFF6] p-7 lg:p-9">
-      <h2 className="font-monster text-5xl uppercase leading-none text-[#0B0B0C]">{title}</h2>
-      <p className="mt-5 inline-block bg-[#E01414] px-4 py-2 font-couture text-2xl italic text-white shadow-[4px_4px_0_#0B0B0C]">
+    <article className="bg-[#FFF6F7] p-7 lg:p-9">
+      <h2 className="font-display text-5xl uppercase leading-none text-[#080808]">{title}</h2>
+      <p className="mt-5 inline-block bg-[#FF1F0F] px-4 py-2 font-couture text-2xl italic text-white shadow-[4px_4px_0_#080808]">
         {accent}
       </p>
-      <div className="mt-6 space-y-3 font-sans font-bold leading-relaxed text-[#0B0B0C]/72">{children}</div>
+      <div className="mt-6 space-y-3 font-sans font-bold leading-relaxed text-[#080808]/72">{children}</div>
     </article>
   );
 }

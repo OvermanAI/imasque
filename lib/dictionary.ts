@@ -161,7 +161,7 @@ export const dict = {
     signature: { en: "Dream More.", zh: "Dream More." },
   },
   footer: {
-    tagline: { en: "The eye mask of 11yo CxY's imagination.", zh: "11 歲 CxY 的想像力眼罩。" },
+    tagline: { en: "Boutique sleep masks shaped by comfort, eyewear and imagination.", zh: "以舒適、眼鏡美學與想像力打造的精品眼罩。" },
     rights: { en: "Built in public. Dream More.", zh: "公開打造。Dream More." },
   },
 } as const;
