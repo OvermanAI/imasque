@@ -4,8 +4,8 @@ export type Lang = "en" | "zh";
 // Slogans & wordmark stay English across both languages by design.
 export const dict = {
   nav: {
-    starmonster: { en: "Starmonster", zh: "STARMONSTER" },
-    product: { en: "Product", zh: "Product" },
+    starmonster: { en: "Starmonster", zh: "星星怪獸" },
+    product: { en: "Product", zh: "產品" },
     shop: { en: "Shop", zh: "選購" },
     collections: { en: "Collections", zh: "系列" },
     journal: { en: "Journal", zh: "日誌" },
@@ -63,14 +63,14 @@ export const dict = {
       zh: "留下你的 email。第一只眼罩成真時，你會最先知道 — 也會幫忙形塑接下來的樣子。",
     },
     emailPlaceholder: { en: "your@email.com", zh: "你的@email.com" },
-    emailButton: { en: "Dream More", zh: "Dream More" },
+    emailButton: { en: "Dream More", zh: "加入名單" },
     emailNote: {
       en: "No spam. Just dreams, occasionally.",
       zh: "沒有垃圾信。只有偶爾寄來的夢。",
     },
     emailThanks: {
       en: "You're on the list. Dream more.",
-      zh: "你在清單上了。Dream more.",
+      zh: "你已加入名單。Dream More.",
     },
   },
   shop: {
@@ -161,7 +161,7 @@ export const dict = {
     signature: { en: "Dream More.", zh: "Dream More." },
   },
   footer: {
-    tagline: { en: "The eye mask of 11yo CxY's imagination.", zh: "The eye mask of 11yo CxY's imagination." },
+    tagline: { en: "The eye mask of 11yo CxY's imagination.", zh: "11 歲 CxY 想像力的眼罩。" },
     rights: { en: "DREAM MORE", zh: "DREAM MORE" },
   },
 } as const;
