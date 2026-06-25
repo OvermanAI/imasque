@@ -67,23 +67,15 @@ export default function Home() {
 
           <Reveal className="relative min-h-[420px] lg:min-h-[650px]">
             <div className="absolute inset-0 rounded-[2rem] bg-[#080808]" />
-            <div className="absolute left-8 right-8 top-8 h-28 bg-[#F8C8C8]/90 blur-3xl" />
+            <div className="absolute left-8 right-8 top-8 h-28 bg-[#F8C8C8]/60 blur-3xl" />
             <div className="absolute inset-x-6 bottom-8 top-10 rounded-[1.5rem] border border-white/10 bg-white/[0.03]" />
             <Image
-              src="/product/celluloid-cream-front-cutout.webp"
-              alt="imasque Celluloid Cream"
-              fill
-              priority
-              sizes="(min-width: 1024px) 44vw, 92vw"
-              className="object-contain object-[center_40%] px-4 pb-36 pt-16 drop-shadow-[0_26px_45px_rgba(0,0,0,0.45)]"
-            />
-            <Image
-              src="/product/celluloid-black-front-cutout.webp"
+              src="/product/去背/imasqueBlack/imasqueBlack.png"
               alt="imasque Celluloid Black"
               fill
               priority
               sizes="(min-width: 1024px) 44vw, 92vw"
-              className="object-contain object-[center_72%] px-2 pb-8 pt-48 drop-shadow-[0_26px_45px_rgba(0,0,0,0.5)]"
+              className="object-contain px-4 pb-24 pt-24 drop-shadow-[0_30px_55px_rgba(0,0,0,0.6)]"
             />
             <div className="absolute bottom-7 left-7 max-w-[15rem] bg-[#F8C8C8] px-5 py-4 font-sans text-xs font-black uppercase tracking-wider2 text-[#080808]">
               Looks like eyewear. Feels like a dream.
