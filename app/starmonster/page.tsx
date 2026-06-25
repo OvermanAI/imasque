@@ -68,12 +68,12 @@ const designRules = [
 ];
 
 const closingLines = [
-  "夢想不需要得到所有人的同意。",
-  "只要你願意相信，星星就會開始發光。",
-  "而我，會一直陪著你。",
-  "一起做夢。",
-  "一起發光。",
-  "一起成為自己想成為的樣子。",
+  "相信自己，相信夢想",
+  "釋放想像力，讓夢想發光",
+  "STARMONSTER 陪著你",
+  "一起做夢",
+  "一起發光",
+  "每天晚上開開心心睡個好覺",
 ];
 
 export default function StarMonsterPage() {
