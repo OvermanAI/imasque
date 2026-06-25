@@ -21,14 +21,14 @@ export function Footer() {
         <Link
           href="/"
           aria-label="imasque"
-          className="relative mx-auto block aspect-[1779/290] w-full overflow-hidden"
+          className="relative mx-auto block aspect-[1779/340] w-full overflow-hidden"
         >
           <Image
             src="/logo/imasquefooter.png"
             alt="imasque"
             fill
             sizes="(min-width: 1280px) 1200px, calc(100vw - 48px)"
-            className="object-cover object-center"
+            className="object-cover object-[center_46%]"
           />
         </Link>
 
