@@ -56,20 +56,12 @@ export default function ProductPage() {
           <Reveal className="relative min-h-[420px] lg:min-h-[640px]">
             <div className="absolute inset-0 bg-[#F8C8C8]/10" />
             <Image
-              src="/product/celluloid-cream-front-cutout.webp"
-              alt="imasque Celluloid Cream"
-              fill
-              priority
-              sizes="(min-width: 1024px) 44vw, 92vw"
-              className="object-contain object-[center_38%] px-3 pb-36 pt-10 drop-shadow-[0_30px_45px_rgba(0,0,0,0.52)]"
-            />
-            <Image
-              src="/product/celluloid-black-front-cutout.webp"
+              src="/product/celluloid-black-hero.webp"
               alt="imasque Celluloid Black"
               fill
               priority
               sizes="(min-width: 1024px) 44vw, 92vw"
-              className="object-contain object-[center_72%] px-3 pb-10 pt-48 drop-shadow-[0_30px_45px_rgba(0,0,0,0.58)]"
+              className="object-cover object-center"
             />
           </Reveal>
         </div>
