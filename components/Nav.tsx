@@ -7,11 +7,16 @@ import { usePathname } from "next/navigation";
 import { useLang } from "@/components/LanguageProvider";
 import { dict, t } from "@/lib/dictionary";
 
-const links = [
-  { href: "/starmonster", key: "starmonster" as const },
-  { href: "/product", key: "product" as const },
+const leftLinks = [
   { href: "/about", key: "about" as const },
+  { href: "/product", key: "product" as const },
 ];
+
+const rightLinks = [
+  { href: "/starmonster", key: "starmonster" as const },
+];
+
+const mobileLinks = [...leftLinks, ...rightLinks];
 
 export function Nav() {
   const { lang, toggle } = useLang();
@@ -23,7 +28,7 @@ export function Nav() {
       <div className="border-b border-[#F8C8C8]/25 bg-[#080808]">
         <nav className="relative mx-auto flex h-24 max-w-7xl items-center justify-between px-6 sm:h-28 lg:px-10">
           <div className="hidden min-w-0 flex-1 items-center gap-8 font-sans text-[0.72rem] font-black uppercase tracking-wider2 md:flex">
-            {links.map((l) => {
+            {leftLinks.map((l) => {
               const active = pathname === l.href;
               return (
                 <Link
@@ -58,6 +63,24 @@ export function Nav() {
           </Link>
 
           <div className="ml-auto flex flex-1 items-center justify-end gap-4">
+            <div className="hidden items-center gap-8 font-sans text-[0.72rem] font-black uppercase tracking-wider2 md:flex">
+              {rightLinks.map((l) => {
+                const active = pathname === l.href;
+                return (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    className={`transition ${
+                      active
+                        ? "text-[#FF1F0F]"
+                        : "text-white hover:text-[#FF1F0F]"
+                    }`}
+                  >
+                    {t(dict.nav[l.key], lang)}
+                  </Link>
+                );
+              })}
+            </div>
             <button
               onClick={toggle}
               aria-label="Toggle language"
@@ -86,7 +109,7 @@ export function Nav() {
       {open && (
         <div className="border-b border-[#F8C8C8]/25 bg-[#080808] md:hidden">
           <div className="flex flex-col gap-4 px-6 py-7 font-sans text-sm font-black uppercase tracking-wider2">
-            {links.map((l) => (
+            {mobileLinks.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
