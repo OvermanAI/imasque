@@ -20,15 +20,15 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
         <Link
           href="/"
-          aria-label="imasque — Dream More"
-          className="relative mx-auto block h-36 w-full max-w-5xl overflow-hidden sm:h-52 lg:h-72"
+          aria-label="imasque"
+          className="relative mx-auto block aspect-[1779/290] w-full overflow-hidden"
         >
           <Image
-            src="/logo/IMASQUElogo.png"
-            alt="imasque Dream More"
+            src="/logo/imasquefooter.png"
+            alt="imasque"
             fill
-            sizes="(min-width: 1024px) 960px, 92vw"
-            className="object-contain object-center"
+            sizes="(min-width: 1280px) 1200px, calc(100vw - 48px)"
+            className="object-cover object-center"
           />
         </Link>
 
