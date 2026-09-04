@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "../../brand.tokens.css";
 @import "./sonic.css";
+@import "./pages.css";
 
 @theme inline {
   --color-bg: var(--bg);
