@@ -20,38 +20,32 @@
    ========================================================================== */
 
 .blog-domaine {
-  /* ── Blog_Domaine × 開放品牌母版 ────────────────────────────────────
-     角色名 token，值全部取自 brand.tokens.css。
-     ⚠️ 換品牌時**不要改這裡**——改 brand.tokens.css 的原色即可。
-     版型 CSS 與 12AI 艦隊共用同一份，只有這一組值不同。 */
-  --bg: var(--paper);
-  --fg: var(--ink);
-  --accent: var(--brand);           /* 動詞色 */
-  --muted: var(--subtle);
-  --faint: color-mix(in srgb, var(--fg) 45%, transparent);
+  /* ── Blog_Domaine × Coterie_sat_cool（黑底變體）─────────────────────
+     imasque 走 Sonic 的深色階，所以取黑底變體（規格書 4-2：
+     黑底站從 aicodingtw 複製）。值全部取自 brand.tokens.css。 */
+  --bg: var(--near-black);
+  --fg: var(--white);
+  --accent: var(--brand);
+  --muted: var(--neutral-400);
+  --faint: var(--neutral-500);
   --line: var(--border);
-  /* ⚠️ 不要寫 --surface: var(--surface) —— 自我循環會解析失敗變空值。
-     --surface 已在 :root 定義，這裡不重宣告，讓它繼承。 */
   --white: #ffffff;
-  --surface-page: var(--paper);
-  --chip-bg: color-mix(in srgb, var(--fg) 8%, transparent);
-  --accent-fg: var(--paper);        /* 實心 chip 的字色 */
-  /* accent 當**文字**用的版本。動詞色偏亮的品牌要在 brand.tokens.css
-     另給一個壓深的同色相版本，色塊填色仍吃 --accent（品牌色不改）。 */
+  --surface-page: var(--near-black);
+  --chip-bg: rgb(255 255 255 / 8%);
+  --accent-fg: var(--near-black);   /* 白底 chip 配深字 */
   --accent-text: var(--accent);
-  /* 相關文章的灰底面板：淺底站用深疊層、深底站要反過來用淺色低透明度 */
-  --panel-bg: color-mix(in srgb, var(--fg) 92%, transparent);
-  --panel-fg: var(--paper);
-  --panel-muted: color-mix(in srgb, var(--paper) 62%, transparent);
-  --panel-line: color-mix(in srgb, var(--paper) 22%, transparent);
+  /* 相關文章的面板：深底站用淺色低透明度（規格書明訂不能照抄白底的疊黑）*/
+  --panel-bg: rgb(255 255 255 / 6%);
+  --panel-fg: var(--white);
+  --panel-muted: rgb(255 255 255 / 62%);
+  --panel-line: rgb(255 255 255 / 14%);
   --display: var(--font-display);
   --mono: var(--font-mono);
   --radius: 3px;
   --pad: 2%;
-  /* 母版的 Nav 是 h-16（64px）sticky。換成別的高度時改這裡。 */
+  /* imasque 的 Nav 是 h-16（64px）sticky */
   --nav-h: 64px;
 }
-
 
 
 .blog-domaine *,
@@ -135,8 +129,6 @@
   /* ⚠️ 用 em 不用 ch。`ch` 是**拉丁數字「0」的寬度**（Space Grotesk 約 0.6em），
      19ch 只裝得下約 12 個漢字，不是 19 個。漢字寬約 1em，所以中文的行寬要用 em。
      19em ＝ 每行約 19 個漢字，對齊 Domaine 那塊「683px / 42.7px ≈ 16 個拉丁字寬」的份量。 */
-  /* ⚠️ 23em 是為中文算的（每行約 23 漢字）。br3ak 英文為主，
-     拉丁字元寬約 0.5em，同樣的視覺行寬要放寬。中文覆蓋見檔尾。 */
   max-width: 20em;
   /* Domaine 的宣言是**左對齊的文字塊放在畫面 35% 處**（1280 實測 x=449、寬 683），
      不是逐行置中。三行的左緣切齊成一個長方形，左邊那片空白是刻意留的——
@@ -148,8 +140,7 @@
   /* 字級以「最長的那一行要在桌機排得下」為準。
      ⚠️ 行高：拉丁可以壓到 1.1，但這個值同時服務中文版的站——
         漢字墨水佔 em 的 93.2%，低於 0.93 多行必疊字，中文實務下限 1.12–1.15。
-        取 1.25 是兩者都安全的折衷 —— 但 br3ak 英文為主，
-        這裡回到拉丁的緊排，中文覆蓋見檔尾。 */
+        取 1.25 是兩者都安全的折衷。 */
   font-size: clamp(20px, 2.5vw, 32px);
   line-height: 1.06;
   letter-spacing: -0.03em;
@@ -359,9 +350,6 @@
      收到 1.15（中文實務下限）已經比原本的 1.24 緊很多。
      ⚠️ 字距也**不跟** Domaine 的 −0.04em：那是給拉丁 display 的，中文字距一律 0
         （艦隊既有規則）。 */
-  /* ⚠️ br3ak 是英文為主的全球品牌，所以這裡回到 Domaine 原值
-     （1.0 / −0.04em）。12AI 艦隊那組 1.15 / 0 是為中文寫的，
-     改掛在 :lang(zh-Hant) 下方覆蓋。 */
   line-height: 1.02;
   letter-spacing: -0.035em;
 }
@@ -952,10 +940,8 @@
 
 /* ─────────────────────────────────────────────────────────────
    中文覆蓋
-   12AI 規格書「三項刻意不跟 Domaine」的理由都是中文排版：
-   漢字墨水佔 em 的 93.2%，行高低於 0.93 多行必疊字；負字距是給
-   拉丁 display 的；13px 的中文太小。br3ak 英文為主，所以正文預設
-   走 Domaine 原值，只有中文路由才套這三項。
+   規格書「三項刻意不跟 Domaine」的理由都是中文排版。開放品牌英文為主，
+   所以預設走 Domaine 原值，只有中文路由套這三項。
    ───────────────────────────────────────────────────────────── */
 :lang(zh-Hant) .blog-domaine .ins-statement { max-width: 23em; line-height: 1.25 }
 :lang(zh-Hant) .blog-domaine .art-hero__title,
@@ -963,7 +949,4 @@
 :lang(zh-Hant) .blog-domaine .art-related__title {
   line-height: 1.15;
   letter-spacing: 0;
-}
-:lang(zh-Hant) .blog-domaine .art-body {
-  font-size: clamp(0.95rem, 1.05vw, 1.0625rem);
 }

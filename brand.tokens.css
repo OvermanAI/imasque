@@ -1,35 +1,36 @@
 /* ─────────────────────────────────────────────────────────────
    IMASQUE 視覺唯一入口。
    ⚠️ 元件不准寫死 hex —— npm run check:tokens 會擋。
-   色值沿用改版前 tailwind.config.ts 的既有 palette。
+   配色來自 Aura「Sonic Architecture」模版（作者定案：連皮一起用）。
    ───────────────────────────────────────────────────────────── */
 
 :root {
-  /* 原色 */
-  --ink:        #080808;
-  --cream:      #F6E7D8;
-  --blush:      #F8C8C8;
-  --blush-haze: #FFF6F7;
-  --red:        #FF1F0F;
-  --beige:      #F4E7D3;
-  --milk:       #FFFFFF;
+  /* 原色 —— 模版的深色階 */
+  --black:      #000000;
+  --near-black: #050505;
+  --coal:       #080808;
+  --soot:       #0a0a0a;
+  --ink-900:    #030303;
+  --white:      #ffffff;
+  --neutral-400: #a3a3a3;
+  --neutral-500: #737373;
+  --neutral-900: #171717;
 
   /* 語意別名 —— 元件只用這一組 */
-  --paper:    var(--blush-haze);
-  --bg:       var(--paper);
-  --fg:       var(--ink);
-  --surface:  var(--milk);
-  --border:   var(--blush);
-  --subtle:   #6b6259;
-  --brand:    var(--red);
-  --accent:   var(--brand);      /* 動詞色：CTA／eyebrow／連結 */
-  --accent-2: var(--blush);
-  --accent-3: var(--cream);
+  --bg:       var(--near-black);
+  --fg:       var(--white);
+  --surface:  var(--neutral-900);
+  --border:   rgb(255 255 255 / 8%);
+  --subtle:   var(--neutral-400);
+  --brand:    var(--white);      /* 這支模版的動詞色是白（反白按鈕）*/
+  --accent:   var(--brand);
+  --accent-2: var(--neutral-400);
+  --accent-3: var(--neutral-900);
 
-  /* 動效專用色 */
-  --viz-bg:   var(--paper);
-  --viz-core: var(--red);
-  --viz-alt:  var(--blush);
+  /* 動效專用色（JS 用 getComputedStyle 讀，不在 JS 寫死）*/
+  --viz-bg:   var(--near-black);
+  --viz-core: var(--white);
+  --viz-alt:  var(--neutral-500);
 
   /* 字 */
   --font-display: var(--font-display-face), Georgia, serif;

@@ -4,8 +4,7 @@ import brand, { type Locale } from '../../../brand.config'
 import { LOCALES, DEFAULT_LOCALE, isLocale, localePath, htmlLang, t } from '@/lib/i18n'
 import { siteUrl } from '@/lib/site-url'
 import { organizationJsonLd, brandJsonLd } from '@/lib/jsonld'
-import { Nav } from '@/components/Nav'
-import { Footer } from '@/components/Footer'
+import { ChromeTop, ChromeFooter } from '@/components/skin/Chrome'
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }))
@@ -63,9 +62,9 @@ export default async function LocaleLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(brandJsonLd(l)) }}
       />
-      <Nav locale={l} />
-      <main>{children}</main>
-      <Footer locale={l} />
+      <ChromeTop locale={l} />
+      <main className="pt-16">{children}</main>
+      <ChromeFooter locale={l} />
     </div>
   )
 }
