@@ -1,0 +1,65 @@
+/* ─────────────────────────────────────────────────────────────
+   IMASQUE 視覺唯一入口。
+   ⚠️ 元件不准寫死 hex —— npm run check:tokens 會擋。
+   配色來自 Aura「Sonic Architecture」模版（作者定案：連皮一起用）。
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* 原色 —— 模版的深色階 */
+  --black:      #000000;
+  --near-black: #050505;
+  --coal:       #080808;
+  --soot:       #0a0a0a;
+  --ink-900:    #030303;
+  --white:      #ffffff;
+  --neutral-400: #a3a3a3;
+  --neutral-500: #737373;
+  --neutral-900: #171717;
+
+  /* 語意別名 —— 元件只用這一組 */
+  --bg:       var(--near-black);
+  --fg:       var(--white);
+  --surface:  var(--neutral-900);
+  --border:   rgb(255 255 255 / 8%);
+  --subtle:   var(--neutral-400);
+  --brand:    var(--white);      /* 這支模版的動詞色是白（反白按鈕）*/
+  --accent:   var(--brand);
+  --accent-2: var(--neutral-400);
+  --accent-3: var(--neutral-900);
+
+  /* 動效專用色（JS 用 getComputedStyle 讀，不在 JS 寫死）*/
+  --viz-bg:   var(--near-black);
+  --viz-core: var(--white);
+  --viz-alt:  var(--neutral-500);
+
+  /* 字 */
+  --font-display: var(--font-display-face), Georgia, serif;
+  --font-body:    var(--font-sans), system-ui, sans-serif;
+  --font-mono:    var(--font-mono-face), ui-monospace, monospace;
+  --font-cjk:     var(--font-cjk-face), system-ui, sans-serif;
+
+  /* 尺度 */
+  --step--1: clamp(.8rem, .78rem + .1vw, .875rem);
+  --step-0:  clamp(1rem, .95rem + .25vw, 1.125rem);
+  --step-1:  clamp(1.25rem, 1.1rem + .75vw, 1.75rem);
+  --step-2:  clamp(1.75rem, 1.4rem + 1.75vw, 3rem);
+  --step-3:  clamp(2.5rem, 1.8rem + 3.5vw, 5rem);
+  --step-4:  clamp(3.5rem, 2rem + 7vw, 9rem);
+
+  --radius: 0px;
+  --ease:   cubic-bezier(.16, 1, .3, 1);
+  --rail:   86px;
+}
+
+@media (max-width: 1100px) { :root { --rail: 64px } }
+@media (max-width: 780px)  { :root { --rail: 52px } }
+@media (max-width: 520px)  { :root { --rail: 44px } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
