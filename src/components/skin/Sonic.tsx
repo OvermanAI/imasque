@@ -18,7 +18,7 @@ export function Sonic({ locale }: { locale: Locale }) {
   void locale
   return (
     <>
-      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
             {/* Abstract Background Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/[0.03] rounded-full blur-3xl pointer-events-none"></div>
 
@@ -77,7 +77,7 @@ export function Sonic({ locale }: { locale: Locale }) {
 
           {/* Marquee Section */}
     
-      <section className="border-y border-white/5 bg-neutral-900/20 overflow-hidden py-8">
+      <section id="dreams" className="border-y border-white/5 bg-neutral-900/20 overflow-hidden py-8">
             <div className="flex whitespace-nowrap animate-scroll">
               <div className="flex gap-16 items-center px-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
                 <span className="text-xl font-medium tracking-tight">Sunglasses</span>
@@ -109,7 +109,7 @@ export function Sonic({ locale }: { locale: Locale }) {
 
           {/* Bento Grid Collection */}
     
-      <section className="max-w-7xl mr-auto ml-auto pt-24 pr-6 pb-24 pl-6 relative group/section">
+      <section id="collections" className="max-w-7xl mr-auto ml-auto pt-24 pr-6 pb-24 pl-6 relative group/section">
             {/* Background Ambient Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-full max-h-[600px] bg-blue-900/10 blur-[100px] rounded-full pointer-events-none opacity-0 group-hover/section:opacity-100 transition-opacity duration-1000"></div>
 
@@ -240,7 +240,7 @@ export function Sonic({ locale }: { locale: Locale }) {
 
           {/* Specs / Feature Section */}
     
-      <section className="border-y bg-neutral-900/30 border-white/5 pt-24 pb-24 relative overflow-hidden">
+      <section id="rest" className="border-y bg-neutral-900/30 border-white/5 pt-24 pb-24 relative overflow-hidden">
 
             {/* Background decorative ambient glow */}
             <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
@@ -374,7 +374,7 @@ export function Sonic({ locale }: { locale: Locale }) {
             </div>
           </section>
     
-      <section className="bg-[color:var(--near-black)] border-t border-white/5 py-24">
+      <section id="stories" className="bg-[color:var(--near-black)] border-t border-white/5 py-24">
             <div className="max-w-7xl mx-auto px-6">
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
                 <div className="max-w-2xl">
@@ -516,7 +516,7 @@ export function Sonic({ locale }: { locale: Locale }) {
 
           {/* Testimonials Section */}
     
-      <section className="py-32 bg-black border-y border-white/5 overflow-hidden">
+      <section id="spectrum" className="py-32 bg-black border-y border-white/5 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 mb-12 flex justify-between items-end">
               <div>
                 <h2 className="text-4xl font-medium text-white tracking-tight">
@@ -589,7 +589,7 @@ export function Sonic({ locale }: { locale: Locale }) {
           </section>
 
     
-      <section className="py-32 bg-[color:var(--coal)] relative overflow-hidden group/blueprint">
+      <section id="workshop" className="py-32 bg-[color:var(--coal)] relative overflow-hidden group/blueprint">
             {/* Grid Background */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--white)05_1px,transparent_1px),linear-gradient(to_bottom,var(--white)05_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,var(--black)_70%,transparent_100%)] pointer-events-none"></div>
 
@@ -688,7 +688,7 @@ export function Sonic({ locale }: { locale: Locale }) {
             </div>
           </section>
     
-      <section className="py-24 px-6">
+      <section id="dreamlist" className="py-24 px-6">
             <div className="max-w-5xl mx-auto bg-neutral-900 rounded-[2rem] p-12 md:p-20 text-center relative overflow-hidden border border-white/5">
               {/* Background Gradients */}
               <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-50"></div>

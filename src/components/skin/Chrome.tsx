@@ -10,12 +10,7 @@ const LANG: Record<string, string> = { en: 'EN', 'zh-Hant': '中文' }
 
 export function ChromeTop({ locale: l }: { locale: Locale }) {
   const home = localePath(l)
-  const base = home === '/' ? '' : home
-  const items = [
-    { href: `${base}/#collection`, label: t({ en: 'Collections', 'zh-Hant': '系列' }, l) },
-    { href: `${base}/#craft`, label: t({ en: 'Craft', 'zh-Hant': '製作' }, l) },
-    ...brand.nav.map((i) => ({ href: localePath(l, i.href), label: t(i.label, l) })),
-  ]
+  const items = brand.nav.map((i) => ({ href: localePath(l, i.href), label: t(i.label, l) }))
 
   return (
     <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-[color:var(--near-black)]/80 backdrop-blur-xl">
