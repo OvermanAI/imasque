@@ -14,15 +14,21 @@ export function ChromeTop({ locale: l }: { locale: Locale }) {
 
   return (
     <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-[color:var(--near-black)]/80 backdrop-blur-xl">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href={home} aria-label={brand.wordmark} className="relative block h-7 w-36 sm:h-8 sm:w-44">
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between relative">
+        {/* 字標絕對置中（沿用改版前 imasque nav 的做法）；
+            選單靠左、語言靠右，兩側在字標兩邊平衡。 */}
+        <Link
+          href={home}
+          aria-label={brand.wordmark}
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 block h-7 w-36 sm:h-8 sm:w-44"
+        >
           <Image
             src="/logo/opt/imasque-wordmark.webp"
             alt={brand.wordmark}
             fill
             priority
             sizes="176px"
-            className="object-contain object-left"
+            className="object-contain object-center"
           />
         </Link>
 
@@ -34,7 +40,7 @@ export function ChromeTop({ locale: l }: { locale: Locale }) {
           ))}
         </div>
 
-        <div className="flex items-center gap-4 text-[0.72rem] font-medium tracking-wider">
+        <div className="ml-auto flex items-center gap-4 text-[0.72rem] font-medium tracking-wider">
           {LOCALES.map((loc, idx) => (
             <span key={loc} className="flex items-center gap-4">
               {idx > 0 && <span className="text-neutral-600">/</span>}
