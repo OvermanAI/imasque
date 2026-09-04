@@ -1,0 +1,969 @@
+/* ==========================================================================
+   Blog 系統樣式｜Domaine 版型 × AEON 視覺語言
+   （/blog 索引與 /blog/[slug] 文章頁共用，本檔自足，不依賴 aeon.css）
+   --------------------------------------------------------------------------
+   版型參考：domaineworldwide.com/insights（作者 2026-09-02 指定）
+     索引  ＝ 小標籤 ／ 置中大宣言 ／ 分類 chips ／ 三欄圖片優先卡片格
+     文章  ＝ 左圖右標分割 Hero ／ 正文＋右側 LATEST 欄 ／ 作者 ／ 訂閱 ／ 相關文章
+   皮＝ AEON（深空底 #04060A、cyan #5BE9FF、hairline、毛玻璃、Space Grotesk）。
+   **只照抄版型骨架，不照抄配色與字體**（作者定案：「版型照抄，皮用 AEON 深底」）。
+
+   ⚠️ 為什麼索引與文章共用一份 CSS，而不是照 about.css「每頁自足」的慣例拆兩份：
+      文章頁最下方的 RELATED POSTS 用的就是索引的卡片與三欄格。拆兩份等於同一組
+      卡片樣式維護兩次，改一邊忘另一邊。這是刻意的例外，不是漏拆。
+
+   沿用 about.css 的移植規則：
+   - 深底標題必須**顯式 color**（globals.css 的 h1–h6 是元素選擇器，贏過繼承）
+   - 帶中文的標題行高 ≥1.12、字距歸 0
+   - wrapper 用 `overflow-x: clip`，不用 hidden
+   - 不抵消 layout 的 padding-top（nav 在這兩頁是實色）
+   ========================================================================== */
+
+.blog-domaine {
+  /* ── Blog_Domaine × 開放品牌母版 ────────────────────────────────────
+     角色名 token，值全部取自 brand.tokens.css。
+     ⚠️ 換品牌時**不要改這裡**——改 brand.tokens.css 的原色即可。
+     版型 CSS 與 12AI 艦隊共用同一份，只有這一組值不同。 */
+  --bg: var(--paper);
+  --fg: var(--ink);
+  --accent: var(--brand);           /* 動詞色 */
+  --muted: var(--subtle);
+  --faint: color-mix(in srgb, var(--fg) 45%, transparent);
+  --line: var(--border);
+  /* ⚠️ 不要寫 --surface: var(--surface) —— 自我循環會解析失敗變空值。
+     --surface 已在 :root 定義，這裡不重宣告，讓它繼承。 */
+  --white: #ffffff;
+  --surface-page: var(--paper);
+  --chip-bg: color-mix(in srgb, var(--fg) 8%, transparent);
+  --accent-fg: var(--paper);        /* 實心 chip 的字色 */
+  /* accent 當**文字**用的版本。動詞色偏亮的品牌要在 brand.tokens.css
+     另給一個壓深的同色相版本，色塊填色仍吃 --accent（品牌色不改）。 */
+  --accent-text: var(--accent);
+  /* 相關文章的灰底面板：淺底站用深疊層、深底站要反過來用淺色低透明度 */
+  --panel-bg: color-mix(in srgb, var(--fg) 92%, transparent);
+  --panel-fg: var(--paper);
+  --panel-muted: color-mix(in srgb, var(--paper) 62%, transparent);
+  --panel-line: color-mix(in srgb, var(--paper) 22%, transparent);
+  --display: var(--font-display);
+  --mono: var(--font-mono);
+  --radius: 3px;
+  --pad: 2%;
+  /* 母版的 Nav 是 h-16（64px）sticky。換成別的高度時改這裡。 */
+  --nav-h: 64px;
+}
+
+
+
+.blog-domaine *,
+.blog-domaine *::before,
+.blog-domaine *::after {
+  box-sizing: border-box;
+}
+
+.blog-domaine a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-domaine .ins-wrap {
+  width: min(1360px, 100% - 2 * var(--pad));
+  margin-inline: auto;
+}
+
+/* 索引頁用的滿版容器：Domaine 的 Insights **沒有 max-width 上限**，
+   一路撐到視窗寬減掉 2% 內距為止。文章頁仍用 .ins-wrap（有 1360 上限），
+   因為長文的閱讀欄不能跟著視窗無限變寬。 */
+.blog-domaine .ins-bleed {
+  width: calc(100% - 2 * var(--pad));
+  margin-inline: auto;
+}
+
+/* ── 共用：mono 小標（AEON 的 kicker：前置破折號 ＋ cyan）─────────────── */
+.blog-domaine .ins-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.blog-domaine .ins-kicker::before {
+  content: "—";
+  color: var(--accent-text);
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   一、索引頁
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* Domaine：左上小標籤 ＋ 置中大宣言。宣言用本站既有的 tagline，不另外寫新文案。 */
+.blog-domaine .ins-head {
+  position: relative;
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(2.5rem, 5vw, 4rem);
+}
+
+.blog-domaine .ins-label {
+  position: absolute;
+  top: clamp(2.5rem, 6vw, 4.5rem);
+  left: 0;
+  margin: 0;
+  color: var(--fg);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* 文章計數器（Domaine 的 INSIGHTS 138）：貼在標籤右上的小徽章 */
+.blog-domaine .ins-count {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: var(--chip-bg);
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  vertical-align: 4px;
+}
+
+.blog-domaine .ins-statement {
+  /* ⚠️ 用 em 不用 ch。`ch` 是**拉丁數字「0」的寬度**（Space Grotesk 約 0.6em），
+     19ch 只裝得下約 12 個漢字，不是 19 個。漢字寬約 1em，所以中文的行寬要用 em。
+     19em ＝ 每行約 19 個漢字，對齊 Domaine 那塊「683px / 42.7px ≈ 16 個拉丁字寬」的份量。 */
+  /* ⚠️ 23em 是為中文算的（每行約 23 漢字）。br3ak 英文為主，
+     拉丁字元寬約 0.5em，同樣的視覺行寬要放寬。中文覆蓋見檔尾。 */
+  max-width: 20em;
+  /* Domaine 的宣言是**左對齊的文字塊放在畫面 35% 處**（1280 實測 x=449、寬 683），
+     不是逐行置中。三行的左緣切齊成一個長方形，左邊那片空白是刻意留的——
+     `INSIGHTS` 小標就孤零零待在左上角。 */
+  margin: clamp(3.5rem, 7vw, 4.5rem) 0 0 34.4%;
+  color: var(--fg);
+  font-family: var(--display);
+  font-weight: 400;
+  /* 字級以「最長的那一行要在桌機排得下」為準。
+     ⚠️ 行高：拉丁可以壓到 1.1，但這個值同時服務中文版的站——
+        漢字墨水佔 em 的 93.2%，低於 0.93 多行必疊字，中文實務下限 1.12–1.15。
+        取 1.25 是兩者都安全的折衷 —— 但 br3ak 英文為主，
+        這裡回到拉丁的緊排，中文覆蓋見檔尾。 */
+  font-size: clamp(20px, 2.5vw, 32px);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  text-align: start;
+  /* ⚠️ 這裡**不能用 text-wrap: balance**。balance 是給短標題用的，它會為了讓每行
+     等長而把整塊寬度縮窄——兩句話合一塊之後量到寬度從 684px 塌成 436px、行數從
+     4 行變 7 行。長段落改用 pretty：只負責避免末行孤字，不動整塊寬度。
+     詞邊界仍由 BalancedText 的 Intl.Segmenter 切分保證。 */
+  text-wrap: pretty;
+}
+
+/* 作者指定的編輯斷行：每一行各自成塊（沿用 about.css 的 .ab-line 慣例）。
+   行內在窄螢幕仍會自然換行——指定的是「至少要在這裡斷」而不是「只能斷在這裡」。 */
+.blog-domaine .ins-line {
+  display: block;
+}
+
+/* ── 分類 chips ───────────────────────────────────────────────────── */
+.blog-domaine .ins-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: clamp(1.6rem, 3vw, 2.4rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.blog-domaine .ins-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition:
+    color 0.3s var(--ease),
+    border-color 0.3s var(--ease),
+    background 0.3s var(--ease);
+}
+
+.blog-domaine .ins-chip:hover,
+.blog-domaine .ins-chip:focus-visible {
+  color: var(--fg);
+  border-color: var(--accent);
+  outline: none;
+}
+
+.blog-domaine .ins-chip[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-fg);
+}
+
+.blog-domaine .ins-chip__x {
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* ── 三欄卡片格 ───────────────────────────────────────────────────── */
+.blog-domaine .ins-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* Domaine 實測 gap: 53.33px 15px——**欄距很窄、列距很寬**，
+     卡片橫向幾乎相連，縱向才分段。 */
+  gap: clamp(2rem, 4vw, 53px) 15px;
+  padding: clamp(2.4rem, 5vw, 4rem) 0 clamp(4rem, 9vw, 7rem);
+}
+
+.blog-domaine .ins-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.blog-domaine .ins-card__media {
+  position: relative;
+  /* Domaine 是 **3:4 直式**（實測 400×532）。直式讓圖的視覺重量變大，
+     整頁的節奏完全不同——這是兩邊最明顯的差別。 */
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  /* Domaine 的卡片圖**沒有圓角也沒有框線**，直接靠圖本身分欄。 */
+  border-radius: 0;
+  background: var(--surface);
+}
+
+.blog-domaine .ins-card__media img {
+  object-fit: cover;
+  transition: transform 0.9s var(--ease);
+}
+
+.blog-domaine .ins-card:hover .ins-card__media img,
+.blog-domaine .ins-card:focus-visible .ins-card__media img {
+  transform: scale(1.03);
+}
+
+.blog-domaine .ins-card__title {
+  margin: 0;
+  color: var(--fg);
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.5;
+  letter-spacing: 0;
+  transition: color 0.3s var(--ease);
+}
+
+.blog-domaine .ins-card:hover .ins-card__title,
+.blog-domaine .ins-card:focus-visible .ins-card__title {
+  color: var(--accent-text);
+}
+
+.blog-domaine .ins-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.blog-domaine .ins-tag {
+  padding: 4px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+}
+
+/* 無限捲動的哨兵：不佔視覺，只是一個讓 IntersectionObserver 觀察的錨點。
+   高度留 1px 而不是 0——高度 0 的元素在某些瀏覽器不會觸發 intersection。 */
+.blog-domaine .ins-sentinel {
+  height: 1px;
+  margin-top: -1px;
+}
+
+.blog-domaine .ins-empty {
+  grid-column: 1 / -1;
+  padding: clamp(3rem, 8vw, 6rem) 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   二、文章頁
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ── 分割 Hero：左圖右標（Domaine 的招牌開場）─────────────────────── */
+.blog-domaine .art-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  /* Domaine 的 Hero 圖是從 y=0 開始的（滿版鑽到浮動 nav 底下）。本站的 nav 是
+     實色的兩列橫幅，所以只把**整塊 Hero** 往上拉、由右側面板自己補回 nav 高度：
+     圖照樣頂到視窗最上緣，標題不會被 nav 蓋住。 */
+  margin-top: calc(-1 * var(--nav-h));
+  border-bottom: 1px solid var(--line);
+}
+
+.blog-domaine .art-hero__media {
+  position: relative;
+  /* Domaine 實測 640×853 ＝ **3:4 直式**，跟索引卡片同一個比例。
+     這是文章頁最明顯的一項——橫式 Hero 會讓整頁的節奏完全不同。 */
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.blog-domaine .art-hero__media img {
+  object-fit: cover;
+}
+
+/* 沒有封面圖時左欄不留空白格，整個 Hero 收成單欄 */
+.blog-domaine .art-hero--nomedia {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.blog-domaine .art-hero__panel {
+  display: flex;
+  flex-direction: column;
+  /* Domaine 是 space-between 不是 center：標題頂上去、meta 與導言沉下來。 */
+  justify-content: space-between;
+  gap: 2rem;
+  /* 上方多補一個 nav 高度：Hero 整塊被拉到 nav 底下了，面板要自己讓開。
+     ⚠️ 標題不可能像 Domaine 那樣頂到 y=106——他們的 nav 是浮動 pill，標題可以
+        鑽到它底下；本站的 nav 是 87px 的實色橫幅，標題最高只能停在它下緣。
+        所以這裡把上內距收到最小，讓標題盡量往上。 */
+  padding: calc(var(--nav-h) + clamp(1.5rem, 3vw, 2.5rem)) clamp(1.5rem, 4vw, 4rem)
+    clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.blog-domaine .art-hero__title {
+  margin: 0;
+  /* ⚠️ 用 em 不用 ch——ch 是拉丁數字「0」的寬度，裝不下等量漢字（見索引宣言的註解）。 */
+  max-width: 14em;
+  color: var(--fg);
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(26px, 3.2vw, 44px);
+  /* Domaine 是 1.0，中文不能跟——漢字墨水佔 em 的 93.2%，低於 0.93 多行必疊字。
+     收到 1.15（中文實務下限）已經比原本的 1.24 緊很多。
+     ⚠️ 字距也**不跟** Domaine 的 −0.04em：那是給拉丁 display 的，中文字距一律 0
+        （艦隊既有規則）。 */
+  /* ⚠️ br3ak 是英文為主的全球品牌，所以這裡回到 Domaine 原值
+     （1.0 / −0.04em）。12AI 艦隊那組 1.15 / 0 是為中文寫的，
+     改掛在 :lang(zh-Hant) 下方覆蓋。 */
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.blog-domaine .art-hero__top,
+.blog-domaine .art-hero__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.blog-domaine .art-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.4rem;
+  margin: 0;
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.blog-domaine .art-hero__lead {
+  margin: 0;
+  max-width: 46em;
+  color: var(--muted);
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: 1.9;
+}
+
+.blog-domaine .art-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  transition: color 0.3s var(--ease);
+}
+
+.blog-domaine .art-back:hover,
+.blog-domaine .art-back:focus-visible {
+  color: var(--accent-text);
+  outline: none;
+}
+
+/* ── 正文 ＋ 右側 LATEST 欄 ───────────────────────────────────────── */
+.blog-domaine .art-main {
+  display: grid;
+  /* Domaine 1280 實測：正文欄 x=160（縮排 134px）、寬 569；側欄 x=899、寬 356；
+     兩欄之間 170px。正文**不貼齊容器左緣**是這一頁的關鍵——左側那道留白
+     讓正文成為一個獨立的閱讀塊，而不是滿版排版。 */
+  grid-template-columns: minmax(0, 1fr) clamp(240px, 28vw, 356px);
+  gap: clamp(2rem, 13vw, 170px);
+  padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(3.5rem, 8vw, 6rem);
+  padding-left: clamp(0px, 10.5vw, 134px);
+}
+
+/* 站上還沒有第二篇文章時側欄不存在，收成單欄，不留空的右欄 */
+.blog-domaine .art-main--solo {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.blog-domaine .art-body {
+  /* Domaine 的正文欄是 569px / 13px ≈ 44 個拉丁字寬。中文字級不可能跟到 13px
+     （太小），所以改用 em 控行寬：34em 在 17px 下 ≈ 578px，與 Domaine 幾乎相同，
+     每行約 34 個漢字——這是中文長文的舒適行寬上限。 */
+  max-width: 34em;
+  color: var(--muted);
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.95;
+}
+
+.blog-domaine .art-body p {
+  margin: 1.4em 0;
+  /* ⚠️ LexicalRenderer 在每個 <p> 上寫死了 Tailwind utility（多數站是
+     `leading-relaxed`＝1.625，ai3d 更寫死 `text-[18px] leading-[1.7]`）。
+     那些 utility 在 @layer 裡、本檔沒有分層，所以這兩條會贏——段落的字級與
+     行距一律回到 .art-body（17px / 1.95），中文長文才有該有的行距。
+     （作者 2026-09-03 看過 before/after 後定案套用。） */
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* 覆寫 LexicalRenderer 寫死的標題色與字級 */
+.blog-domaine .art-body :is(h1, h2, h3, h4) {
+  color: var(--fg);
+  font-family: var(--display);
+  font-weight: 400;
+  line-height: 1.28;
+  letter-spacing: 0;
+}
+
+/* ⚠️ h1 一定要在這裡給字級，不能讓它掉回 globals.css。
+   LexicalRenderer 會把 markdown 的 `#` 原樣轉成 <h1>，而 globals.css 的
+   h1 是 clamp(3rem, 7vw, 5.75rem)＝**最大 92px**——套進 578px 的正文欄，
+   一個標題就佔掉整個螢幕，而且比 Hero 的文章標題還大（實測 aibrand.tw 的
+   Represent 那篇，正文用 `#` 分節，每一節標題都變成巨無霸）。
+   正文裡**最高階的標題就是 h2 這一級**（Domaine 實測 35.56px），h1 跟著同級：
+   真正的文章標題在 Hero，正文的分節標題不該跟它競爭。 */
+.blog-domaine .art-body :is(h1, h2) {
+  /* Domaine 實測：35.56px / 行高 1.1 / margin 35.56px 上、14.22px 下，
+     **沒有上框線、也沒有任何前綴符號**（borderTop: 0、::before: none）。
+     原本那條 hairline ＋ cyan 破折號是我自己加的 AEON kicker 語彙，不是 Domaine 的。 */
+  margin-top: clamp(2.2rem, 3.6vw, 2.4rem);
+  margin-bottom: 0.9rem;
+  font-size: clamp(22px, 2.8vw, 36px);
+}
+
+.blog-domaine .art-body h3 {
+  margin-top: clamp(2rem, 4vw, 2.8rem);
+  font-size: clamp(17px, 1.9vw, 21px);
+}
+
+/* h4 在 globals.css 沒有字級，會直接繼承正文（跟內文一樣大、看不出是標題）。
+   給它一個介於 h3 與正文之間的級數。 */
+.blog-domaine .art-body h4 {
+  margin-top: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: clamp(16px, 1.7vw, 18px);
+}
+
+.blog-domaine .art-body strong {
+  color: var(--fg);
+  font-weight: 500;
+}
+
+/* Domaine 用斜體做強調；本站中文沒有真斜體，改成 cyan 提亮 */
+.blog-domaine .art-body em {
+  color: var(--accent-text);
+  font-style: normal;
+}
+
+.blog-domaine .art-body a {
+  color: var(--accent-text);
+  text-underline-offset: 0.25em;
+}
+
+.blog-domaine .art-body hr {
+  margin: clamp(2.2rem, 4vw, 3rem) 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.blog-domaine .art-body code {
+  padding: 0.12em 0.42em;
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--accent-text);
+  font-family: var(--mono);
+  font-size: 0.88em;
+}
+
+/* CopyCodeBlock 內的 <code> 不吃上面那組行內樣式 */
+.blog-domaine .art-body pre code {
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+.blog-domaine .art-body :is(ul, ol) {
+  margin: 1.3em 0;
+}
+
+.blog-domaine .art-body li::marker {
+  color: var(--accent-text);
+}
+
+.blog-domaine .art-body th {
+  color: var(--fg);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.blog-domaine .art-body :is(tr, td) {
+  border-color: var(--line);
+}
+
+/* 右側 LATEST 欄的標題：Domaine 實測 21.33px / weight 400 / 大寫 / 一般無襯線，
+   字距 −0.01em。**不是** mono 小標，所以這裡不沿用 .ins-kicker。 */
+.blog-domaine .art-side__label {
+  margin: 0;
+  color: var(--fg);
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(17px, 1.7vw, 21px);
+  letter-spacing: 0;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+/* 右側 LATEST 欄 */
+.blog-domaine .art-side {
+  position: sticky;
+  top: calc(var(--nav-h) + 24px);
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.blog-domaine .art-side__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.blog-domaine .art-side__item {
+  /* Domaine 實測：flex / gap 15px / padding-top 15px / border-top 1px。 */
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 15px;
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+}
+
+.blog-domaine .art-side__thumb {
+  position: relative;
+  /* Domaine 實測 71×77（0.923）——比 1:1 略高一點點，不是正方也不是 3:4。 */
+  aspect-ratio: 12 / 13;
+  overflow: hidden;
+  border-radius: 0;
+  background: var(--surface);
+}
+
+.blog-domaine .art-side__thumb img {
+  object-fit: cover;
+}
+
+/* Domaine 的側欄 meta 是「分類 chip ＋ 日期」一行，12–13px 一般字，
+   不是 mono 大寫寬字距。 */
+.blog-domaine .art-side__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  color: var(--faint);
+  font-size: 12px;
+}
+
+.blog-domaine .art-side__title {
+  margin: 0;
+  color: var(--fg);
+  font-family: var(--display);
+  font-weight: 400;
+  /* Domaine 實測 14.22px */
+  font-size: 14px;
+  line-height: 1.55;
+  letter-spacing: 0;
+  transition: color 0.3s var(--ease);
+}
+
+.blog-domaine .art-side__item:hover .art-side__title {
+  color: var(--accent-text);
+}
+
+/* ── 作者 ─────────────────────────────────────────────────────────────
+   Domaine 1280 實測：區塊上下各一條 hairline；標籤貼容器左緣；
+   頭像 171×239（0.714 直式、無圓角）在 x=543；內容欄 x=734、寬 513，
+   離頭像 20px。內容順序：灰底 chip → 名字 28.44px → 職稱 13px → 簡介 13px。 */
+.blog-domaine .art-author {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 171px minmax(0, 513px);
+  column-gap: 20px;
+  align-items: start;
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* 還沒有頭像時收成兩欄（標籤／內容），不留一個空框 */
+.blog-domaine .art-author--nophoto {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 513px);
+}
+
+.blog-domaine .art-author__portrait {
+  position: relative;
+  margin: 0;
+  /* Domaine 是 171×239 ≈ 5:7 */
+  aspect-ratio: 5 / 7;
+  overflow: hidden;
+  border-radius: 0;
+  background: var(--surface);
+}
+
+/* ⚠️ 用 contain 不是 cover：本站的頭像是**去背的方形角色圖**，
+   用 cover 會把角色的頭腳裁掉。Domaine 用的是 5:7 拍好的人像，才適合 cover。
+   object-position 壓到接近底部，讓角色「站」在框裡——方形圖放進 5:7 的框
+   上下會多出空間，置中會像沒對齊，靠底才像刻意的。 */
+.blog-domaine .art-author__portrait img {
+  object-fit: contain;
+  object-position: center 92%;
+}
+
+.blog-domaine .art-author__chip {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  /* ⚠️ .ins-tag 本身沒有 font-size，它在卡片裡靠 .ins-card__meta 的 10px 帶。
+     獨立使用時會繼承到 16px，要自己指定。Domaine 的作者 chip 是 12px。 */
+  font-size: 12px;
+}
+
+.blog-domaine .art-author__name {
+  margin: 0 0 0.4rem;
+  color: var(--fg);
+  font-family: var(--display);
+  font-weight: 400;
+  /* Domaine 28.44px */
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.blog-domaine .art-author__bio {
+  /* ⚠️ 職稱那一行已移除（與簡介第一句重複，作者 0903 指出），
+     所以這裡的上緣要自己撐開名字與簡介之間的距離。 */
+  margin: 0.9rem 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+/* 核心信念比前面三行亮一階——作者是把它當引言寫的，不是接續的敘述 */
+.blog-domaine .art-author__belief {
+  color: var(--fg);
+}
+
+/* ⚠️ 不能用 :first-of-type——信念與前面的敘述都是 <span>，:first-of-type 會命中
+   第一行敘述。用相鄰兄弟：只有「接在非信念行後面」的那一行才加上間距。 */
+.blog-domaine .ins-line:not(.art-author__belief) + .art-author__belief {
+  margin-top: 0.7em;
+}
+
+/* ── 訂閱 ─────────────────────────────────────────────────────────── */
+.blog-domaine .art-sub {
+  display: grid;
+  grid-template-columns: clamp(120px, 14vw, 190px) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
+  border-top: 1px solid var(--line);
+}
+
+.blog-domaine .art-sub__title {
+  margin: 0 0 1.4rem;
+  max-width: 22ch;
+  color: var(--fg);
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(19px, 2.2vw, 26px);
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.blog-domaine .art-sub input {
+  background: var(--surface);
+  color: var(--fg);
+}
+
+.blog-domaine .art-sub input::placeholder {
+  color: var(--faint);
+}
+
+.blog-domaine .art-sub input:focus {
+  border-color: var(--accent);
+}
+
+.blog-domaine .art-sub__note {
+  margin-top: 1.2rem;
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+/* ── 相關文章 ─────────────────────────────────────────────────────── */
+.blog-domaine .art-related {
+  padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(4rem, 9vw, 7rem);
+  border-top: 1px solid var(--line);
+}
+
+/* Domaine 1280 實測：特寫圖 402×436（0.923）在 x=26；文字欄 x=443（離圖 15px）、
+   寬 402；右邊是一塊**灰底圓角面板**（x=899、寬 356、radius 3px、padding 15px 15px 0），
+   面板內是「Insights」小標 ＋ 3 筆清單。
+   ⚠️ 面板底色 Domaine 是 50% 黑（白底上＝灰）。深色站要反過來——用**淺色低透明度**
+      疊上去，否則黑上加黑等於看不見。 */
+.blog-domaine .art-related__top {
+  display: grid;
+  grid-template-columns: minmax(0, 402fr) minmax(0, 402fr) minmax(0, 356fr);
+  gap: 15px;
+  align-items: start;
+  margin: clamp(1.8rem, 4vw, 2.8rem) 0 clamp(2.5rem, 5vw, 4rem);
+}
+
+.blog-domaine .art-related__feature {
+  display: contents;
+}
+
+.blog-domaine .art-panel {
+  padding: 15px 15px 0;
+  border-radius: 3px;
+  background: var(--panel-bg);
+  color: var(--panel-fg);
+}
+
+.blog-domaine .art-panel__label {
+  margin: 0 0 4px;
+  color: var(--panel-muted);
+  font-size: 13px;
+}
+
+/* 面板內的字色跟著面板走，不跟著頁面——白底變體的面板是深色島 */
+.blog-domaine .art-panel .art-side__title {
+  color: var(--panel-fg);
+}
+
+.blog-domaine .art-panel .art-side__meta {
+  color: var(--panel-muted);
+}
+
+.blog-domaine .art-panel .art-side__item {
+  border-color: var(--panel-line);
+}
+/* ⚠️ 面板內的 chip 也要跟著面板走。.ins-tag 自己設了 color/border，會贏過
+   從面板繼承下來的顏色——白底變體的面板是**深色島**，不覆寫就會變成
+   深字疊深底（實測對比只有 2:1）。深色變體的 panel token ＝ 頁面 token，
+   所以這條對深色變體沒有任何影響。 */
+.blog-domaine .art-panel .ins-tag {
+  color: var(--panel-muted);
+  border-color: var(--panel-line);
+}
+
+
+/* 面板內的清單沿用側欄的 item 樣式，只是第一筆不要上框線（面板本身已經分隔） */
+.blog-domaine .art-panel .art-side__list {
+  gap: 0;
+}
+
+.blog-domaine .art-panel .art-side__item {
+  padding-bottom: 15px;
+}
+
+.blog-domaine .art-related__media {
+  position: relative;
+  /* Domaine 實測 402×436 ＝ 0.923 */
+  aspect-ratio: 12 / 13;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.blog-domaine .art-related__media img {
+  object-fit: cover;
+  transition: transform 0.9s var(--ease);
+}
+
+.blog-domaine .art-related__feature:hover .art-related__media img {
+  transform: scale(1.03);
+}
+
+.blog-domaine .art-related__title {
+  margin: 0.8rem 0 0.9rem;
+  color: var(--fg);
+  font-family: var(--display);
+  font-weight: 400;
+  /* Domaine 42.67px / 行高 1.0；中文行高守 1.2 */
+  font-size: clamp(24px, 3.3vw, 42px);
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.blog-domaine .art-related__excerpt {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+/* ── 窄螢幕 ───────────────────────────────────────────────────────── */
+@media (width <= 1080px) {
+  /* 窄螢幕取消宣言的左偏移——1080 以下再留 34% 空白會把文字擠成細長條 */
+  .blog-domaine .ins-statement {
+    margin-left: 0;
+  }
+
+  .blog-domaine .art-main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* 側欄在窄螢幕不 sticky，改成正文後的一段清單 */
+  .blog-domaine .art-side {
+    position: static;
+    padding-top: clamp(2rem, 5vw, 3rem);
+    border-top: 1px solid var(--line);
+  }
+
+  .blog-domaine .ins-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width <= 860px) {
+  .blog-domaine .art-hero,
+  .blog-domaine .art-related__top {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* 窄螢幕**標題在上、圖在下**（Domaine 在 683 寬也是標題先出現）。
+     不換順序的話，3:4 的圖在 860 寬會高到 1147px，標題被推到 y=1317——
+     等於首屏只看得到一張圖。 */
+  .blog-domaine .art-hero__panel {
+    order: -1;
+    /* 圖不再在上面，就不必補 nav 高度了 */
+    padding-top: clamp(2.5rem, 5vw, 4.5rem);
+  }
+
+  /* 3:4 在窄螢幕仍然太高，用 max-height 截掉（object-fit: cover 會自己裁）。
+     比例維持 3:4，不另外換一組比例。 */
+  .blog-domaine .art-hero__media {
+    max-height: 72vh;
+  }
+
+  /* 標題移到最上面之後，Hero 就不該再鑽到 nav 底下 */
+  .blog-domaine .art-hero {
+    margin-top: 0;
+  }
+
+  .blog-domaine .art-sub {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.2rem;
+  }
+
+  /* 作者區在窄螢幕收成單欄：標籤 → 頭像 → 內容。頭像不再撐滿整個欄寬，
+     壓到 140px，否則一張人像會佔掉整個首屏。 */
+  .blog-domaine .art-author {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 1.2rem;
+  }
+
+  /* 還沒有頭像時收成兩欄（標籤／內容），不留一個空框 */
+.blog-domaine .art-author--nophoto {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 513px);
+}
+
+.blog-domaine .art-author__portrait {
+    width: 140px;
+  }
+}
+
+@media (width <= 640px) {
+  .blog-domaine .ins-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .blog-domaine .ins-label {
+    position: static;
+  }
+
+  .blog-domaine .ins-statement {
+    margin-top: 1.6rem;
+    margin-left: 0;
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-domaine .ins-card__media img,
+  .blog-domaine .art-related__media img,
+  .blog-domaine .ins-card__title,
+  .blog-domaine .art-back {
+    transition: none;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   中文覆蓋
+   12AI 規格書「三項刻意不跟 Domaine」的理由都是中文排版：
+   漢字墨水佔 em 的 93.2%，行高低於 0.93 多行必疊字；負字距是給
+   拉丁 display 的；13px 的中文太小。br3ak 英文為主，所以正文預設
+   走 Domaine 原值，只有中文路由才套這三項。
+   ───────────────────────────────────────────────────────────── */
+:lang(zh-Hant) .blog-domaine .ins-statement { max-width: 23em; line-height: 1.25 }
+:lang(zh-Hant) .blog-domaine .art-hero__title,
+:lang(zh-Hant) .blog-domaine .ins-statement,
+:lang(zh-Hant) .blog-domaine .art-related__title {
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+:lang(zh-Hant) .blog-domaine .art-body {
+  font-size: clamp(0.95rem, 1.05vw, 1.0625rem);
+}

@@ -1,0 +1,64 @@
+/* ─────────────────────────────────────────────────────────────
+   IMASQUE 視覺唯一入口。
+   ⚠️ 元件不准寫死 hex —— npm run check:tokens 會擋。
+   色值沿用改版前 tailwind.config.ts 的既有 palette。
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* 原色 */
+  --ink:        #080808;
+  --cream:      #F6E7D8;
+  --blush:      #F8C8C8;
+  --blush-haze: #FFF6F7;
+  --red:        #FF1F0F;
+  --beige:      #F4E7D3;
+  --milk:       #FFFFFF;
+
+  /* 語意別名 —— 元件只用這一組 */
+  --paper:    var(--blush-haze);
+  --bg:       var(--paper);
+  --fg:       var(--ink);
+  --surface:  var(--milk);
+  --border:   var(--blush);
+  --subtle:   #6b6259;
+  --brand:    var(--red);
+  --accent:   var(--brand);      /* 動詞色：CTA／eyebrow／連結 */
+  --accent-2: var(--blush);
+  --accent-3: var(--cream);
+
+  /* 動效專用色 */
+  --viz-bg:   var(--paper);
+  --viz-core: var(--red);
+  --viz-alt:  var(--blush);
+
+  /* 字 */
+  --font-display: var(--font-display-face), Georgia, serif;
+  --font-body:    var(--font-sans), system-ui, sans-serif;
+  --font-mono:    var(--font-mono-face), ui-monospace, monospace;
+  --font-cjk:     var(--font-cjk-face), system-ui, sans-serif;
+
+  /* 尺度 */
+  --step--1: clamp(.8rem, .78rem + .1vw, .875rem);
+  --step-0:  clamp(1rem, .95rem + .25vw, 1.125rem);
+  --step-1:  clamp(1.25rem, 1.1rem + .75vw, 1.75rem);
+  --step-2:  clamp(1.75rem, 1.4rem + 1.75vw, 3rem);
+  --step-3:  clamp(2.5rem, 1.8rem + 3.5vw, 5rem);
+  --step-4:  clamp(3.5rem, 2rem + 7vw, 9rem);
+
+  --radius: 0px;
+  --ease:   cubic-bezier(.16, 1, .3, 1);
+  --rail:   86px;
+}
+
+@media (max-width: 1100px) { :root { --rail: 64px } }
+@media (max-width: 780px)  { :root { --rail: 52px } }
+@media (max-width: 520px)  { :root { --rail: 44px } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
