@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import brand, { type Locale } from '../../../brand.config'
 import { localePath, t, LOCALES } from '@/lib/i18n'
@@ -19,9 +20,15 @@ export function ChromeTop({ locale: l }: { locale: Locale }) {
   return (
     <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-[color:var(--near-black)]/80 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href={home} className="flex items-center gap-2 text-lg font-medium text-white tracking-tighter">
-          <span className="w-4 h-4 bg-white rounded-full" />
-          {brand.wordmark}
+        <Link href={home} aria-label={brand.wordmark} className="relative block h-7 w-36 sm:h-8 sm:w-44">
+          <Image
+            src="/logo/opt/imasque-wordmark.webp"
+            alt={brand.wordmark}
+            fill
+            priority
+            sizes="176px"
+            className="object-contain object-left"
+          />
         </Link>
 
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-400">
@@ -64,9 +71,14 @@ export function ChromeFooter({ locale: l }: { locale: Locale }) {
     <footer className="border-t border-white/5 bg-[color:var(--near-black)] py-16">
       <div className="max-w-7xl mx-auto px-6 grid gap-10 md:grid-cols-[1.4fr_1fr_1fr] text-sm">
         <div>
-          <div className="flex items-center gap-2 text-lg font-medium text-white tracking-tighter">
-            <span className="w-4 h-4 bg-white rounded-full" />
-            {brand.wordmark}
+          <div className="relative h-9 w-48">
+            <Image
+              src="/logo/opt/imasque-wordmark.webp"
+              alt={brand.wordmark}
+              fill
+              sizes="192px"
+              className="object-contain object-left"
+            />
           </div>
           <p className="mt-4 max-w-xs text-neutral-500 leading-relaxed">{tagline}</p>
           <p className="mt-6 text-[0.7rem] uppercase tracking-[0.18em] text-neutral-600">
