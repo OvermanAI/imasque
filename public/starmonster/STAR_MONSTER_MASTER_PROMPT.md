@@ -1,6 +1,6 @@
 # STAR MONSTER Character Master Prompt
 
-Recorded for imasque / STARMONSTER on 2026-06-24.
+Recorded for IMASQUE / STARMONSTER on 2026-06-24.
 
 Reference image:
 

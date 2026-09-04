@@ -48,13 +48,13 @@ export function Nav() {
 
           <Link
             href="/"
-            aria-label="imasque — Dream More"
+            aria-label="IMASQUE — Dream More"
             className="absolute left-1/2 top-1/2 h-20 w-52 -translate-x-1/2 -translate-y-1/2 overflow-hidden sm:h-24 sm:w-80"
             onClick={() => setOpen(false)}
           >
             <Image
-              src="/logo/IMASQUElogo.png"
-              alt="imasque Dream More"
+              src="/logo/imasque-logo-horizontal.webp"
+              alt="IMASQUE Dream More"
               fill
               priority
               sizes="(min-width: 640px) 320px, 256px"

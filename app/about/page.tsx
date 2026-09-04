@@ -9,21 +9,21 @@ const aboutCopy = {
   en: {
     intro: {
       index: "About / CxY",
-      title: "About imasque",
+      title: "About IMASQUE",
       intro: "A brand where CxY and her dad turn imagination into something real.",
     },
     openingTitle: "I am CxY.",
     opening: [
       "I am CxY.",
       "An 11-year-old girl full of cuteness and creativity.",
-      "imasque is a brand my dad and I imagined together.",
+      "IMASQUE is a brand my dad and I imagined together.",
       "I want to make the fun pictures in my head real.",
       "Not just think about them.",
       "Not just draw them on paper.",
       "I want to try.",
       "I want to see whether my dream can become real.",
     ],
-    whyTitle: "This is why imasque began.",
+    whyTitle: "This is why IMASQUE began.",
     whyBody: ["I like dreaming.", "I also like imagining strange, cute and interesting things.", "Sometimes I wonder:"],
     questions: [
       "What if an eye mask did not have to look ordinary?",
@@ -52,7 +52,7 @@ const aboutCopy = {
         title: "Plush toys",
         accent: "Each one has its own dream.",
         lines: [
-          "I also want to wear imasque myself in photos.",
+          "I also want to wear IMASQUE myself in photos.",
           "Because this is something my dad and I imagined together, I want to be its model.",
           "I want to make different eye masks for more than ten of my favourite plush toys.",
           "They may have different colours, shapes and sleepy faces.",
@@ -76,34 +76,34 @@ const aboutCopy = {
     ],
     maskTitle: "Not just a mask.",
     maskBody: [
-      "To me, imasque is not just making an eye mask.",
+      "To me, IMASQUE is not just making an eye mask.",
       "It is me bravely starting a brand.",
       "It is also how I let my imagination out.",
       "I want to believe in my dream and dare to make it.",
       "Even if I do not know what it will become at first, I can still make it step by step.",
     ],
-    publicTitle: "imasque is the beginning of my imagination.",
-    publicBody: "I will record the process of making imasque.",
+    publicTitle: "IMASQUE is the beginning of my imagination.",
+    publicBody: "I will record the process of making IMASQUE.",
     records: ["Ideas", "Colours", "Design", "Photos", "Website", "First real product", "The process of making the dream with dad", "Dreaming with my plush toys"],
   },
   zh: {
     intro: {
       index: "About / CxY",
-      title: "About imasque",
+      title: "About IMASQUE",
       intro: "CxY 和爸爸一起把想像力做出來的品牌。",
     },
     openingTitle: "我是 CxY。",
     opening: [
       "我是 CxY。",
       "一個可愛、充滿創意的 11 歲小美女。",
-      "imasque 是我和爸爸想出來的品牌。",
+      "IMASQUE 是我和爸爸想出來的品牌。",
       "我想把腦袋裡那些很好玩的畫面，真的做出來。",
       "不是只有想一想。",
       "也不是只有畫在紙上。",
       "我想試試看。",
       "我想看看我的夢，可不可以變成真的。",
     ],
-    whyTitle: "這就是 imasque 開始的原因。",
+    whyTitle: "這就是 IMASQUE 開始的原因。",
     whyBody: ["我喜歡做夢。", "也喜歡想很多奇奇怪怪、可愛又有趣的東西。", "有時候我會想："],
     questions: [
       "如果眼罩不是只有普通的樣子呢？",
@@ -128,7 +128,7 @@ const aboutCopy = {
         title: "玩偶們",
         accent: "每一個都有自己的夢。",
         lines: [
-          "我也想自己戴上 imasque 拍照。",
+          "我也想自己戴上 IMASQUE 拍照。",
           "因為這是我和爸爸一起想出來的東西，我想自己當它的模特兒。",
           "我還想幫我最喜歡的 10 多個玩偶，每一個都做一個不一樣的眼罩。",
           "牠們可能有不同顏色、不同造型、不同的睡覺表情。",
@@ -149,14 +149,14 @@ const aboutCopy = {
     buildExtra: ["有時候我會突然想到很奇怪的東西。", "爸爸就會問我：「那它會長什麼樣子？」「戴起來會舒服嗎？」「妳想怎麼拍照？」"],
     maskTitle: "Not just a mask.",
     maskBody: [
-      "對我來說，imasque 不只是做眼罩。",
+      "對我來說，IMASQUE 不只是做眼罩。",
       "它是我勇敢開始做一個品牌。",
       "也是我把想像力放出來的方式。",
       "我想相信自己的夢，也想大膽去做。",
       "就算一開始還不知道會變成什麼樣子，也可以一步一步做出來。",
     ],
-    publicTitle: "imasque 是我想像力的開始。",
-    publicBody: "我會把 imasque 做出來的過程記錄下來。",
+    publicTitle: "IMASQUE 是我想像力的開始。",
+    publicBody: "我會把 IMASQUE 做出來的過程記錄下來。",
     records: ["想法", "顏色", "設計", "拍照", "網站", "第一個真的產品", "我和爸爸一起把夢做出來的過程", "我和玩偶們一起做夢的樣子"],
   },
 };
@@ -189,7 +189,7 @@ export default function AboutPage() {
             <div className="absolute -left-4 -top-4 h-full w-full rotate-[-3deg] border-2 border-[#080808] bg-[#F6E7D8]" />
             <div className="relative border-2 border-[#080808] bg-white p-8 shadow-[8px_8px_0_#080808] lg:p-10">
               <p className="font-sans text-[0.72rem] font-black uppercase tracking-widest2 text-[#FF1F0F]">
-                Why imasque exists
+                Why IMASQUE exists
               </p>
               <h2 className="mt-5 font-display text-[clamp(3rem,6vw,6rem)] uppercase leading-[0.82] text-[#080808]">
                 <BalancedText>{copy.whyTitle}</BalancedText>

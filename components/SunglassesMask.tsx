@@ -22,7 +22,7 @@ export function SunglassesMask({
       viewBox="0 0 560 340"
       className={className}
       role="img"
-      aria-label="imasque two-tone sunglasses-shaped eye mask"
+      aria-label="IMASQUE two-tone sunglasses-shaped eye mask"
     >
       <defs>
         <linearGradient id={lg} x1="0" y1="0" x2="1" y2="1">

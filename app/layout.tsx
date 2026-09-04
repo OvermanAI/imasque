@@ -34,12 +34,12 @@ const bodoni = Bodoni_Moda({
 });
 
 export const metadata: Metadata = {
-  title: "imasque Celluloid — Boutique Sleep Masks",
+  title: "IMASQUE Celluloid — Boutique Sleep Masks",
   description:
-    "Muji-level comfort, fashion-eyewear creativity, under $10. imasque Celluloid is a boutique sleep mask shaped by comfort, eyewear and CxY's imagination.",
+    "Muji-level comfort, fashion-eyewear creativity, under $10. IMASQUE Celluloid is a boutique sleep mask shaped by comfort, eyewear and CxY's imagination.",
   metadataBase: new URL("https://imasque.com"),
   openGraph: {
-    title: "imasque Celluloid — Boutique Sleep Masks",
+    title: "IMASQUE Celluloid — Boutique Sleep Masks",
     description:
       "A boutique sleep mask inspired by celluloid eyewear: comfort-first, visually memorable, and built in public by CxY.",
     type: "website",

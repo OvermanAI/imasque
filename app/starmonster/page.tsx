@@ -290,7 +290,7 @@ export default function StarMonsterPage() {
                 <h3 className="mt-4 font-sans text-4xl font-black uppercase leading-none [font-family:var(--font-fraunces)]">
                   {card.title}
                 </h3>
-                <p className="mt-5 font-sans text-base font-semibold leading-relaxed text-[#080808]/72">{card.body}</p>
+                <p className="mt-5 font-sans text-base font-semibold leading-relaxed text-[#080808]/72"><BalancedText>{card.body}</BalancedText></p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   {card.points.map((point) => (
                     <span key={point} className="border-2 border-[#080808] bg-white px-4 py-2 font-sans text-sm font-black shadow-[3px_3px_0_#080808]">

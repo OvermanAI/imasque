@@ -60,8 +60,8 @@ const useCases = [
   {
     title: { en: "Bedtime ritual", zh: "睡前儀式" },
     body: {
-      en: "Putting on imasque before bed is not just getting ready to sleep. It is getting ready to enter your dream.",
-      zh: "睡前戴上 imasque，不只是準備睡覺，而是準備進入自己的夢。",
+      en: "Putting on IMASQUE before bed is not just getting ready to sleep. It is getting ready to enter your dream.",
+      zh: "睡前戴上 IMASQUE，不只是準備睡覺，而是準備進入自己的夢。",
     },
   },
   {
@@ -90,7 +90,7 @@ const useCases = [
 export default function ProductPage() {
   const { lang } = useLang();
   const copy = {
-    kicker: { en: "imasque Celluloid", zh: "imasque Celluloid" },
+    kicker: { en: "IMASQUE Celluloid", zh: "IMASQUE Celluloid" },
     title: {
       en: "The boutique sleep mask inspired by eyewear.",
       zh: "以精品眼鏡為靈感的睡眠眼罩。",
@@ -111,12 +111,12 @@ export default function ProductPage() {
     },
     promise: {
       en: [
-        "I want imasque to feel soft and easy to wear, so bedtime, flights or any rest moment can feel a little happier.",
+        "I want IMASQUE to feel soft and easy to wear, so bedtime, flights or any rest moment can feel a little happier.",
         "If you buy it for yourself, a friend or your plush toys, I hope opening it feels like tonight could become a very cute dream.",
         "If there is a product problem, we will take care of it properly. This is not just a regular eye mask. It is the first real dream I want to make.",
       ],
       zh: [
-        "我希望 imasque 是軟軟的、好戴的，睡覺前、搭飛機、想休息的時候，戴上都會覺得很開心。",
+        "我希望 IMASQUE 是軟軟的、好戴的，睡覺前、搭飛機、想休息的時候，戴上都會覺得很開心。",
         "如果你是買給自己、朋友，或你的玩偶，我希望你打開它的時候會覺得：今晚好像可以做一個很可愛的夢。",
         "如果產品有問題，我們會好好處理。因為這不是一個普通眼罩，這是我第一個真的想做出來的夢。",
       ],
@@ -152,8 +152,8 @@ export default function ProductPage() {
           <Reveal className="relative min-h-[420px] lg:min-h-[640px]">
             <div className="absolute inset-0 bg-[#F8C8C8]/10" />
             <Image
-              src="/product/celluloid-black-hero.webp"
-              alt="imasque Celluloid Black"
+              src="/product/16001588.png"
+              alt="IMASQUE Celluloid Black"
               fill
               priority
               sizes="(min-width: 1024px) 44vw, 92vw"
@@ -179,14 +179,14 @@ export default function ProductPage() {
                 <div className="relative aspect-[4/3] bg-[#F6E7D8]">
                   <Image
                     src={variant.src}
-                    alt={`imasque ${variant.name}`}
+                    alt={`IMASQUE ${variant.name}`}
                     fill
                     sizes="(min-width: 1024px) 42vw, 90vw"
                     className="object-contain p-6"
                   />
                 </div>
                 <h3 className="mt-6 font-display text-5xl font-semibold leading-none">{variant.name}</h3>
-                <p className="mt-4 max-w-xl font-sans text-base font-semibold leading-relaxed text-[#080808]/62">{variant.desc[lang]}</p>
+                <p className="mt-4 max-w-xl font-sans text-base font-semibold leading-relaxed text-[#080808]/62"><BalancedText>{variant.desc[lang]}</BalancedText></p>
               </article>
             ))}
           </Reveal>
@@ -197,8 +197,8 @@ export default function ProductPage() {
         <div className="mx-auto grid max-w-7xl gap-px bg-[#080808] px-6 py-16 lg:grid-cols-4 lg:px-10 lg:py-24">
           {details.map((item) => (
             <Reveal key={item.title.en} className="bg-white p-7 lg:p-8">
-              <h2 className="font-display text-4xl font-semibold leading-none">{item.title[lang]}</h2>
-              <p className="mt-5 font-sans text-sm font-semibold leading-relaxed text-[#080808]/62">{item.body[lang]}</p>
+              <h2 className="font-display text-4xl font-semibold leading-none"><BalancedText>{item.title[lang]}</BalancedText></h2>
+              <p className="mt-5 font-sans text-sm font-semibold leading-relaxed text-[#080808]/62"><BalancedText>{item.body[lang]}</BalancedText></p>
             </Reveal>
           ))}
         </div>
@@ -217,8 +217,8 @@ export default function ProductPage() {
           <Reveal stagger className="grid gap-px bg-[#080808]">
             {useCases.map((item) => (
               <article key={item.title.en} className="grid gap-4 bg-[#FFF6F7] p-6 md:grid-cols-[0.35fr_0.65fr] md:items-center">
-                <h3 className="font-display text-4xl font-semibold leading-none">{item.title[lang]}</h3>
-                <p className="font-sans text-base font-semibold leading-relaxed text-[#080808]/64">{item.body[lang]}</p>
+                <h3 className="font-display text-4xl font-semibold leading-none"><BalancedText>{item.title[lang]}</BalancedText></h3>
+                <p className="font-sans text-base font-semibold leading-relaxed text-[#080808]/64"><BalancedText>{item.body[lang]}</BalancedText></p>
               </article>
             ))}
           </Reveal>

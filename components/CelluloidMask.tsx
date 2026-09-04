@@ -14,7 +14,7 @@ export function CelluloidMask({ className = "", idSuffix = "celluloid" }: Props)
       viewBox="0 0 720 430"
       className={className}
       role="img"
-      aria-label="imasque Celluloid tortoiseshell sunglasses-shaped sleep mask"
+      aria-label="IMASQUE Celluloid tortoiseshell sunglasses-shaped sleep mask"
     >
       <defs>
         <linearGradient id={cream} x1="0" y1="0" x2="1" y2="1">

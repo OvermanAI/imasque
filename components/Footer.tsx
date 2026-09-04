@@ -20,15 +20,15 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
         <Link
           href="/"
-          aria-label="imasque"
-          className="relative mx-auto block aspect-[1779/340] w-full overflow-hidden"
+          aria-label="IMASQUE"
+          className="relative mx-auto block aspect-[4/1] w-full overflow-hidden"
         >
           <Image
-            src="/logo/imasquefooter.png"
-            alt="imasque"
+            src="/logo/IMASQUE_Footer.png"
+            alt="IMASQUE"
             fill
             sizes="(min-width: 1280px) 1200px, calc(100vw - 48px)"
-            className="object-cover object-[center_46%]"
+            className="object-contain object-center"
           />
         </Link>
 
@@ -49,7 +49,7 @@ export function Footer() {
           <span className="font-sans text-sm font-black tracking-widest2 text-[#FF1F0F]">
             {t(dict.footer.rights, lang)}
           </span>
-          <span>© {year} imasque</span>
+          <span>© {year} IMASQUE</span>
         </div>
       </div>
     </footer>

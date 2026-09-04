@@ -54,8 +54,8 @@ const moments = [
   {
     title: { en: "Bedtime", zh: "睡前" },
     body: {
-      en: "CxY and her favourite plush toys put on imasque together, turning bedtime into a little dream ritual.",
-      zh: "CxY 和心愛玩偶一起戴上 imasque，睡前從日常切換到夢境。",
+      en: "CxY and her favourite plush toys put on IMASQUE together, turning bedtime into a little dream ritual.",
+      zh: "CxY 和心愛玩偶一起戴上 IMASQUE，睡前從日常切換到夢境。",
     },
   },
   {
@@ -68,7 +68,7 @@ const moments = [
   {
     title: { en: "Recharge", zh: "短暫充電" },
     body: {
-      en: "In a gaming room, study break or work pause, imasque becomes your personal pit stop.",
+      en: "In a gaming room, study break or work pause, IMASQUE becomes your personal pit stop.",
       zh: "在電競房、工作間、午休片刻，戴上就是自己的暫停鍵。",
     },
   },
@@ -90,8 +90,8 @@ export default function Home() {
       zh: "Muji 等級舒適。精品眼鏡式創意。",
     },
     heroBody: {
-      en: "imasque is a boutique eye mask inspired by Celluloid sunglasses. Comfortable enough to wear every day, stylish enough to show, and designed to launch under $10.",
-      zh: "imasque 是一款以 Celluloid 太陽眼鏡為靈感的精品眼罩。舒服到每天想戴，好看到想拍給別人看，定價在 10 美金以下。",
+      en: "IMASQUE is a boutique eye mask inspired by Celluloid sunglasses. Comfortable enough to wear every day, stylish enough to show, and designed to launch under $10.",
+      zh: "IMASQUE 是一款以 Celluloid 太陽眼鏡為靈感的精品眼罩。舒服到每天想戴，好看到想拍給別人看，定價在 10 美金以下。",
     },
     productCta: { en: "Explore Celluloid", zh: "探索 Celluloid" },
     dropCta: { en: "Join first drop", zh: "加入首發名單" },
@@ -99,16 +99,16 @@ export default function Home() {
     firstKicker: { en: "The first two pieces", zh: "首發兩款" },
     firstTitle: { en: "Comfort first. Creativity visible.", zh: "舒適優先，創意看得見。" },
     firstBody: {
-      en: "Muji made comfort a daily standard. imasque builds on that softness with boutique eyewear shapes, original colourways, miniature plush versions and personal add-on ideas.",
-      zh: "Muji 讓舒服成為日用品標準。imasque 在這個舒適基礎上，加入精品眼鏡輪廓、原創配色、迷你玩偶尺寸與可組裝小配件的想像。",
+      en: "Muji made comfort a daily standard. IMASQUE builds on that softness with boutique eyewear shapes, original colourways, miniature plush versions and personal add-on ideas.",
+      zh: "Muji 讓舒服成為日用品標準。IMASQUE 在這個舒適基礎上，加入精品眼鏡輪廓、原創配色、迷你玩偶尺寸與可組裝小配件的想像。",
     },
     ritualKicker: { en: "Ritual, not novelty", zh: "不是噱頭，是儀式" },
-    ritualTitle: { en: "Every imasque has a moment.", zh: "每一個 imasque 都有自己的使用時刻。" },
+    ritualTitle: { en: "Every IMASQUE has a moment.", zh: "每一個 IMASQUE 都有自己的使用時刻。" },
     storyKicker: { en: "CxY's AI entrepreneurship story", zh: "CxY 的 AI 創業故事" },
     storyTitle: { en: "11 years old, building a product the new way.", zh: "11 歲，用新的方式打造產品。" },
     storyA: {
-      en: "imasque is not a product made by adults to please children. It comes from CxY's imagination around rest, styling, plush toys and AI creation.",
-      zh: "imasque 不是大人做出來討好小孩的產品。它來自 CxY 對休息、造型、玩偶與 AI 創作的想像。",
+      en: "IMASQUE is not a product made by adults to please children. It comes from CxY's imagination around rest, styling, plush toys and AI creation.",
+      zh: "IMASQUE 不是大人做出來討好小孩的產品。它來自 CxY 對休息、造型、玩偶與 AI 創作的想像。",
     },
     storyB: {
       en: "She first uses AI to imagine real usage scenes, then works with her dad on materials, form, website and the first products. The story keeps its childlike spark, but the brand has to be good enough for adults to buy.",
@@ -159,7 +159,7 @@ export default function Home() {
             <div className="absolute inset-x-6 bottom-8 top-10 rounded-[1.5rem] border border-white/10 bg-white/[0.03]" />
             <Image
               src="/product/去背/imasqueBlack/imasqueBlack.png"
-              alt="imasque Celluloid Black"
+              alt="IMASQUE Celluloid Black"
               fill
               priority
               sizes="(min-width: 1024px) 44vw, 92vw"
@@ -176,8 +176,8 @@ export default function Home() {
         <Reveal stagger className="mx-auto grid max-w-7xl divide-y divide-[#080808]/10 px-6 lg:grid-cols-3 lg:divide-x lg:divide-y-0 lg:px-10">
           {proof.map((item) => (
             <article key={item.title.en} className="py-10 lg:px-8">
-              <h2 className="font-display text-[clamp(2.2rem,4vw,4.25rem)] font-semibold leading-[0.95]">{item.title[lang]}</h2>
-              <p className="mt-5 font-sans text-base font-semibold leading-relaxed text-[#080808]/62">{item.body[lang]}</p>
+              <h2 className="font-display text-[clamp(2.2rem,4vw,4.25rem)] font-semibold leading-[0.95]"><BalancedText>{item.title[lang]}</BalancedText></h2>
+              <p className="mt-5 font-sans text-base font-semibold leading-relaxed text-[#080808]/62"><BalancedText>{item.body[lang]}</BalancedText></p>
             </article>
           ))}
         </Reveal>
@@ -202,14 +202,14 @@ export default function Home() {
                 <div className="relative aspect-[4/3] bg-[#FFF6F7]">
                   <Image
                     src={product.image}
-                    alt={`imasque ${product.name}`}
+                    alt={`IMASQUE ${product.name}`}
                     fill
                     sizes="(min-width: 1024px) 26vw, 80vw"
                     className="object-contain p-5"
                   />
                 </div>
                 <h3 className="mt-5 font-display text-4xl font-semibold">{product.name}</h3>
-                <p className="mt-3 font-sans text-sm font-semibold leading-relaxed text-[#080808]/62">{product.note[lang]}</p>
+                <p className="mt-3 font-sans text-sm font-semibold leading-relaxed text-[#080808]/62"><BalancedText>{product.note[lang]}</BalancedText></p>
               </article>
             ))}
           </Reveal>
@@ -229,8 +229,8 @@ export default function Home() {
           <Reveal stagger className="mt-10 grid gap-px overflow-hidden bg-[#080808] md:grid-cols-2">
             {moments.map((item) => (
               <article key={item.title.en} className="bg-[#FFF6F7] p-7 lg:p-10">
-                <p className="font-display text-5xl font-semibold leading-none">{item.title[lang]}</p>
-                <p className="mt-5 max-w-md font-sans text-base font-semibold leading-relaxed text-[#080808]/64">{item.body[lang]}</p>
+                <p className="font-display text-5xl font-semibold leading-none"><BalancedText>{item.title[lang]}</BalancedText></p>
+                <p className="mt-5 max-w-md font-sans text-base font-semibold leading-relaxed text-[#080808]/64"><BalancedText>{item.body[lang]}</BalancedText></p>
               </article>
             ))}
           </Reveal>

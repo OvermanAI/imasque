@@ -51,8 +51,8 @@ export const dict = {
     bipKicker: { en: "03 — Building in Public", zh: "03 — 公開打造" },
     bipTitle: { en: "Made in the open, by an 11-year-old.", zh: "由一位 11 歲的孩子，公開打造。" },
     bipBody: {
-      en: "imasque is being built by CxY in public — every colour choice, every wrong turn, every small win, written down as it happens.",
-      zh: "imasque 由 CxY 以 Building in Public 的方式打造 — 每一個配色、每一次走錯路、每一個小小的進展，都在發生的當下被記下來。",
+      en: "IMASQUE is being built by CxY in public — every colour choice, every wrong turn, every small win, written down as it happens.",
+      zh: "IMASQUE 由 CxY 以 Building in Public 的方式打造 — 每一個配色、每一次走錯路、每一個小小的進展，都在發生的當下被記下來。",
     },
     bipCta: { en: "Read the Dream Journal", zh: "閱讀夢想日誌" },
 
@@ -115,10 +115,10 @@ export const dict = {
   journal: {
     title: { en: "Dream Journal", zh: "夢想日誌" },
     intro: {
-      en: "The public record of building imasque.",
-      zh: "公開記錄 imasque 的打造過程。",
+      en: "The public record of building IMASQUE.",
+      zh: "公開記錄 IMASQUE 的打造過程。",
     },
-    building: { en: "Building imasque", zh: "Building imasque" },
+    building: { en: "Building IMASQUE", zh: "Building IMASQUE" },
     buildingDesc: {
       en: "Notes from the workshop — decisions, mistakes, small steps forward.",
       zh: "來自工作室的筆記 — 決定、失誤、向前的小步伐。",
@@ -147,16 +147,16 @@ export const dict = {
     title: { en: "About", zh: "關於" },
     formula: { en: "eye mask × 11yo CxY's imagination", zh: "eye mask × 11 歲 CxY 的想像力" },
     body1: {
-      en: "imasque began with a simple question from an 11-year-old: what if an eye mask didn't have to look like an eye mask?",
-      zh: "imasque 始於一個 11 歲孩子的簡單疑問：如果眼罩，不一定要長得像眼罩呢？",
+      en: "IMASQUE began with a simple question from an 11-year-old: what if an eye mask didn't have to look like an eye mask?",
+      zh: "IMASQUE 始於一個 11 歲孩子的簡單疑問：如果眼罩，不一定要長得像眼罩呢？",
     },
     body2: {
       en: "The answer, for now, looks like a pair of sunglasses — soft, two-tone, made to rest in. It isn't medical. It isn't a toy. It's a small object built on comfort, healing and imagination.",
       zh: "目前的答案，看起來像一副太陽眼鏡 — 柔和、雙色、為了休息而生。它不是醫療用品，也不是玩具。它是一個建立在舒適、療癒與想像力之上的小小物件。",
     },
     body3: {
-      en: "CxY is building imasque in public, one dream at a time. This is the beginning.",
-      zh: "CxY 正以 Building in Public 的方式打造 imasque，一次一個夢。這，是開始。",
+      en: "CxY is building IMASQUE in public, one dream at a time. This is the beginning.",
+      zh: "CxY 正以 Building in Public 的方式打造 IMASQUE，一次一個夢。這，是開始。",
     },
     signature: { en: "Dream More.", zh: "Dream More." },
   },
